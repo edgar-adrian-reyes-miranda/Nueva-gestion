@@ -1,0 +1,34 @@
+<body>
+
+<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
+
+<div class="contenedor-tabla">
+  <h1> Tramites</h1>
+
+  <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
+  <form id="formulario-universidad" >
+    <label for="nombre-universidad">Nombre del tramite:</label>
+    <input type="text" id="nombre-universidad" placeholder="Ingrese el nombre del tramite a realizar">
+    <button type="button" onclick="agregartramite()">Guardar</button>
+  </form>
+
+  <!-- Tabla de Universidades -->
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tipo tramite</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Filas de datos aquí -->
+    <tr *ngFor="let tramite of tipo">
+      <td>{{tramite.id_tramite}}</td>
+      <td>{{tramite.tipo_tramite}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</body>

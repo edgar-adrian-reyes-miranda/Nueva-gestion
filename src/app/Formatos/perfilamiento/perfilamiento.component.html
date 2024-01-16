@@ -1,0 +1,41 @@
+<body>
+
+<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
+
+<div class="contenedor-tabla">
+  <h1> Perfilamiento</h1>
+
+  <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
+  <form id="formulario-universidad" >
+    <label for="nombre-perfilamiento">Nombre del perfilamiento:</label>
+    <input type="text" id="nombre-perfilamiento" placeholder="Ingrese el nombre del perfilamiento" name="nombre" required [(ngModel)]="perfila.nombre">
+
+    <button type="button"  role="button" (click)="guardar()"  *ngIf="!perfila.id_perfilamiento;else elseBlock">Guardar</button>
+    <ng-template #elseBlock>
+      <button type="button"  role="button" (click)="editar()" >Actualizar</button>
+    </ng-template>
+  </form>
+
+  <!-- Tabla de Universidades -->
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Descripcion</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Filas de datos aquí -->
+    <tr *ngFor="let perfi of perfil">
+      <td>{{perfi.id_perfilamiento}}</td>
+      <td>{{perfi.nombre}}</td>
+      <td>
+        <button class="accion-boton" title="Editar" [routerLink]="['/perfilamiento/forms',perfi.id_perfilamiento]"><i class="material-icons">edit</i> Editar</button>
+        <button class="accion-boton" title="Eliminar"  (click)="eliminar(perfi.id_perfilamiento)" ><i class="material-icons">delete</i> Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>

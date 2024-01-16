@@ -1,0 +1,40 @@
+<body>
+<button class="regreso" [routerLink]="'/General'"><i class="material-icons">arrow_back</i> Regresar</button>
+<div class="contenedor">
+<h1>Datos Escolares</h1>
+
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Correo Institucional</th>
+      <th>Carrera</th>
+      <th>Universidad</th>
+      <th>Matrícula</th>
+      <th>Modalidad Escolar</th>
+      <th>Plan de Estudio</th>
+      <th>Periodo</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Puedes agregar filas de datos aquí -->
+    <tr *ngFor="let lista of escolare">
+      <td>{{lista.id_escolar}}</td>
+      <td>{{lista.corroe_inst}}</td>
+      <td>{{lista.carrera}}</td>
+      <td>{{lista.nombre_uni.nombre}}</td>
+      <td>{{lista.matricula}}</td>
+      <td>{{lista.modalidad_escolar.tipo_modalidad}}</td>
+      <td>{{lista.plan.nombre}}</td>
+      <td>{{lista.periodo.tipo_periodo}}</td>
+      <td>
+        <button class="accion-boton" title="Editar" [routerLink]="['/actualizar/forms', lista.id_escolar]">Editar</button>
+        <button class="accion-boton" title="Eliminar" (click)="eliminar(lista.id_escolar)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>

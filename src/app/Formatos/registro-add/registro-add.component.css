@@ -1,0 +1,83 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el botón de regreso */
+.regreso {
+  background-color: #13322B; /* Color de fondo verde oscuro */
+  color: #FFF; /* Texto blanco */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* Estilos para el contenedor de tabla */
+.contenedor-tabla {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #D4C19C; /* Color de fondo beige */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el formulario */
+#formulario-universidad {
+  margin-bottom: 20px;
+}
+
+#formulario-universidad label {
+  display: block;
+  margin-bottom: 5px;
+  color: #285C4D; /* Color de texto verde más claro */
+}
+
+#formulario-universidad input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #285C4D; /* Color de borde verde más claro */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para las tablas */
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-datos th, .tabla-datos td {
+  border: 1px solid #285C4D; /* Color de borde verde más claro */
+  padding: 10px;
+  text-align: left;
+}
+
+.tabla-datos th {
+  background-color: #285C4D; /* Color de fondo verde más claro */
+  color: #FFF; /* Texto blanco */
+}
+
+.tabla-datos td button {
+  background-color: #285C4D; /* Color de fondo verde más claro */
+  color: #FFF; /* Texto blanco */
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.tabla-datos td button i {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.tabla-datos td button:hover {
+  background-color: #13322B; /* Color de fondo verde oscuro al pasar el mouse */
+}

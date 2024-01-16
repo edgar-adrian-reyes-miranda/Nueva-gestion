@@ -1,0 +1,47 @@
+<div class="encabezado">
+<div>
+  <button class="regreso" [routerLink]="'/vistaUsuario'"><i class="material-icons icono">rotate_left</i> </button>
+  <div class="seccion">
+    <h2>Datos Personales <i class="material-icons editar-icono" ng-click="activarCampos('datos-personales')">edit</i></h2>
+    <input type="text" ng-model="nombre" class="editable" placeholder="Nombre" ng-if="activado['datos-personales']">
+    <input type="text" ng-model="primerApellido" class="editable" placeholder="Primer Apellido" ng-if="activado['datos-personales']">
+    <input type="text" ng-model="segundoApellido" class="editable" placeholder="Segundo  Apellido" ng-if="activado['datos-personales']">
+    <input type="email" ng-model="Correo" class="editable" placeholder="Correo" ng-if="">
+    <input type="text" ng-model="Curp" class="editable" placeholder="CURP" ng-if="activado['datos-personales']">
+    <input type="text" ng-model="Edad" class="editable" placeholder="Edad" ng-if="">
+    <input type="text" ng-model="Estado" class="editable" placeholder="Estado" ng-if="">
+    <input type="text" ng-model="Municipio" class="editable" placeholder="Municipio" ng-if="">
+    <input type="text" ng-model="Direccion" class="editable" placeholder="Direccion" ng-if="">
+    <input type="text" ng-model="Genero" class="editable" placeholder="Genero" ng-if="">
+    <input type="text" ng-model="Telefono" class="editable" placeholder="Telefono" ng-if="">
+    <input type="text" ng-model="Telefono de casa" class="editable" placeholder="Telefono de casa" ng-if="">
+    <button class="guardar-boton" ng-click="guardarCampos('datos-personales')" ng-if="activado['datos-personales']">Guardar</button>
+  </div>
+
+  <div class="seccion">
+    <h2>Datos Escolares <i class="material-icons editar-icono" ng-click="activarCampos('datos-escolares')">edit</i></h2>
+    <input type="text" ng-model="correo_isnt" class="editable" placeholder="Correo Institucional" ng-if="activado['datos-escolares']">
+    <input type="text" ng-model="carrera" class="editable" placeholder="Carrera" ng-if="activado['datos-personales']">
+    <input type="text" ng-model="universidades" class="editable" placeholder="Universidades" ng-if="activado['datos-personales']">
+    <input type="email" ng-model="matricula" class="editable" placeholder="Matricula" ng-if="">
+    <input type="text" ng-model="modalidad_escolar" class="editable" placeholder="Modalidad Escolar" ng-if="activado['datos-personales']">
+    <input type="text" ng-model="planEstudios" class="editable" placeholder="Plan de Estudios" ng-if="">
+    <input type="text" ng-model="periodo" class="editable" placeholder="Periodo" ng-if="">
+    <button class="guardar-boton" ng-click="guardarCampos('datos-escolares')" ng-if="activado['datos-escolares']">Guardar</button>
+  </div>
+
+  <div class="seccion">
+    <h2>Datos Ingresos <i class="material-icons editar-icono" ng-click="activarCampos('datos-ingresos')">edit</i></h2>
+    <input type="text" ng-model="tramite" class="editable" placeholder="Trámite" ng-if="activado['datos-ingresos']">
+    <input type="text" ng-model="perfilamiento" class="editable" placeholder="Perfilamiento" ng-if="activado['datos-personales']">
+    <input type="text" ng-model="tunro" class="editable" placeholder="Turno" ng-if="activado['datos-personales']">
+    <input type="email" ng-model="modalidad" class="editable" placeholder="Modalidad" ng-if="">
+    <input type="text" ng-model="cv" class="editable" placeholder="CV" ng-if="activado['datos-personales']">
+    <input type="text" ng-model="historialacademico" class="editable" placeholder="Historial Academico" ng-if="">
+    <button class="guardar-boton" ng-click="guardarCampos('datos-ingresos')" ng-if="activado['datos-ingresos']">Guardar</button>
+  </div>
+
+</div>
+
+
+</div>

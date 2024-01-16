@@ -1,0 +1,40 @@
+<body>
+
+<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
+
+<div class="contenedor-tabla">
+  <h1> Universidades</h1>
+
+  <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
+  <form id="formulario-universidad" >
+    <label for="nombre-universidad">Nombre de la Universidad:</label>
+    <input type="text" id="nombre-universidad" placeholder="Ingrese el nombre de la universidad" name="nombre" required [(ngModel)]="uni.nombre">
+    <button role="button" type="button" (click)="guardar()" *ngIf="!uni.id_uni; else elseBlock" >Guardar</button>
+    <ng-template #elseBlock>
+      <button type="button" role="button" (click)="editar()"  >Actualizar</button>
+    </ng-template>
+  </form>
+
+  <!-- Tabla de Universidades -->
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <tr *ngFor="let univ of universidad">
+      <td>{{univ.id_uni}}</td>
+      <td>{{univ.nombre}}</td>
+      <td>
+        <button class="accion-boton" title="Editar" [routerLink]="['/universidades/forms', univ.id_uni]"><i class="material-icons">edit</i> Editar</button>
+        <button class="accion-boton" title="Eliminar" (click)="eliminar(univ.id_uni)"><i class="material-icons">delete</i> Eliminar</button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>

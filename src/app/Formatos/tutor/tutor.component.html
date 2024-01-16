@@ -1,0 +1,26 @@
+<body>
+
+<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
+
+<div class="contenedor-tabla">
+  <h1> Tutor</h1>
+  <!-- Tabla de Universidades -->
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Filas de datos aquí -->
+    <tr *ngFor="let profe of tutor">
+      <td>{{profe.id_tutor}}</td>
+      <td>{{profe.nombre}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</body>

@@ -1,0 +1,62 @@
+<body>
+
+<button class="regreso" [routerLink]="'/General'"><i class="material-icons">arrow_back</i> Regresar</button>
+<div class="contenedor-tabla">
+
+  <br>
+  <br>
+  <h1>Datos Personales</h1>
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Primer Apellido</th>
+      <th>Segundo Apellido</th>
+      <th>Correo</th>
+      <th>CURP</th>
+      <th>EDAD</th>
+      <th>Estado</th>
+      <th>Municipio</th>
+      <th>Dirección</th>
+      <th>Género</th>
+      <th>Teléfono</th>
+      <th>Teléfono de Casa</th>
+      <th>Acciones</th>
+      <th>Crear Ftd</th>
+      <th>EDITAR</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Puedes agregar filas de datos aquí -->
+    <tr *ngFor="let person of lista">
+      <td>{{person.id_person}}</td>
+      <td>{{person.nombre}}</td>
+      <td>{{person.p_apellido}}</td>
+      <td>{{person.s_apellido}}</td>
+      <td>{{person.correo}}</td>
+      <td>{{person.curp}}</td>
+      <td>{{person.edad}}</td>
+      <td>{{person.estados}}</td>
+      <td>{{person.municipio}}</td>
+      <td>{{person.direccion}}</td>
+      <td>{{person.genero.tipo_genero}}</td>
+      <td>{{person.telefono}}</td>
+      <td>{{person.telefono_casa}}</td>
+      <td>
+        <button class="accion-boton" title="Editar" [routerLink]="['/actualizar/forms', person.id_person]">Editar</button>
+        <button class="accion-boton" title="Eliminar" (click)="eliminar(person.id_person)" >Eliminar</button>
+      </td>
+      <td>
+        <button class="crear-ftd-boton" [routerLink]="'/registro-ftd'" >Crear FTD</button>
+      </td>
+      <td>
+        <button class="crear-ftd-boton">Editar Escolar</button>
+        <button class="crear-ftd-boton">Editar Ingreso</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>

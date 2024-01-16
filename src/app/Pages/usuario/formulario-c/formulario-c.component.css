@@ -1,0 +1,65 @@
+/* Estilos para la sección de encabezado */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #B38E5D; /* Fondo ocre */
+  font-family: 'Montserrat-Italic';
+  text-align: center;
+}
+
+.icono {
+  color: #13322B; /* Icono verde oscuro */
+  cursor: pointer;
+}
+
+/* Estilos para las secciones de datos personales, escolares e ingresos */
+.seccion {
+  margin-bottom: 20px;
+  border: 2px solid #285C4D; /* Borde verde más claro */
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #B38E5D; /* Fondo ocre */
+  color: #FFF; /* Texto blanco */
+}
+
+.editar-icono {
+  color: #13322B; /* Icono verde oscuro */
+  cursor: pointer;
+}
+
+.guardar-boton {
+  background-color: #13322B;
+  color: #FFF;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.editable {
+  border: 1px solid #13322B; /* Borde verde oscuro */
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 70%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.regreso {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #13322B; /* Color de fondo verde oscuro */
+  color: #FFF; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}

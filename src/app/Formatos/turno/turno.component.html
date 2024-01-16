@@ -1,0 +1,27 @@
+<body>
+
+<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
+
+<div class="contenedor-tabla">
+  <h1> Turnos</h1>
+  <!-- Tabla de Universidades -->
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tipo turno</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Filas de datos aquí -->
+    <tr *ngFor="let hora of turno">
+      <td>{{hora.id_turno}}</td>
+      <td>{{hora.tipo_turno}}</td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</body>

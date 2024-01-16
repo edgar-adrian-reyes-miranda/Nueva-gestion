@@ -1,0 +1,42 @@
+<body>
+
+<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
+
+<div class="contenedor-tabla">
+  <h1> Grupos</h1>
+
+  <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
+  <form id="formulario-grupo" >
+    <label for="nombre-grupo">Nombre del grupo:</label>
+    <input type="text" id="nombre-grupo" placeholder="Ingrese el nombre del grupo" name="nombre" required [(ngModel)]="gruo.nombre">
+    <button type="button" role="button" (click)="guardar()" *ngIf="!gruo.id_grupo else elseBlock">Guardar</button>
+    <ng-template #elseBlock>
+      <button type="button" role="button" (click)="editar()" >Actualizar</button>
+    </ng-template>
+  </form>
+
+  <!-- Tabla de Universidades -->
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Filas de datos aquí -->
+    <tr *ngFor="let grupos of grupo">
+      <td>{{grupos.id_grupo}}</td>
+      <td>{{grupos.nombre}}</td>
+      <td>
+        <button class="accion-boton" title="Editar" [routerLink]="['/grupo/forms', grupos.id_grupo]" ><i class="material-icons">edit</i> Editar</button>
+        <button class="accion-boton" title="Eliminar" (click)="eliminar(grupos.id_grupo)" ><i class="material-icons">delete</i> Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</body>

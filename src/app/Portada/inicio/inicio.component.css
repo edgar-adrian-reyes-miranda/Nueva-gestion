@@ -1,0 +1,38 @@
+.portada {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Montserrat-Italic';
+}
+
+h1 {
+  font-size: 2em;
+  color: #621132;
+  margin-bottom: 20px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #B38E5D;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.btn img {
+  margin-right: 10px;
+}
+
+.botones img {
+  width: 100px;
+  /* ajusta el tamaño según sea necesario */
+  height: auto;
+}

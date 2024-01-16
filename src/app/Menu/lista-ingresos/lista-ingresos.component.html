@@ -1,0 +1,38 @@
+<body>
+<button class="regreso" [routerLink]="'/General'"><i class="material-icons">arrow_back</i> Regresar</button>
+<div class="contenedor">
+  <h1>Datos Ingresos</h1>
+  <table class="tabla-datos">
+    <thead>
+    <tr>
+      <th>Trámite</th>
+      <th>Perfilamiento</th>
+      <th>Horario</th>
+      <th>Turno</th>
+      <th>Modalidad</th>
+      <th>CV</th>
+      <th>Historial Académico</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Puedes agregar filas de datos aquí -->
+    <tr *ngFor="let ingreso of ingre">
+      <td>{{ingreso.id_ingreso}}</td>
+      <td>{{ingreso.tramite.tipo_tramite}}</td>
+      <td>{{ingreso.perfilamiento.id_perfilamiento}}</td>
+      <td>{{ingreso.horas.horario}}</td>
+      <td>{{ingreso.turno.tipo_turno}}</td>
+      <td>{{ingreso.moda.tipo_modalidad}}</td>
+      <td>{{ingreso.cv}}</td>
+      <td>{{ingreso.historial_Academico}}</td>
+      <td>
+        <button class="accion-boton" title="Editar" [routerLink]="['/actualizar/forms', ingreso.id_ingreso]">Editar</button>
+        <button class="accion-boton" title="Eliminar" (click)="eliminar(ingreso.id_ingreso)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>

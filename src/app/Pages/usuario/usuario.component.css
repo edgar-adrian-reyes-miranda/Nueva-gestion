@@ -1,0 +1,46 @@
+body {
+  background-color: #D4C19C;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.regreso {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #13322B; /* Color de fondo verde oscuro */
+  color: #FFF; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.boton {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.informacion {
+  background-color: #9D2449;
+  color: #FFF;
+}
+
+.reporte-mensual {
+  background-color: #13322B;
+  color: #FFF;
+}
+
+.icono {
+  margin-right: 10px;
+}

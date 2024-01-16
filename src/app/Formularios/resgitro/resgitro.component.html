@@ -1,0 +1,16 @@
+<button class="regreso" [routerLink]="'/login'"><i class="material-icons">arrow_back</i> Regresar</button>
+<body>
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+
+  <label for="correo">Correo:</label>
+  <input type="email" id="correo" name="correo" required>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+
+  <button [routerLink]="'/registro-personales'">Registrarse</button>
+</form>
+
+</body>

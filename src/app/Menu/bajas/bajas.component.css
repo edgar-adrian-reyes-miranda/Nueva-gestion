@@ -1,0 +1,65 @@
+body {
+  font-family: 'Montserrat';
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.regreso {
+  background-color: #13322B;
+  color: #FFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.contenedor-tabla {
+  max-width: 1290px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #D4C19C;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-tabla h1 {
+  color: #285C4D;
+}
+
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-datos th, .tabla-datos td {
+  border: 1px solid #285C4D;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabla-datos th {
+  background-color: #285C4D;
+  color: #FFF;
+}
+
+.tabla-datos td button {
+  background-color: #285C4D;
+  color: #FFF;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.tabla-datos td button i {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.tabla-datos td button:hover {
+  background-color: #13322B;
+}

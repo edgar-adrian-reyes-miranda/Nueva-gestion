@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat-Medium';
+  text-align: center;
+  text-size:18px
+}
+
+.regreso {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #13322B;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.boton {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  color: #FFF;
+  background-color: #285C4D;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.datos-personales {
+  background-color: #4E232E;
+}
+
+.datos-escolares {
+  background-color: #56242A;
+}
+
+.datos-ingresos {
+  background-color: #9D2449;
+}
+
+.datos-ftd {
+  background-color: #13322B;
+}
+
+.bajas {
+  background-color: #D4C19C;
+}
+
+.datos-extras {
+  background-color: #B38E5D;
+}
+
+.registro {
+  background-color: #285C4D;
+}
+.material-icons {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.logo {
+  max-width: 100%;
+  margin-top: 40px;
+}
+
+p {
+  font-size: 22px;
+  color: white; /* Texto verde más claro */
+  margin-bottom: 10px;
+  text-align-all: justify;
+  font-family: Montserrat-Italic;
+}
