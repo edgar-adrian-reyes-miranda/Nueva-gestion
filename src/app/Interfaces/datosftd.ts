@@ -1,25 +1,26 @@
-import {Cursos} from "./cursos";
-import {Estatusinfotec} from "./estatusinfotec";
-import {Grupos} from "./grupos";
-import {Tutor} from "./tutor";
-import {Proyectos} from "./proyectos";
-import {Datospersonales} from "./datospersonales";
-import {Enlace} from "./enlace";
+import { Cursos } from "./cursos";
+import { Estatusinfotec } from "./estatusinfotec";
+import { Grupos } from "./grupos";
+import { Tutor } from "./tutor";
+import { Proyectos } from "./proyectos";
+import { Datospersonales } from "./datospersonales";
+import { Enlace } from "./enlace";
 
 export class Datosftd {
-  id_ftd?:number;
-  area:string='';
-  fecha_ingreso:string='';
-  fecha_termino:string='';
-  correo_becario:string='';
-  matricula_ftd:string='';
-  beca:string='';
-  becadocumenot:string='';
-  nombre_curso:Cursos= new Cursos();
-  estatus:Estatusinfotec= new Estatusinfotec();
-  enlace:Enlace= new Enlace();
-  nombre_grupo:Grupos= new Grupos();
-  tutor:Tutor= new Tutor();
-  nombre_proyecto:Proyectos= new Proyectos();
-  dato:Datospersonales = new Datospersonales();
+  id_ftd?: number;
+  area: string = '';
+  beca: string = '';
+  becadocumenot: string = '';
+  fecha_ingreso: string = '';
+  fecha_termino: string = '';
+  matricula_ftd: string = '';
+  correo_becario: string = '';
+  proyectos: Proyectos = new Proyectos();
+  tutores: Tutor = new Tutor();
+  grupos: Grupos = new Grupos();
+  enlace: Enlace = new Enlace();
+  estatusInfotec: Estatusinfotec = new Estatusinfotec();
+  cursos: Cursos = new Cursos();
+  datosPersonales: Datospersonales = new Datospersonales();
+
 }

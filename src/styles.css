@@ -1,32 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%;
-background-color: #621132}
-body { margin: 0;
+html,
+body {
+  height: 100%;
+  background-color: #621132
+}
+
+body {
+  margin: 0;
   font-family: 'Montserrat-Bold';
-  text-size:12px;
+  size: 12px;
 }
 
 @font-face {
   font-family: 'Montserrat';
   src: url('assets/fonts/Montserrat-Italic-VariableFont_wght.ttf'),
-  url('assets/fonts/Montserrat-VariableFont_wght.ttf'),
-  url('assets/fonts/static/Montserrat-Black.ttf'),
-  url('assets/fonts/static/Montserrat-BlackItalic.ttf'),
-  url('assets/fonts/static/Montserrat-Bold.ttf'),
-  url('assets/fonts/static/Montserrat-BoldItalic.ttf'),
-  url('assets/fonts/static/Montserrat-ExtraBold.ttf'),
-  url('assets/fonts/static/Montserrat-ExtraBoldItalic.ttf'),
-  url('assets/fonts/static/Montserrat-ExtraLight.ttf'),
-  url('assets/fonts/static/Montserrat-ExtraLightItalic.ttf'),
-  url('assets/fonts/static/Montserrat-Light.ttf'),
-  url('assets/fonts/static/Montserrat-Italic.ttf'),
-  url('assets/fonts/static/Montserrat-LightItalic.ttf'),
-  url('assets/fonts/static/Montserrat-Medium.ttf'),
-  url('assets/fonts/static/Montserrat-MediumItalic.ttf'),
-  url('assets/fonts/static/Montserrat-Regular.ttf'),
-  url('assets/fonts/static/Montserrat-SemiBold.ttf'),
-  url('assets/fonts/static/Montserrat-SemiBoldItalic.ttf'),
-  url('assets/fonts/static/Montserrat-Thin.ttf'),
-  url('assets/fonts/static/Montserrat-ThinItalic.ttf');
+    url('assets/fonts/Montserrat-VariableFont_wght.ttf'),
+    url('assets/fonts/static/Montserrat-Black.ttf'),
+    url('assets/fonts/static/Montserrat-BlackItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Bold.ttf'),
+    url('assets/fonts/static/Montserrat-BoldItalic.ttf'),
+    url('assets/fonts/static/Montserrat-ExtraBold.ttf'),
+    url('assets/fonts/static/Montserrat-ExtraBoldItalic.ttf'),
+    url('assets/fonts/static/Montserrat-ExtraLight.ttf'),
+    url('assets/fonts/static/Montserrat-ExtraLightItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Light.ttf'),
+    url('assets/fonts/static/Montserrat-Italic.ttf'),
+    url('assets/fonts/static/Montserrat-LightItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Medium.ttf'),
+    url('assets/fonts/static/Montserrat-MediumItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Regular.ttf'),
+    url('assets/fonts/static/Montserrat-SemiBold.ttf'),
+    url('assets/fonts/static/Montserrat-SemiBoldItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Thin.ttf'),
+    url('assets/fonts/static/Montserrat-ThinItalic.ttf');
 }

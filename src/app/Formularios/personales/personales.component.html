@@ -1,63 +1,167 @@
-<button class="regreso" [routerLink]="'/registro'"><i class="material-icons icono">rotate_left</i> </button>
+<button class="regreso" [routerLink]="'/registro'">
+  <i class="material-icons icono">rotate_left</i>
+</button>
 <body>
-<form>
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" class="editable" placeholder="Nombre" name="nomre" required [(ngModel)]="dato.nombre">
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input
+      type="text"
+      id="nombre"
+      name="nombre"
+      class="editable"
+      placeholder="Nombre"
+      name="nomre"
+      required
+      [(ngModel)]="dato.nombre"
+    />
 
-  <label for="primerApellido">Primer Apellido:</label>
-  <input type="text" id="primerApellido" name="primerApellido" class="editable"
-         placeholder="Primer Apellido"  name="p_apellido" required [(ngModel)]="dato.p_apellido">
+    <label for="primerApellido">Primer Apellido:</label>
+    <input
+      type="text"
+      id="primerApellido"
+      name="primerApellido"
+      class="editable"
+      placeholder="Primer Apellido"
+      name="p_apellido"
+      required
+      [(ngModel)]="dato.p_apellido"
+    />
 
-  <label for="segundoApellido">Segundo Apellido:</label>
-  <input type="text" id="segundoApellido" name="segundoApellido" class="editable"
-         placeholder="Segundo Apellido" name="s_apellido" required [(ngModel)]="dato.s_apellido">
+    <label for="segundoApellido">Segundo Apellido:</label>
+    <input
+      type="text"
+      id="segundoApellido"
+      name="segundoApellido"
+      class="editable"
+      placeholder="Segundo Apellido"
+      name="s_apellido"
+      required
+      [(ngModel)]="dato.s_apellido"
+    />
 
-  <label for="correo">Correo:</label>
-  <input type="email" id="correo" name="correo" class="editable"
-         placeholder="Correo" name="correo" required [(ngModel)]="dato.correo">
+    <label for="correo">Correo:</label>
+    <input
+      type="email"
+      id="correo"
+      name="correo"
+      class="editable"
+      placeholder="Correo"
+      name="correo"
+      required
+      [(ngModel)]="dato.correo"
+    />
 
-  <label for="Curp">CURP:</label>
-  <input type="text" id="Curp" name="Curp" class="editable"
-         placeholder="CURP" name="curp" required [(ngModel)]="dato.curp">
+    <label for="Curp">CURP:</label>
+    <input
+      type="text"
+      id="Curp"
+      name="Curp"
+      class="editable"
+      placeholder="CURP"
+      name="curp"
+      required
+      [(ngModel)]="dato.curp"
+    />
 
-  <label for="Edad">Edad:</label>
-  <input type="text" id="Edad" name="Edad" class="editable"
-         placeholder="Edad" name="edad" required [(ngModel)]="dato.edad">
+    <label for="Edad">Edad:</label>
+    <input
+      type="text"
+      id="Edad"
+      name="Edad"
+      class="editable"
+      placeholder="Edad"
+      name="edad"
+      required
+      [(ngModel)]="dato.edad"
+    />
 
-  <label for="Estado">Estado:</label>
-  <input type="text" id="Estado" name="Estado" class="editable"
-         placeholder="Estado" name="estado" required [(ngModel)]="dato.estados">
+    <label for="Estado">Estado:</label>
+    <input
+      type="text"
+      id="Estado"
+      name="Estado"
+      class="editable"
+      placeholder="Estado"
+      name="estado"
+      required
+      [(ngModel)]="dato.estados"
+    />
 
-  <label for="Municipio">Municipio:</label>
-  <input type="text" id="Municipio" name="Municipio" class="editable"
-         placeholder="Municipio" name="municipio" required [(ngModel)]="dato.municipio">
+    <label for="Municipio">Municipio:</label>
+    <input
+      type="text"
+      id="Municipio"
+      name="Municipio"
+      class="editable"
+      placeholder="Municipio"
+      name="municipio"
+      required
+      [(ngModel)]="dato.municipio"
+    />
 
-  <label for="Direccion">Dirección:</label>
-  <input type="text" id="Direccion" name="Direccion" class="editable"
-         placeholder="Dirección" name="direccion" required [(ngModel)]="dato.direccion">
+    <label for="Direccion">Dirección:</label>
+    <input
+      type="text"
+      id="Direccion"
+      name="Direccion"
+      class="editable"
+      placeholder="Dirección"
+      name="direccion"
+      required
+      [(ngModel)]="dato.direccion"
+    />
 
-  <label for="Genero">Género:</label>
-  <select id="Genero" name="genero" class="editable" required [(ngModel)]="dato.genero" >
-    <option value="">Elije un genero</option>
-    <option *ngFor="let gen of genero" [ngValue]="gen" >
-      {{gen.tipo_genero}}
-    </option>
-  </select>
+    <label for="Genero">Género:</label>
+    <select
+      id="Genero"
+      name="genero"
+      class="editable"
+      required
+      [(ngModel)]="dato.genero"
+    >
+      <option value="">Elije un genero</option>
+      <option *ngFor="let gen of genero" [ngValue]="gen">
+        {{ gen.tipo_genero }}
+      </option>
+    </select>
 
- <p>Elejiste el genero: {{dato.genero.tipo_genero | json}}</p>
+    <p>Elejiste el genero: {{ dato.genero.tipo_genero | json }}</p>
 
-  <label for="Telefono">Teléfono:</label>
-  <input type="text" id="Telefono" name="Telefono" class="editable"
-         placeholder="Teléfono" name="telefono" required [(ngModel)]="dato.telefono">
+    <label for="Telefono">Teléfono:</label>
+    <input
+      type="text"
+      id="Telefono"
+      name="Telefono"
+      class="editable"
+      placeholder="Teléfono"
+      name="telefono"
+      required
+      [(ngModel)]="dato.telefono"
+    />
 
-  <label for="TelefonoCasa">Teléfono de Casa:</label>
-  <input type="text" id="TelefonoCasa" name="TelefonoCasa" class="editable"
-         placeholder="Teléfono de Casa" name="telefono_casa" required [(ngModel)]="dato.telefono_casa">
+    <label for="TelefonoCasa">Teléfono de Casa:</label>
+    <input
+      type="text"
+      id="TelefonoCasa"
+      name="TelefonoCasa"
+      class="editable"
+      placeholder="Teléfono de Casa"
+      name="telefono_casa"
+      required
+      [(ngModel)]="dato.telefono_casa"
+    />
 
-  <button type="submit" role="button" (click)="guardar()" *ngIf="!dato.id_person; else elseBlock" >Guardar</button>
+    <button
+      type="submit"
+      role="button"
+      (click)="guardar()"
+      *ngIf="!dato.id_person; else elseBlock"
+    >
+      Guardar
+    </button>
 
-  <ng-template #elseBlock>
-    <button type="submit" role="button" (click)="editar()"  >Guardar</button>
-  </ng-template>
-</form>
+    <ng-template #elseBlock>
+      <button type="submit" role="button" (click)="editar()">Actualizar</button>
+    </ng-template>
+  </form>
 </body>

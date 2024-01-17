@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Datosftd} from "../../Interfaces/datosftd";
-import {DatosftdService} from "../../Apis/datosftd.service";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Datosftd } from "../../Interfaces/datosftd";
+import { DatosftdService } from "../../Apis/datosftd.service";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -9,40 +9,41 @@ import {Router} from "@angular/router";
   templateUrl: './lista-ftd.component.html',
   styleUrls: ['./lista-ftd.component.css']
 })
-export class ListaFtdComponent implements OnInit{
-  ftd:Datosftd[]=[];
-  constructor(private api:DatosftdService,
-              private rute:Router) {
+export class ListaFtdComponent implements OnInit {
+  ftd: Datosftd[] = [];
+  constructor(private api: DatosftdService,
+    private rute: Router) {
   }
   ngOnInit(): void {
     this.api.getListFtd().subscribe(
-      (Data:Datosftd[])=>{
-        this.ftd=Data;
+      (Data: Datosftd[]) => {
+        this.ftd = Data;
+        console.log('Lista completa', Data);
       },
-      (error)=> console.error('Error al obtener la lista', error),
-      ()=> console.log('Obtencion de lista completa')
+      (error) => console.error('Error al obtener la lista', error),
+      () => console.log('Obtencion de lista completa')
     );
   }
 
-  private ActualizarLista(){
+  private ActualizarLista() {
     this.api.getListFtd().subscribe(
-      (data:Datosftd[])=>{
-        this.ftd=data;
+      (data: Datosftd[]) => {
+        this.ftd = data;
       },
-       error=> console.error('Error  al actualizar la lista', error),
-      ()=> console.log('Actualizacion de lista completa')
+      error => console.error('Error  al actualizar la lista', error),
+      () => console.log('Actualizacion de lista completa')
     );
   }
 
-  eliminar(id: number | undefined){
-    if (typeof  id === 'number'){
+  eliminar(id: number | undefined) {
+    if (typeof id === 'number') {
       this.api.eliminarftd(id).subscribe(
-        res=>{
+        res => {
           this.ActualizarLista();
         },
         error => console.error('Error al eliminar el dato', error.error)
       );
-    }else{
+    } else {
       console.error('ERROR en el ID de ftd', id);
     }
   }
