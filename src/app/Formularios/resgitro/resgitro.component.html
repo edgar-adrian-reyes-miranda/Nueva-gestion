@@ -1,16 +1,35 @@
-<button class="regreso" [routerLink]="'/login'"><i class="material-icons">arrow_back</i> Regresar</button>
+<button class="regreso" [routerLink]="'/'">
+  <i class="material-icons">arrow_back</i> Regresar
+</button>
 <body>
-<form>
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" required>
+  <form (ngSubmit)="guardar()">
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      required
+      [(ngModel)]="registro.username"
+    />
 
-  <label for="correo">Correo:</label>
-  <input type="email" id="correo" name="correo" required>
+    <label for="correo">Correo:</label>
+    <input
+      type="email"
+      id="correo"
+      name="correo"
+      required
+      [(ngModel)]="registro.correo"
+    />
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required>
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      [(ngModel)]="registro.password"
+    />
 
-  <button [routerLink]="'/registro-personales'">Registrarse</button>
-</form>
-
+    <button type="submit">Registrarse</button>
+  </form>
 </body>

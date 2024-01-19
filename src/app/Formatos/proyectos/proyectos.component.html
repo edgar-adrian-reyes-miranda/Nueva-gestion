@@ -1,49 +1,93 @@
 <body>
-<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
-<div class="contenedor-tabla">
-  <h1> Proyectos</h1>
+  <button class="regreso" [routerLink]="'/datos-extras'">
+    <i class="material-icons">arrow_back</i> Regresar
+  </button>
+  <div class="contenedor-tabla">
+    <h1>Proyectos</h1>
 
-  <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
-  <form id="formulario-proyecto" >
-    <label for="nombre-proyecto">Nombre del proyecto:</label>
-    <input type="text" id="nombre-proyecto" placeholder="Ingrese el nombre del proyecto" name="nombre" required [(ngModel)]="proyec.nombre">
+    <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
+    <form id="formulario-proyecto">
+      <label for="nombre-proyecto">Nombre del proyecto:</label>
+      <input
+        type="text"
+        id="nombre-proyecto"
+        placeholder="Ingrese el nombre del proyecto"
+        name="nombre"
+        required
+        [(ngModel)]="proyec.nombre"
+      />
 
-    <label for="avance-proyecto">avance del proyecto:</label>
-    <input type="text" id="avance-proyecto" placeholder="Ingrese el avance del proyecto" name="avance" required [(ngModel)]="proyec.avance">
+      <label for="avance-proyecto">avance del proyecto:</label>
+      <input
+        type="text"
+        id="avance-proyecto"
+        placeholder="Ingrese el avance del proyecto"
+        name="avance"
+        required
+        [(ngModel)]="proyec.avance"
+      />
 
-    <label for="evaluacion-proyecto">Evaluacion del proyecto:</label>
-    <input type="text" id="evaluacion-proyecto" placeholder="Ingrese la evaluacion del proyecto" name="evaluacion" required [(ngModel)]="proyec.evaluacion">
+      <label for="evaluacion-proyecto">Evaluacion del proyecto:</label>
+      <input
+        type="text"
+        id="evaluacion-proyecto"
+        placeholder="Ingrese la evaluacion del proyecto"
+        name="evaluacion"
+        required
+        [(ngModel)]="proyec.evaluacion"
+      />
 
-    <button role="button" type="button" (click)="guardar()" *ngIf="!proyec.id_proyecto ; else elseBlock" >Guardar</button>
-    <ng-template #elseBlock>
-      <button type="button" role="button" (click)="editar()"  >Actualizar</button>
-    </ng-template>
-  </form>
+      <button
+        role="button"
+        type="button"
+        (click)="guardar()"
+        *ngIf="!proyec.id_proyecto; else elseBlock"
+      >
+        Guardar
+      </button>
+      <ng-template #elseBlock>
+        <button type="button" role="button" (click)="editar()">
+          Actualizar
+        </button>
+      </ng-template>
+    </form>
 
-  <!-- Tabla de Universidades -->
-  <table class="tabla-datos">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Avance</th>
-      <th>Evaluacion</th>
-      <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <tr *ngFor="let pro of proyectos ">
-      <td>{{pro.id_proyecto}}</td>
-      <td>{{pro.nombre}}</td>
-      <td>{{pro.avance}}</td>
-      <td>{{pro.evaluacion}}</td>
-      <td>
-        <button class="accion-boton" title="Editar" [routerLink]="['/proyectos/forms', ]"><i class="material-icons">edit</i> Editar</button>
-        <button class="accion-boton" title="Eliminar" (click)="eliminar(pro.id_proyecto)"><i class="material-icons">delete</i> Eliminar</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+    <!-- Tabla de Universidades -->
+    <table class="tabla-datos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Avance</th>
+          <th>Evaluacion</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr></tr>
+        <tr *ngFor="let pro of proyectos">
+          <td>{{ pro.id_proyecto }}</td>
+          <td>{{ pro.nombre }}</td>
+          <td>{{ pro.avance }}</td>
+          <td>{{ pro.evaluacion }}</td>
+          <td>
+            <button
+              class="accion-boton"
+              title="Editar"
+              [routerLink]="['/proyectos/forms', pro.id_proyecto]"
+            >
+              <i class="material-icons">edit</i> Editar
+            </button>
+            <button
+              class="accion-boton"
+              title="Eliminar"
+              (click)="eliminar(pro.id_proyecto)"
+            >
+              <i class="material-icons">delete</i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>

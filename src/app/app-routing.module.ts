@@ -1,3 +1,4 @@
+import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./Logueos/login/login.component";
@@ -38,8 +39,9 @@ import { ReportesComponent } from "./Pages/usuario/reportes/reportes.component";
 
 const routes: Routes = [
   ///Logueos
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
-  { path: 'admin', component: AdminComponent, pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  // { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  //{ path: 'admin', component: AdminComponent, pathMatch: 'full' },
   //registros
 
   //vistas
@@ -91,6 +93,7 @@ const routes: Routes = [
   { path: 'universidades/forms/:id_uni', component: UniversidadComponent, pathMatch: 'full' },
   { path: 'cursos/forms/:id_curso', component: CursosComponent, pathMatch: 'full' },
   { path: 'grupo/forms/:id_grupo', component: GruposComponent, pathMatch: 'full' },
+  { path: 'proyectos/forms/:id_proyecto', component: ProyectosComponent, pathMatch: 'full' },
   { path: 'perfilamiento/forms/:id_perfilamiento', component: PerfilamientoComponent, pathMatch: 'full' },
   { path: 'actualizar/forms/:id_person', component: PersonalesComponent, pathMatch: 'full' },
   { path: 'actualizar/forms/:id_escolar', component: EscolaresComponent, pathMatch: 'full' },

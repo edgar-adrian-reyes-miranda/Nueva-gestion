@@ -56,6 +56,23 @@
 
     <p>Elijiste el turno: {{ ingreso.turno.tipo_turno | json }}</p>
 
+    <label for="horario">Horario:</label>
+    <select
+      id="horarios"
+      name="Hora:"
+      class="editable"
+      required
+      [(ngModel)]="ingreso.horarios"
+    >
+      <option value="">Elije el turno</option>
+      <option *ngFor="let horas of horario" [ngValue]="horas">
+        {{ horas.horario }}
+      </option>
+      <!-- Agrega más opciones según sea necesario -->
+    </select>
+
+    <p>Elijiste el horario: {{ ingreso.horarios.horario }}</p>
+
     <label for="modalidad">Modalidad:</label>
     <select
       id="modalidad"
@@ -95,6 +112,6 @@
       [ngModel]="ingreso.historial_Academico"
     />
 
-    <button [routerLink]="'/login'" (click)="guardar()">Guardar</button>
+    <button (click)="guardar()">Guardar</button>
   </form>
 </body>

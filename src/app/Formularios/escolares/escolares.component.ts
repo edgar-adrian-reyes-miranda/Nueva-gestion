@@ -31,7 +31,7 @@ export class EscolaresComponent implements OnInit {
     private seruni: UniversidadesService,
     private serplan: PlaneducativoService,
     private serperi: PeriodoService,
-  private serperson:DatospersonalesService) {
+    private serperson: DatospersonalesService) {
   }
   ngOnInit(): void {
     this.cargardatos();
@@ -54,12 +54,13 @@ export class EscolaresComponent implements OnInit {
     );
   }
 
-  private relacionpersonalesescolares() {
+  private relacionpersonalesescolares(): void {
     this.active.params.subscribe(
       params => {
         let id = params['id_person']
         if (id) {
-          this.serperson.getporIdpersonal(id).subscribe((personas) => this.escolares.datosPersonales = personas);
+          this.serperson.getporIdpersonal(id).subscribe((personas) =>
+            this.escolares.datosPersonales = personas);
         }
       }
     )
@@ -92,6 +93,7 @@ export class EscolaresComponent implements OnInit {
       }
     );
   }
+
   editar() {
     this.api.editarEscolar(this.escolares).subscribe(
       escolar => {

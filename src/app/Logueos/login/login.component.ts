@@ -1,40 +1,51 @@
-import {Component, OnInit} from '@angular/core';
-import {AccesoService} from "../../Apis/acceso.service";
-import {HttpErrorResponse} from "@angular/common/http";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { Usuarios } from 'src/app/Interfaces/usuarios';
+import { UsuarioService } from 'src/app/Apis/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements  OnInit{
-  username:string='';
-  password:string='';
-  constructor(private apiSer:AccesoService, private router:Router) {
+export class LoginComponent implements OnInit {
+
+  usuario: Usuarios = new Usuarios();
+
+  constructor(private api: UsuarioService,
+    private router: Router) {
   }
   ngOnInit(): void {
   }
 
-  login() {
-    const loginData = { username: this.username, password: this.password };
-
-    this.apiSer.logueo(loginData).subscribe(
-      (response) => {
-        if (response === 'Inicio de sesión exitoso') {
-          console.log('Inicio de sesión exitoso');
-          // Redirige a tu componente específico después de un inicio de sesión exitoso
-          this.router.navigate(['/vistaUsuario']);
-        } else {
-          console.log('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
-          // Puedes manejar el caso de credenciales incorrectas aquí si es necesario
-        }
-      },
+  acceso() {
+    this.api.login(this.usuario).subscribe(
+      response => {
+        console.log('Respuesta del servidor', response);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Inicio Exitoso",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.router.navigate(['/vistaUsuario']);
+      }
+      ,
       (error) => {
-        console.error('Error al iniciar sesión', error);
-        // Puedes manejar otros tipos de errores si es necesario
+        console.error('Error en el inicio de sesión:', error);
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Revisar credenciales",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        this.router.navigate(['']);
       }
     );
   }
+
 }
 

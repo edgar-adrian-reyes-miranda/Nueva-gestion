@@ -1,38 +1,50 @@
-import {Component, OnInit} from '@angular/core';
-import {Usuarios} from "../../Interfaces/usuarios";
-import {ActivatedRoute, Router} from "@angular/router";
-import {AccesoService} from "../../Apis/acceso.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { Usuarios } from 'src/app/Interfaces/usuarios';
+import { UsuarioService } from 'src/app/Apis/usuario.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-resgitro',
   templateUrl: './resgitro.component.html',
   styleUrls: ['./resgitro.component.css']
 })
-export class ResgitroComponent implements  OnInit{
-  usuario:Usuarios= new Usuarios();
+export class ResgitroComponent implements OnInit {
+  registro: Usuarios = new Usuarios();
 
-  constructor(private api:AccesoService,
-              private route:Router,
-              private actived:ActivatedRoute) {
+  constructor(private api: UsuarioService,
+    private route: Router,
+    private actived: ActivatedRoute) {
   }
   ngOnInit(): void {
-    this.actived.params.subscribe(params=>{
-      let id= params['id'];
-      if (id){
-        this
-      }
-    })
   }
-  /*
-  guardar(){
-    this.api.registro(this.usuario).subscribe(
-      usuarios=>{
-        this.route.navigate(['/registro-personales']);
-        console.log('Nuevo usuario', `Nuevo ${this.usuario.id}con exito`);
+
+  guardar() {
+    this.api.registroUsuario(this.registro).subscribe(
+      (usurios: Usuarios) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Inicio Exitoso",
+          showConfirmButton: true,
+          timer: 1500
+        });
+        this.route.navigate(['/General']);
+      },
+      (error) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Revisar credenciales",
+          showConfirmButton: true,
+          timer: 1500,
+        });
+        this.route.navigate(['/registro']);
       }
     )
   }
-  editar(){
+  editar() {
 
-  }*/
+  }
 }

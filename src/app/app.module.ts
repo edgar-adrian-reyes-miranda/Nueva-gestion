@@ -43,6 +43,7 @@ import { EnlaceComponent } from './Formatos/enlace/enlace.component';
 import { EstusInfotecComponent } from './Formatos/estus-infotec/estus-infotec.component';
 import { ProyectosComponent } from './Formatos/proyectos/proyectos.component';
 import { ReportesComponent } from './Pages/usuario/reportes/reportes.component';
+import { TablaVistaComponent } from './Formularios/tabla-vista/tabla-vista.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { ReportesComponent } from './Pages/usuario/reportes/reportes.component';
     EstusInfotecComponent,
     ProyectosComponent,
     ReportesComponent,
+    TablaVistaComponent,
 
   ],
   imports: [

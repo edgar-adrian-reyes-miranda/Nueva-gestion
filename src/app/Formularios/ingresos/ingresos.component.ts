@@ -11,6 +11,8 @@ import { ModalidadService } from "../../Apis/modalidad.service";
 import { TurnoService } from "../../Apis/turno.service";
 import { PerfilamientoService } from "../../Apis/perfilamiento.service";
 import { DatospersonalesService } from 'src/app/Apis/datospersonales.service';
+import { Horarios } from 'src/app/Interfaces/horarios';
+import { HorariosService } from 'src/app/Apis/horarios.service';
 
 @Component({
   selector: 'app-ingresos',
@@ -23,6 +25,7 @@ export class IngresosComponent implements OnInit {
   perfis: Perfilamiento[] = [];
   moda: Modalidad[] = [];
   tunr: Turno[] = [];
+  horario: Horarios[] = [];
   constructor(private api: DatosingresosService,
     private route: Router,
     private actived: ActivatedRoute,
@@ -30,7 +33,9 @@ export class IngresosComponent implements OnInit {
     private sermoda: ModalidadService,
     private serturn: TurnoService,
     private serperfi: PerfilamientoService,
-    private serperson: DatospersonalesService) {
+    private serperson: DatospersonalesService,
+    private serhora: HorariosService,
+  ) {
   }
 
   ngOnInit(): void {
@@ -39,6 +44,7 @@ export class IngresosComponent implements OnInit {
     this.cargarTurnos();
     this.cargarmodalidad();
     this.cargarPerfils();
+    this.cargargarhorarios();
     this.relacionescolaresingreso();
   }
   private cargardatos() {
@@ -76,6 +82,9 @@ export class IngresosComponent implements OnInit {
   }
   private cargarPerfils() {
     this.serperfi.getListPerfil().subscribe((perfilamiento) => this.perfis = perfilamiento);
+  }
+  private cargargarhorarios() {
+    this.serhora.getListHorario().subscribe((horarios) => this.horario = horarios);
   }
   guardar() {
     this.api.guardarIngreso(this.ingreso).subscribe(

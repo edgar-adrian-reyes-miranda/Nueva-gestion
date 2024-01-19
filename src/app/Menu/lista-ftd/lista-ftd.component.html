@@ -10,15 +10,18 @@
         <tr>
           <th>ID</th>
           <th>Area</th>
-          <th>Fecha de Ingreso</th>
-          <th>Fecha de Termino</th>
-          <th>Correo Becario</th>
           <th>Beca</th>
           <th>Documento de Beca (Drive)</th>
-          <th>Nombre de Curso</th>
-          <th>Nombre de Grupo</th>
+          <th>Fecha de Ingreso</th>
+          <th>Fecha de Termino</th>
+          <th>Matricula FTD</th>
+          <th>Correo Becario</th>
+          <th>Nombre proyecto</th>
           <th>Tutor</th>
-          <th>Nombre de proyecto</th>
+          <th>Nombre Grupo</th>
+          <th>Enlace</th>
+          <th>Estatus Infotec</th>
+          <th>Cursos</th>
           <th>Acciones</th>
         </tr>
       </thead>
@@ -27,15 +30,19 @@
         <tr *ngFor="let lista of ftd">
           <td>{{ lista.id_ftd }}</td>
           <td>{{ lista.area }}</td>
-          <td>{{ lista.fecha_ingreso }}</td>
-          <td>{{ lista.fecha_termino }}</td>
-          <td>{{ lista.correo_becario }}</td>
           <td>{{ lista.beca }}</td>
           <td>{{ lista.becadocumenot }}</td>
-          <td>{{ lista.cursos.nombre }}</td>
-          <td>{{ lista.enlace.tipo_enlace }}</td>
+          <td>{{ lista.fecha_ingreso }}</td>
+          <td>{{ lista.fecha_termino }}</td>
+          <td>{{ lista.matricula_ftd }}</td>
+          <td>{{ lista.correo_becario }}</td>
+          <td>{{ lista.proyectos.nombre }}</td>
           <td>{{ lista.tutores.nombre }}</td>
-          <td>{{ lista.proyectos.id_proyecto }}</td>
+          <td>{{ lista.grupos.nombre }}</td>
+          <td>{{ lista.enlace.tipo_enlace }}</td>
+          <td>{{ lista.estatusInfotec.tipo_estaus }}</td>
+          <td>{{ lista.cursos.nombre }}</td>
+
           <td>
             <button
               class="accion-boton"

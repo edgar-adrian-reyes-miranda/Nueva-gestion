@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AccesoService} from "../../Apis/acceso.service";
+
 
 @Component({
   selector: 'app-admin',
@@ -11,7 +11,7 @@ export class AdminComponent implements  OnInit{
   correo:string='';
   password:string='';
 
-  constructor(private adServ:AccesoService) {
+  constructor() {
   }
   ngOnInit(): void {
   }

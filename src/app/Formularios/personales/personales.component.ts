@@ -47,7 +47,7 @@ export class PersonalesComponent implements OnInit {
       personales => {
         this.rouete.navigate(['/registro-escolares']);
         //window.location.reload();
-        console.log('Nuevo dato personal', "Nuevo ${this.dato.id_person} creado con exito");
+        console.log('Nuevo dato personal', `Nuevo ${ this.dato.id_person } creado con exito`);
 
       }
     );

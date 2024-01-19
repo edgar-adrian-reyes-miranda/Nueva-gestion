@@ -40,7 +40,7 @@
       <!-- Agrega más opciones según sea necesario -->
     </select>
 
-    <p>Elejiste la universidad: {{ escolares.universidades | json }}</p>
+    <p>Elejiste la universidad: {{ escolares.universidades.nombre }}</p>
 
     <label for="matricula">Matrícula:</label>
     <input
@@ -62,15 +62,15 @@
       [(ngModel)]="escolares.modalidadesEscolares"
     >
       <option value="">Elije la modalidad Escolar</option>
-      <option *ngFor="let mod of modEs" value="mod">
-        {{ mod.tipo_modalidad }}
+      <option *ngFor="let modalidadesEscolares of modEs" [ngValue]="modalidadesEscolares">
+        {{ modalidadesEscolares.tipo_modalidad }}
       </option>
       <!-- Agrega más opciones según sea necesario -->
     </select>
 
     <p>
       Elejiste la modalidad Escolar:
-      {{ escolares.modalidadesEscolares.tipo_modalidad | json }}
+      {{ escolares.modalidadesEscolares.tipo_modalidad }}
     </p>
 
     <label for="planEstudios">Plan de Estudios:</label>
@@ -82,15 +82,13 @@
       [(ngModel)]="escolares.planEducativo"
     >
       <option value="">Elije tu Plan de estudios</option>
-      <option *ngFor="let p of plan" value="p">
+      <option *ngFor="let p of plan" [ngValue]="p">
         {{ p.nombre }}
       </option>
       <!-- Agrega más opciones según sea necesario -->
     </select>
 
-    <p>
-      Elejiste el plan de estudios: {{ escolares.planEducativo.nombre | json }}
-    </p>
+    <p>Elejiste el plan de estudios: {{ escolares.planEducativo.nombre }}</p>
 
     <label for="periodo">Periodo:</label>
     <select
@@ -101,13 +99,13 @@
       [(ngModel)]="escolares.periodo"
     >
       <option value="">Elije tu Periodo escolar</option>
-      <option *ngFor="let per of periodo" value="per">
+      <option *ngFor="let per of periodo" [ngValue]="per">
         {{ per.tipo_periodo }}
       </option>
       <!-- Agrega más opciones según sea necesario -->
     </select>
 
-    <p>Elejiste el periodo: {{ escolares.periodo.tipo_periodo | json }}</p>
+    <p>Elejiste el periodo: {{ escolares.periodo.tipo_periodo }}</p>
 
     <button
       type="button"

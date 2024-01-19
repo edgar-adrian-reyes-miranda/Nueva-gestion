@@ -7,6 +7,7 @@
     <table class="tabla-datos">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Trámite</th>
           <th>Perfilamiento</th>
           <th>Horario</th>
@@ -22,7 +23,7 @@
         <tr *ngFor="let ingreso of ingre">
           <td>{{ ingreso.id_ingreso }}</td>
           <td>{{ ingreso.tramite.tipo_tramite }}</td>
-          <td>{{ ingreso.perfilamiento.id_perfilamiento }}</td>
+          <td>{{ ingreso.perfilamiento.nombre }}</td>
           <td>{{ ingreso.horarios.horario }}</td>
           <td>{{ ingreso.turno.tipo_turno }}</td>
           <td>{{ ingreso.modalidad.tipo_modalidad }}</td>
