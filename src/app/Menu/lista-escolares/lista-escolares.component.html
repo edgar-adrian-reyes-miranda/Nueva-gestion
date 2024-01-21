@@ -21,7 +21,12 @@
       </thead>
       <tbody>
         <!-- Puedes agregar filas de datos aquí -->
-        <tr *ngFor="let lista of escolare">
+        <tr
+          *ngFor="
+            let lista of escolare
+              | paginate : { itemsPerPage: 10, currentPage: page }
+          "
+        >
           <td>{{ lista.id_escolar }}</td>
           <td>{{ lista.correo_inst }}</td>
           <td>{{ lista.carrera }}</td>
@@ -50,4 +55,9 @@
       </tbody>
     </table>
   </div>
+  <pagination-controls
+    (pageChange)="page = $event"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+  ></pagination-controls>
 </body>

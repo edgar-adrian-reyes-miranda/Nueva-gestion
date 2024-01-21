@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 })
 export class ListaEscolaresComponent implements OnInit {
   escolare: Datosescolares[] = [];
+  page!: number;
   constructor(private api: DatosescolaresService,
     private route: Router) {
   }

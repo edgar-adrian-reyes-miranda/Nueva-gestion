@@ -1,7 +1,5 @@
-import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from "./Logueos/login/login.component";
 import { AdminComponent } from "./Logueos/admin/admin.component";
 import { UsuarioComponent } from "./Pages/usuario/usuario.component";
 import { FormularioCComponent } from "./Pages/usuario/formulario-c/formulario-c.component";
@@ -35,13 +33,13 @@ import { EnlaceComponent } from "./Formatos/enlace/enlace.component";
 import { EstusInfotecComponent } from "./Formatos/estus-infotec/estus-infotec.component";
 import { ProyectosComponent } from "./Formatos/proyectos/proyectos.component";
 import { ReportesComponent } from "./Pages/usuario/reportes/reportes.component";
+import { LoginComponent } from './Logueos/login/login.component';
 
 
 const routes: Routes = [
   ///Logueos
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  // { path: 'login', component: LoginComponent, pathMatch: 'full' },
-  //{ path: 'admin', component: AdminComponent, pathMatch: 'full' },
+   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+
   //registros
 
   //vistas

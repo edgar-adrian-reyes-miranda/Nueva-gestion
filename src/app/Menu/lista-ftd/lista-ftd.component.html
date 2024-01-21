@@ -5,7 +5,9 @@
   <div class="contenedor">
     <h1>Datos FTD</h1>
 
-    <table class="tabla-datos">
+    <table
+      class="tabla-datos | paginate : { itemsPerPage: 10, currentPage: page }"
+    >
       <thead>
         <tr>
           <th>ID</th>
@@ -63,4 +65,9 @@
       </tbody>
     </table>
   </div>
+  <pagination-controls
+    (pageChange)="page = $event"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+  ></pagination-controls>
 </body>

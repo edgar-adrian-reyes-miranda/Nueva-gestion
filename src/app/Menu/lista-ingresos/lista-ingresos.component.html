@@ -20,7 +20,12 @@
       </thead>
       <tbody>
         <!-- Puedes agregar filas de datos aquí -->
-        <tr *ngFor="let ingreso of ingre">
+        <tr
+          *ngFor="
+            let ingreso of ingre
+              | paginate : { itemsPerPage: 10, currentPage: page }
+          "
+        >
           <td>{{ ingreso.id_ingreso }}</td>
           <td>{{ ingreso.tramite.tipo_tramite }}</td>
           <td>{{ ingreso.perfilamiento.nombre }}</td>
@@ -49,4 +54,9 @@
       </tbody>
     </table>
   </div>
+  <pagination-controls
+    (pageChange)="page = $event"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+  ></pagination-controls>
 </body>

@@ -9,7 +9,8 @@ import {Route, Router} from "@angular/router";
   styleUrls: ['./lista-personales.component.css']
 })
 export class ListaPersonalesComponent implements  OnInit{
- lista: Datospersonales[]=[];
+  lista: Datospersonales[] = [];
+  page!: number;
   constructor(private api:DatospersonalesService,
               private route:Router) {
   }

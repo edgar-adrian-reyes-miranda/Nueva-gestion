@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { Usuarios } from 'src/app/Interfaces/usuarios';
 import { UsuarioService } from 'src/app/Apis/usuario.service';
 import Swal from 'sweetalert2';
+import { Admins } from 'src/app/Interfaces/admins';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   usuario: Usuarios = new Usuarios();
+  admins: Admins = new Admins();
 
   constructor(private api: UsuarioService,
     private router: Router) {
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['']);
       }
     );
-  }
+  } 
 
 }
 

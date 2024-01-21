@@ -30,7 +30,7 @@ export class ResgitroComponent implements OnInit {
           showConfirmButton: true,
           timer: 1500
         });
-        this.route.navigate(['/General']);
+        this.route.navigate(['/registro-personales']);
       },
       (error) => {
         Swal.fire({

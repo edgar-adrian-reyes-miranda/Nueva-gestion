@@ -7,7 +7,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
-import { InicioComponent } from './Portada/inicio/inicio.component';
 import { LoginComponent } from './Logueos/login/login.component';
 import { AdminComponent } from './Logueos/admin/admin.component';
 import { UsuarioComponent } from './Pages/usuario/usuario.component';
@@ -44,12 +43,13 @@ import { EstusInfotecComponent } from './Formatos/estus-infotec/estus-infotec.co
 import { ProyectosComponent } from './Formatos/proyectos/proyectos.component';
 import { ReportesComponent } from './Pages/usuario/reportes/reportes.component';
 import { TablaVistaComponent } from './Formularios/tabla-vista/tabla-vista.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PortadaComponent } from './Logueos/portada/portada.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
     LoginComponent,
     AdminComponent,
     UsuarioComponent,
@@ -85,6 +85,7 @@ import { TablaVistaComponent } from './Formularios/tabla-vista/tabla-vista.compo
     ProyectosComponent,
     ReportesComponent,
     TablaVistaComponent,
+    PortadaComponent,
 
   ],
   imports: [
@@ -97,6 +98,7 @@ import { TablaVistaComponent } from './Formularios/tabla-vista/tabla-vista.compo
     RouterModule,
     HttpClientModule,
     MatCardModule,
+    NgxPaginationModule,
 
 
   ],

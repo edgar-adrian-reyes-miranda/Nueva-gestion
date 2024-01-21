@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 })
 export class ListaIngresosComponent implements OnInit {
   ingre: Datosingresos[] = [];
+  page!: number;
 
   constructor(private api: DatosingresosService,
     private route: Router) {
