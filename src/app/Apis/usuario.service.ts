@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Usuarios } from '../Interfaces/usuarios';
 import baseUrl from './UrlApiB';
 import { Observable, catchError, map, throwError } from 'rxjs';
+import { Admins } from '../Interfaces/admins';
 
 @Injectable({
   providedIn: 'root'
@@ -33,8 +34,8 @@ export class UsuarioService {
     return this.http.put<Usuarios>(`${baseUrl}usuarios/editar/${id}`, usuario, { headers: this.httpHeaders });
   }
 
-  login(usuario: Usuarios): Observable<Usuarios> {
-    return this.http.post<Usuarios>(`${baseUrl}usuarios/login`, usuario, { headers: this.httpHeaders })
+  login(usuario: any): Observable<any> {
+    return this.http.post<any>(`${baseUrl}usuarios/login`, usuario, { headers: this.httpHeaders })
       .pipe(catchError((error) => {
         console.error('ERROR AL INICIAR SESIÓN', error);
         return throwError('Error en el inicio de sesión');

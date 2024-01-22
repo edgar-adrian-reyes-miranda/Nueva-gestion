@@ -1,175 +1,169 @@
-<body>
-  <button class="regreso" [routerLink]="'/datos-personales'">
-    <i class="material-icons">arrow_back</i> Regresar
+<button class="regreso" [routerLink]="'/datos-personales'">
+  <i class="material-icons">arrow_back</i> Regresar
+</button>
+<form>
+  <label for="nombreProyecto">Nombre de Proyecto:</label>
+  <select
+    id="nombreProyecto"
+    name="nombreProyecto"
+    required
+    [(ngModel)]="ftd.proyectos"
+  >
+    <option value="">Elije el Proyecto</option>
+    <option *ngFor="let pro of proyec" [ngValue]="pro">
+      {{ pro.nombre }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
+  <p>Has selecionado el proyecto {{ ftd.proyectos.nombre }}</p>
+  <p>Has selecionado el proyecto {{ ftd.proyectos.evaluacion }}</p>
+  <p>Has selecionado el proyecto {{ ftd.proyectos.avance }}</p>
+
+  <label for="areaInfotec">Área de Infotec:</label>
+  <input
+    type="text"
+    id="areaInfotec"
+    name="areaInfotec"
+    placeholder="Área de Infotec"
+    required
+    [(ngModel)]="ftd.area"
+  />
+
+  <label for="tutor">Tutor:</label>
+  <select id="tutor" name="tutor" required [(ngModel)]="ftd.tutores">
+    <option *ngFor="let t of turt" [ngValue]="t">
+      {{ t.nombre }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
+
+  <p>Has selecionado el proyecto {{ ftd.tutores.nombre | json }}</p>
+
+  <label for="beca">Beca:</label>
+  <input
+    type="text"
+    id="beca"
+    name="beca"
+    placeholder="Beca"
+    required
+    [(ngModel)]="ftd.beca"
+  />
+
+  <label for="beca">Beca Documento en Drive:</label>
+  <input
+    type="text"
+    id="beca-documento"
+    name="beca_documento"
+    placeholder="Ingresa la liga donde subiste el documento de tu beca "
+    [(ngModel)]="ftd.becadocumenot"
+  />
+
+  <label for="fechaIngreso">Fecha de Ingreso:</label>
+  <input
+    type="text"
+    id="fechaIngreso"
+    name="fecha_Ingreso"
+    class="flatpickr"
+    placeholder="Fecha de Ingreso"
+    required
+    [(ngModel)]="ftd.fecha_ingreso"
+  />
+
+  <label for="fechaTermino">Fecha de Término:</label>
+  <input
+    type="text"
+    id="fechaTermino"
+    name="fecha_Termino"
+    class="flatpickr"
+    placeholder="Fecha de Término"
+    required
+    [(ngModel)]="ftd.fecha_termino"
+  />
+
+  <label for="grupo">Grupo:</label>
+  <select id="grupo" name="grupo" required [(ngModel)]="ftd.grupos">
+    <option value="">Elije el Grupo</option>
+    <option *ngFor="let grp of grup" [ngValue]="grp">
+      {{ grp.nombre }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
+
+  <p>Elejiste el grupo: {{ ftd.grupos.nombre | json }}</p>
+
+  <label for="enlace">Enlace:</label>
+  <select
+    id="enlace"
+    name="enlace"
+    placeholder="Enlace"
+    required
+    [(ngModel)]="ftd.enlace"
+  >
+    <option value="">ELije tu enlace</option>
+    <option *ngFor="let en of enla" [ngValue]="en">
+      {{ en.tipo_enlace }}
+    </option>
+  </select>
+
+  <label for="infotecMatricula">Matrícula Infotec:</label>
+  <input
+    type="text"
+    id="infotecMatricula"
+    name="infotecMatricula"
+    placeholder="Matrícula Infotec"
+    required
+    [(ngModel)]="ftd.matricula_ftd"
+  />
+
+  <label for="correoBecario">Correo Becario:</label>
+  <input
+    type="text"
+    id="correoBecario"
+    name="correoBecario"
+    placeholder="Correo Becario"
+    required
+    [(ngModel)]="ftd.correo_becario"
+  />
+
+  <label for="estatus">Estatus:</label>
+  <select
+    type="text"
+    id="estatus"
+    name="estatus"
+    placeholder="Estatus"
+    required
+    [(ngModel)]="ftd.estatusInfotec"
+  >
+    <option value="">Elije le estatus del aspirante</option>
+    <option *ngFor="let infotec of estatus" [ngValue]="infotec">
+      {{ infotec.tipo_estaus }}
+    </option>
+  </select>
+
+  <p>Elejiste el estatus: {{ ftd.estatusInfotec.tipo_estaus | json }}</p>
+
+  <label for="cursos">Cursos:</label>
+  <select
+    id="cursos"
+    name="cursos"
+    placeholder="Cursos"
+    [(ngModel)]="ftd.cursos"
+  >
+    <option value="">Elije el curso</option>
+    <option *ngFor="let curss of curs" [ngValue]="curss">
+      {{ curss.nombre }}
+    </option>
+  </select>
+
+  <p>Elejiste el estatus: {{ ftd.cursos.nombre | json }}</p>
+  <p>Elejiste el estatus: {{ ftd.cursos.tipo_estatus | json }}</p>
+  <p>Elejiste el estatus: {{ ftd.cursos.unidad | json }}</p>
+
+  <button role="button" (click)="guardar()" *ngIf="!ftd.id_ftd; else elseBlock">
+    Guardar
   </button>
-  <form>
-    <label for="nombreProyecto">Nombre de Proyecto:</label>
-    <select
-      id="nombreProyecto"
-      name="nombreProyecto"
-      required
-      [(ngModel)]="ftd.proyectos"
-    >
-      <option value="">Elije el Proyecto</option>
-      <option *ngFor="let pro of proyec" [ngValue]="pro">
-        {{ pro.nombre }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-    <p>Has selecionado el proyecto {{ ftd.proyectos.nombre  }}</p>
-    <p>Has selecionado el proyecto {{ ftd.proyectos.evaluacion  }}</p>
-    <p>Has selecionado el proyecto {{ ftd.proyectos.avance  }}</p>
 
-    <label for="areaInfotec">Área de Infotec:</label>
-    <input
-      type="text"
-      id="areaInfotec"
-      name="areaInfotec"
-      placeholder="Área de Infotec"
-      required
-      [(ngModel)]="ftd.area"
-    />
-
-    <label for="tutor">Tutor:</label>
-    <select id="tutor" name="tutor" required [(ngModel)]="ftd.tutores">
-      <option *ngFor="let t of turt" [ngValue]="t">
-        {{ t.nombre }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-
-    <p>Has selecionado el proyecto {{ ftd.tutores.nombre | json }}</p>
-
-    <label for="beca">Beca:</label>
-    <input
-      type="text"
-      id="beca"
-      name="beca"
-      placeholder="Beca"
-      required
-      [(ngModel)]="ftd.beca"
-    />
-
-    <label for="beca">Beca Documento en Drive:</label>
-    <input
-      type="text"
-      id="beca-documento"
-      name="beca_documento"
-      placeholder="Ingresa la liga donde subiste el documento de tu beca "
-      [(ngModel)]="ftd.becadocumenot"
-    />
-
-    <label for="fechaIngreso">Fecha de Ingreso:</label>
-    <input
-      type="text"
-      id="fechaIngreso"
-      name="fecha_Ingreso"
-      class="flatpickr"
-      placeholder="Fecha de Ingreso"
-      required
-      [(ngModel)]="ftd.fecha_ingreso"
-    />
-
-    <label for="fechaTermino">Fecha de Término:</label>
-    <input
-      type="text"
-      id="fechaTermino"
-      name="fecha_Termino"
-      class="flatpickr"
-      placeholder="Fecha de Término"
-      required
-      [(ngModel)]="ftd.fecha_termino"
-    />
-
-    <label for="grupo">Grupo:</label>
-    <select id="grupo" name="grupo" required [(ngModel)]="ftd.grupos">
-      <option value="">Elije el Grupo</option>
-      <option *ngFor="let grp of grup" [ngValue]="grp">
-        {{ grp.nombre }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-
-    <p>Elejiste el grupo: {{ ftd.grupos.nombre | json }}</p>
-
-    <label for="enlace">Enlace:</label>
-    <select
-      id="enlace"
-      name="enlace"
-      placeholder="Enlace"
-      required
-      [(ngModel)]="ftd.enlace"
-    >
-      <option value="">ELije tu enlace</option>
-      <option *ngFor="let en of enla" [ngValue]="en">
-        {{ en.tipo_enlace }}
-      </option>
-    </select>
-
-    <label for="infotecMatricula">Matrícula Infotec:</label>
-    <input
-      type="text"
-      id="infotecMatricula"
-      name="infotecMatricula"
-      placeholder="Matrícula Infotec"
-      required
-      [(ngModel)]="ftd.matricula_ftd"
-    />
-
-    <label for="correoBecario">Correo Becario:</label>
-    <input
-      type="text"
-      id="correoBecario"
-      name="correoBecario"
-      placeholder="Correo Becario"
-      required
-      [(ngModel)]="ftd.correo_becario"
-    />
-
-    <label for="estatus">Estatus:</label>
-    <select
-      type="text"
-      id="estatus"
-      name="estatus"
-      placeholder="Estatus"
-      required
-      [(ngModel)]="ftd.estatusInfotec"
-    >
-      <option value="">Elije le estatus del aspirante</option>
-      <option *ngFor="let infotec of estatus" [ngValue]="infotec">
-        {{ infotec.tipo_estaus }}
-      </option>
-    </select>
-
-    <p>Elejiste el estatus: {{ ftd.estatusInfotec.tipo_estaus | json }}</p>
-
-    <label for="cursos">Cursos:</label>
-    <select
-      id="cursos"
-      name="cursos"
-      placeholder="Cursos"
-      [(ngModel)]="ftd.cursos"
-    >
-      <option value="">Elije el curso</option>
-      <option *ngFor="let curss of curs" [ngValue]="curss">
-        {{ curss.nombre }}
-      </option>
-    </select>
-
-    <p>Elejiste el estatus: {{ ftd.cursos.nombre | json }}</p>
-    <p>Elejiste el estatus: {{ ftd.cursos.tipo_estatus | json }}</p>
-    <p>Elejiste el estatus: {{ ftd.cursos.unidad | json }}</p>
-
-    <button
-      role="button"
-      (click)="guardar()"
-      *ngIf="!ftd.id_ftd; else elseBlock"
-    >
-      Guardar
-    </button>
-
-    <ng-template #elseBlock>
-      <button role="button" (click)="editar()">Editar</button>
-    </ng-template>
-  </form>
-</body>
+  <ng-template #elseBlock>
+    <button role="button" (click)="editar()">Editar</button>
+  </ng-template>
+</form>

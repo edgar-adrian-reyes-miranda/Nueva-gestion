@@ -1,68 +1,82 @@
-<body>
+<!-- index.html -->
+<button class="regreso" [routerLink]="'/General'">
+  <i class="material-icons">arrow_back</i> Regresar
+</button>
 
-<button class="regreso" [routerLink]="'/General'"><i class="material-icons">arrow_back</i> Regresar</button>
+<div class="contenedor">
+  <div class="contenedor-tabla">
+    <h1>Admins</h1>
+    <form id="formulario-admin">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Ingrese su nombre de usuario"
+      />
+      <label for="contrasena">Contraseña:</label>
+      <input
+        type="password"
+        id="contrasena"
+        placeholder="Ingrese su contraseña"
+      />
+      <button type="button" class="guardar-boton">Guardar</button>
+    </form>
+    <table class="tabla-datos">
+      <h2>Lista de administradores</h2>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let admi of adm">
+          <td>{{ admi.id_admin }}</td>
+          <td>{{ admi.username }}</td>
+          <td>{{ admi.password }}</td>
+          <td>
+            <button class="accion-boton">
+              <i class="material-icons">edit</i> Editar
+            </button>
+            <button class="accion-boton">
+              <i class="material-icons">delete</i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<div class="contenedor-tabla">
-  <h1> Admins</h1>
-
-  <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
-  <form id="formulario-universidad" >
-    <label for="nombre-universidad">Correo:</label>
-    <input type="email" id="nombre-universidad" placeholder="Ingrese el correo">
-    <label for="contrasena">Contraseña:</label>
-    <input type="password" id="contrasena" placeholder="Ingrese su contraseña">
-    <button type="button" onclick="agregaradmins()">Guardar</button>
-  </form>
-
-  <!-- Tabla de Universidades -->
-  <table class="tabla-datos">
-   <h2> Lista de administradores</h2>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Correo</th>
-      <th>password</th>
-      <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!-- Filas de datos aquí -->
-    <tr>
-      <td>1</td>
-      <td>Universidad Ejemplo</td>
-      <td>
-        <button class="accion-boton"><i class="material-icons">edit</i> Editar</button>
-        <button class="accion-boton"><i class="material-icons">delete</i> Eliminar</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="contenedor-tabla">
+    <h2>Lista de usuarios</h2>
+    <table class="tabla-datos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Correo</th>
+          <th>Password</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usua of usuario">
+          <td>{{ usua.id }}</td>
+          <td>{{ usua.username }}</td>
+          <td>{{ usua.correo }}</td>
+          <td>{{ usua.password }}</td>
+          <td>
+            <button class="accion-boton">
+              <i class="material-icons">edit</i> Editar
+            </button>
+            <button class="accion-boton">
+              <i class="material-icons">delete</i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div class="contenedor-tabla">
-<h2>Lista de usuarios</h2>
-
-<table class="tabla-datos">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>username</th>
-    <th>Correo</th>
-    <th>password</th>
-    <th>Acciones</th>
-  </tr>
-  </thead>
-  <tbody>
-  <!-- Filas de datos aquí -->
-  <tr>
-    <td>1</td>
-    <td>Universidad Ejemplo</td>
-    <td>
-      <button class="accion-boton"><i class="material-icons">edit</i> Editar</button>
-      <button class="accion-boton"><i class="material-icons">delete</i> Eliminar</button>
-    </td>
-  </tr>
-  </tbody>
-</table>
-</div>
-
-</body>

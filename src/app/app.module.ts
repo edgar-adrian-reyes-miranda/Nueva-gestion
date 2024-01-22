@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { LoginComponent } from './Logueos/login/login.component';
-import { AdminComponent } from './Logueos/admin/admin.component';
 import { UsuarioComponent } from './Pages/usuario/usuario.component';
 import { AdminsComponent } from './Pages/admins/admins.component';
 import { MatCardModule } from "@angular/material/card";
@@ -51,7 +50,6 @@ import { PortadaComponent } from './Logueos/portada/portada.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    AdminComponent,
     UsuarioComponent,
     AdminsComponent,
     FormularioCComponent,

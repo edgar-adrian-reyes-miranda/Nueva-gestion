@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from "./Logueos/admin/admin.component";
 import { UsuarioComponent } from "./Pages/usuario/usuario.component";
 import { FormularioCComponent } from "./Pages/usuario/formulario-c/formulario-c.component";
 import { AdminsComponent } from "./Pages/admins/admins.component";
@@ -36,15 +35,17 @@ import { ReportesComponent } from "./Pages/usuario/reportes/reportes.component";
 import { LoginComponent } from './Logueos/login/login.component';
 
 
+
 const routes: Routes = [
-  ///Logueos
-   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+
+  //,/Logueos
+
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
 
   //registros
 
   //vistas
   { path: 'vistaUsuario', component: UsuarioComponent, pathMatch: 'full' },
-  { path: 'Admin', component: AdminComponent, pathMatch: 'full' },
 
   ///vistaAdministrador
   { path: 'General', component: AdminsComponent, pathMatch: 'full' },

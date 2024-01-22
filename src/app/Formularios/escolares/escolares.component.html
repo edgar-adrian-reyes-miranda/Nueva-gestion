@@ -1,122 +1,123 @@
-<body>
-  <button class="regreso" [routerLink]="'/registro-personales'">
-    <i class="material-icons icono">rotate_left</i>
+<button class="regreso" [routerLink]="'/registro-personales'">
+  <i class="material-icons icono">rotate_left</i>
+</button>
+<form>
+  <label for="correo_isnt">Correo Institucional:</label>
+  <input
+    type="text"
+    id="correo_isnt"
+    name="correo_isnt"
+    class="editable"
+    placeholder="Correo Institucional"
+    required
+    [(ngModel)]="escolares.correo_inst"
+  />
+
+  <label for="carrera">Carrera:</label>
+  <input
+    type="text"
+    id="carrera"
+    name="carrera"
+    class="editable"
+    placeholder="Carrera"
+    required
+    [(ngModel)]="escolares.carrera"
+  />
+
+  <label for="universidades">Universidades:</label>
+  <select
+    id="universidades"
+    name="universidades"
+    class="editable"
+    required
+    [(ngModel)]="escolares.universidades"
+  >
+    <option value="">Elije una Universidad</option>
+    <option *ngFor="let uni of univerisdad" [ngValue]="uni">
+      {{ uni.nombre }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
+
+  <p>Elejiste la universidad: {{ escolares.universidades.nombre }}</p>
+
+  <label for="matricula">Matrícula:</label>
+  <input
+    type="email"
+    id="matricula"
+    name="matricula"
+    class="editable"
+    placeholder="Matrícula"
+    required
+    [(ngModel)]="escolares.matricula"
+  />
+
+  <label for="modalidad_escolar">Modalidad Escolar:</label>
+  <select
+    id="modalidad_escolar"
+    name="modalidad_escolar"
+    class="editable"
+    required
+    [(ngModel)]="escolares.modalidadesEscolares"
+  >
+    <option value="">Elije la modalidad Escolar</option>
+    <option
+      *ngFor="let modalidadesEscolares of modEs"
+      [ngValue]="modalidadesEscolares"
+    >
+      {{ modalidadesEscolares.tipo_modalidad }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
+
+  <p>
+    Elejiste la modalidad Escolar:
+    {{ escolares.modalidadesEscolares.tipo_modalidad }}
+  </p>
+
+  <label for="planEstudios">Plan de Estudios:</label>
+  <select
+    id="planEstudios"
+    name="planEstudios"
+    class="editable"
+    required
+    [(ngModel)]="escolares.planEducativo"
+  >
+    <option value="">Elije tu Plan de estudios</option>
+    <option *ngFor="let p of plan" [ngValue]="p">
+      {{ p.nombre }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
+
+  <p>Elejiste el plan de estudios: {{ escolares.planEducativo.nombre }}</p>
+
+  <label for="periodo">Periodo:</label>
+  <select
+    id="periodo"
+    name="periodo"
+    class="editable"
+    required
+    [(ngModel)]="escolares.periodo"
+  >
+    <option value="">Elije tu Periodo escolar</option>
+    <option *ngFor="let per of periodo" [ngValue]="per">
+      {{ per.tipo_periodo }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
+
+  <p>Elejiste el periodo: {{ escolares.periodo.tipo_periodo }}</p>
+
+  <button
+    type="button"
+    (click)="guardar()"
+    *ngIf="!escolares.id_escolar; else elseBlock"
+  >
+    Guardar
   </button>
-  <form>
-    <label for="correo_isnt">Correo Institucional:</label>
-    <input
-      type="text"
-      id="correo_isnt"
-      name="correo_isnt"
-      class="editable"
-      placeholder="Correo Institucional"
-      required
-      [(ngModel)]="escolares.correo_inst"
-    />
 
-    <label for="carrera">Carrera:</label>
-    <input
-      type="text"
-      id="carrera"
-      name="carrera"
-      class="editable"
-      placeholder="Carrera"
-      required
-      [(ngModel)]="escolares.carrera"
-    />
-
-    <label for="universidades">Universidades:</label>
-    <select
-      id="universidades"
-      name="universidades"
-      class="editable"
-      required
-      [(ngModel)]="escolares.universidades"
-    >
-      <option value="">Elije una Universidad</option>
-      <option *ngFor="let uni of univerisdad" [ngValue]="uni">
-        {{ uni.nombre }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-
-    <p>Elejiste la universidad: {{ escolares.universidades.nombre }}</p>
-
-    <label for="matricula">Matrícula:</label>
-    <input
-      type="email"
-      id="matricula"
-      name="matricula"
-      class="editable"
-      placeholder="Matrícula"
-      required
-      [(ngModel)]="escolares.matricula"
-    />
-
-    <label for="modalidad_escolar">Modalidad Escolar:</label>
-    <select
-      id="modalidad_escolar"
-      name="modalidad_escolar"
-      class="editable"
-      required
-      [(ngModel)]="escolares.modalidadesEscolares"
-    >
-      <option value="">Elije la modalidad Escolar</option>
-      <option *ngFor="let modalidadesEscolares of modEs" [ngValue]="modalidadesEscolares">
-        {{ modalidadesEscolares.tipo_modalidad }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-
-    <p>
-      Elejiste la modalidad Escolar:
-      {{ escolares.modalidadesEscolares.tipo_modalidad }}
-    </p>
-
-    <label for="planEstudios">Plan de Estudios:</label>
-    <select
-      id="planEstudios"
-      name="planEstudios"
-      class="editable"
-      required
-      [(ngModel)]="escolares.planEducativo"
-    >
-      <option value="">Elije tu Plan de estudios</option>
-      <option *ngFor="let p of plan" [ngValue]="p">
-        {{ p.nombre }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-
-    <p>Elejiste el plan de estudios: {{ escolares.planEducativo.nombre }}</p>
-
-    <label for="periodo">Periodo:</label>
-    <select
-      id="periodo"
-      name="periodo"
-      class="editable"
-      required
-      [(ngModel)]="escolares.periodo"
-    >
-      <option value="">Elije tu Periodo escolar</option>
-      <option *ngFor="let per of periodo" [ngValue]="per">
-        {{ per.tipo_periodo }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-
-    <p>Elejiste el periodo: {{ escolares.periodo.tipo_periodo }}</p>
-
-    <button
-      type="button"
-      (click)="guardar()"
-      *ngIf="!escolares.id_escolar; else elseBlock"
-    >
-      Guardar
-    </button>
-
-    <ng-template #elseBlock>
-      <button type="button" (click)="editar()">Editar</button>
-    </ng-template>
-  </form>
-</body>
+  <ng-template #elseBlock>
+    <button type="button" (click)="editar()">Editar</button>
+  </ng-template>
+</form>

@@ -10,32 +10,30 @@ import baseUrl from './UrlApiB';
 export class AdminsService {
 
   constructor(private http: HttpClient) { }
-  private HttpHeaders = new HttpHeaders({ 'Content-Type': `applications/json` });
+  //private HttpHeaders = new HttpHeaders({ 'Content-Type': `applications/json` });
 
   getAll(): Observable<Admins[]> {
-    return this.http.get(`${baseUrl}admins/lista`).pipe(
+    return this.http.get(`${baseUrl}adminis/lista`).pipe(
       map(Admins => Admins as Admins[]));
   }
 
   getAdminId(id: number) {
-    return this.http.get<Admins>(`baseUrladmins/${id}`);
+    return this.http.get<Admins>(`baseUrladminis/${id}`);
   }
   registroAdmin(admin: Admins) {
-    return this.http.post<Admins>(`${baseUrl}admins/registro`, admin, { headers: this.HttpHeaders });
+    return this.http.post<Admins>(`${baseUrl}adminis/registro`, admin);
   }
 
   eliminarAdmin(id: number) {
-    return this.http.delete<void>(`${baseUrl}admins/${id}`);
+    return this.http.delete<void>(`${baseUrl}adminis/${id}`);
   }
 
-  login(admin: Admins): Observable<Admins> {
-    return this.http.post<Admins>(`${baseUrl}admins/login`, admin, { headers: this.HttpHeaders })
-      .pipe(catchError((error) => {
-        console.error('Error en el inicio de sesion', error);
-        return throwError('Error en el servidor');
-      }));
-  }
-  editarAdmin(id: number, admin: Admins): Observable<Admins> {
-    return this.http.put<Admins>(`${baseUrl}admins/edit/${id}`, admin, { headers: this.HttpHeaders });
+  login(usuario: any): Observable<any> {
+    return this.http.post<Admins>(`${baseUrl}adminis/login`, usuario)
+      .pipe(
+        catchError((error) => {
+          console.error('Error en el inicio de sesion', error);
+          return throwError('Error en el servidor');
+        }));
   }
 }

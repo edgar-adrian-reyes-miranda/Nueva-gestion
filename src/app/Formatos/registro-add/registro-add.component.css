@@ -1,83 +1,106 @@
-/* Estilos generales */
+/* estilos.css */
+
 body {
-  font-family: 'Arial', sans-serif;
+  background-color: #F0F0F0;
   margin: 0;
-  padding: 0;
 }
 
-/* Estilos para el botón de regreso */
 .regreso {
-  background-color: #13322B; /* Color de fondo verde oscuro */
-  color: #FFF; /* Texto blanco */
+  background-color: #13322B;
+  /* Verde oscuro */
+  color: white;
+  padding: 10px;
   border: none;
-  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  margin: 5px;
-}
-
-/* Estilos para el contenedor de tabla */
-.contenedor-tabla {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #D4C19C; /* Color de fondo beige */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para el formulario */
-#formulario-universidad {
   margin-bottom: 20px;
 }
 
-#formulario-universidad label {
-  display: block;
-  margin-bottom: 5px;
-  color: #285C4D; /* Color de texto verde más claro */
+.regreso i {
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
-#formulario-universidad input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #285C4D; /* Color de borde verde más claro */
-  border-radius: 5px;
-  margin-bottom: 10px;
+.regreso:hover {
+  background-color: #285C4D;
+  /* Verde más claro */
 }
 
-/* Estilos para las tablas */
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat-Medium';
+}
+
+.contenedor-tabla {
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  background-color: #FFF;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-tabla h1,
+.contenedor-tabla h2 {
+  color: #4E232E;
+  /* Vino tinto */
+}
+
 .tabla-datos {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.tabla-datos th, .tabla-datos td {
-  border: 1px solid #285C4D; /* Color de borde verde más claro */
+.tabla-datos th,
+.tabla-datos td {
+  border: 1px solid #D4C19C;
+  /* Beige */
   padding: 10px;
   text-align: left;
 }
 
 .tabla-datos th {
-  background-color: #285C4D; /* Color de fondo verde más claro */
-  color: #FFF; /* Texto blanco */
+  background-color: #13322B;
+  /* Verde oscuro */
+  color: white;
 }
 
-.tabla-datos td button {
-  background-color: #285C4D; /* Color de fondo verde más claro */
-  color: #FFF; /* Texto blanco */
+.guardar-boton,
+.accion-boton,
+button {
+  background-color: #285C4D;
+  /* Verde más claro */
+  color: white;
   border: none;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 4px;
   cursor: pointer;
-  margin-right: 5px;
+  font-family: 'Montserrat-Bold';
 }
 
-.tabla-datos td button i {
-  vertical-align: middle;
-  margin-right: 5px;
+.guardar-boton:hover,
+.accion-boton:hover,
+button:hover {
+  background-color: #13322B;
+  /* Verde oscuro */
 }
 
-.tabla-datos td button:hover {
-  background-color: #13322B; /* Color de fondo verde oscuro al pasar el mouse */
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: #4E232E;
+  font-family: 'Montserrat-SemiBold';
+  /* Vino tinto */
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #D4C19C;
+  /* Beige */
+  border-radius: 4px;
 }

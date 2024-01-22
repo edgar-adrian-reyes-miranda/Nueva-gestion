@@ -4,6 +4,7 @@ import { DatospersonalesService } from "../../Apis/datospersonales.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Genero } from "../../Interfaces/genero";
 import { GeneroService } from "../../Apis/genero.service";
+import { UsuarioService } from 'src/app/Apis/usuario.service';
 
 
 @Component({
@@ -17,12 +18,13 @@ export class PersonalesComponent implements OnInit {
   constructor(private api: DatospersonalesService,
     private rouete: Router,
     private active: ActivatedRoute,
-    private sergenero: GeneroService,) {
+    private sergenero: GeneroService,
+    private seruus: UsuarioService) {
   }
   ngOnInit(): void {
     this.cargardatos();
     this.cargargenero();
-
+    this.relaciondatospersonalesusuario();
   }
   cargardatos() {
     this.active.params.subscribe(params => {
@@ -40,6 +42,16 @@ export class PersonalesComponent implements OnInit {
       this.genero = generos;
     });
   }
+  private relaciondatospersonalesusuario() {
+    this.active.params.subscribe(
+      params => {
+        let id = params['id']
+        if (id) {
+          this.seruus.gerUsuarioById(id).subscribe((usuarios) => this.dato.usuario = usuarios);
+        }
+      }
+    )
+  }
 
   guardar(): void {
     console.log(this.dato)
@@ -47,7 +59,7 @@ export class PersonalesComponent implements OnInit {
       personales => {
         this.rouete.navigate(['/registro-escolares']);
         //window.location.reload();
-        console.log('Nuevo dato personal', `Nuevo ${ this.dato.id_person } creado con exito`);
+        console.log('Nuevo dato personal', `Nuevo ${this.dato.id_person} creado con exito`);
 
       }
     );

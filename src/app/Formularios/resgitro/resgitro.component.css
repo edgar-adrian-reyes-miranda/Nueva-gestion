@@ -1,54 +1,64 @@
-body {
-  font-family: 'Montserrat-Bold';
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
+/* estilos.css */
+* {
+  text-align: center;
 }
 
 form {
-  background-color: #fff;
+  width: 300px;
+  margin: 50px auto;
   padding: 20px;
-  border-radius: 8px;
+  background-color: #D4C19C;
+  /* Beige */
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
+  margin: 10px 0;
+  color: #9D2449;
+  /* Rojo más claro */
 }
 
 input {
-  width: 100%;
-  padding: 10px;
+  width: 80%;
+  padding: 8px;
   margin-bottom: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #13322B;
+  /* Verde oscuro */
+  border-radius: 5px;
 }
 
 button {
-  background-color: #285C4D;
-  color: #fff;
+  background-color: #4E232E;
+  /* Vino tinto */
+  color: white;
+  padding: 10px 15px;
   border: none;
-  padding: 12px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #13322B;
+  background-color: #56242A;
+  /* Marrón rojizo */
 }
+
+.material-icons {
+  font-size: 24px;
+}
+
 .regreso {
-  background-color: #13322B; /* Color de fondo verde oscuro */
-  color: #FFF; /* Texto blanco */
+  background-color: #13322B;
+  /* Verde oscuro */
+  color: white;
+  padding: 10px;
   border: none;
-  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  margin: 10px;
-  text-decoration: none;
+}
+
+.regreso:hover {
+  background-color: #285C4D;
+  /* Verde más claro */
 }

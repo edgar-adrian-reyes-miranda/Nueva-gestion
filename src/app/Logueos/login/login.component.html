@@ -8,8 +8,7 @@
       id="username"
       name="username"
       required
-      [(ngModel)]="usuario.username"
-      *ngIf=""
+      [(ngModel)]="compa.username"
     />
 
     <label for="password">Contraseña:</label>
@@ -18,8 +17,13 @@
       id="password"
       name="password"
       required
-      [(ngModel)]="usuario.password"
+      [(ngModel)]="compa.password"
     />
+    <label for="tipo">Tipo de Usuario:</label>
+    <select id="tipo" name="tipo" [(ngModel)]="compa.tipo" required>
+      <option value="usuario">Usuario</option>
+      <option value="admins">Administrador</option>
+    </select>
 
     <button type="submit">Iniciar sesión</button>
 

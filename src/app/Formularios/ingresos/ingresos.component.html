@@ -1,117 +1,115 @@
-<body>
-  <button class="regreso" [routerLink]="'/registro-escolares'">
-    <i class="material-icons icono">rotate_left</i>
-  </button>
-  <form>
-    <label for="tramite">Trámite:</label>
-    <select
-      id="tramite"
-      name="tramite"
-      class="editable"
-      required
-      [(ngModel)]="ingreso.tramite"
-    >
-      <option value="">Elije tu tipo de Trámite</option>
-      <option *ngFor="let tram of tra" [ngValue]="tram">
-        {{ tram.tipo_tramite }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
+<button class="regreso" [routerLink]="'/registro-escolares'">
+  <i class="material-icons icono">rotate_left</i>
+</button>
+<form>
+  <label for="tramite">Trámite:</label>
+  <select
+    id="tramite"
+    name="tramite"
+    class="editable"
+    required
+    [(ngModel)]="ingreso.tramite"
+  >
+    <option value="">Elije tu tipo de Trámite</option>
+    <option *ngFor="let tram of tra" [ngValue]="tram">
+      {{ tram.tipo_tramite }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
 
-    <p>
-      Elijiste el tipo de tramite de: {{ ingreso.tramite.tipo_tramite | json }}
-    </p>
+  <p>
+    Elijiste el tipo de tramite de: {{ ingreso.tramite.tipo_tramite | json }}
+  </p>
 
-    <label for="perfilamiento">Perfilamiento:</label>
-    <select
-      id="perfilamiento"
-      name="perfilamiento"
-      class="editable"
-      required
-      [(ngModel)]="ingreso.perfilamiento"
-    >
-      <option value="">Elije tu tipo de Perfilamiento</option>
-      <option *ngFor="let perfil of perfis" [ngValue]="perfil">
-        {{ perfil.nombre }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
+  <label for="perfilamiento">Perfilamiento:</label>
+  <select
+    id="perfilamiento"
+    name="perfilamiento"
+    class="editable"
+    required
+    [(ngModel)]="ingreso.perfilamiento"
+  >
+    <option value="">Elije tu tipo de Perfilamiento</option>
+    <option *ngFor="let perfil of perfis" [ngValue]="perfil">
+      {{ perfil.nombre }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
 
-    <p>Elijiste el perfil de : {{ ingreso.perfilamiento.nombre | json }}</p>
+  <p>Elijiste el perfil de : {{ ingreso.perfilamiento.nombre | json }}</p>
 
-    <label for="turno">Turno:</label>
-    <select
-      id="turno"
-      name="turno"
-      class="editable"
-      required
-      [(ngModel)]="ingreso.turno"
-    >
-      <option value="">Elije el turno</option>
-      <option *ngFor="let tur of tunr" [ngValue]="tur">
-        {{ tur.tipo_turno }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
+  <label for="turno">Turno:</label>
+  <select
+    id="turno"
+    name="turno"
+    class="editable"
+    required
+    [(ngModel)]="ingreso.turno"
+  >
+    <option value="">Elije el turno</option>
+    <option *ngFor="let tur of tunr" [ngValue]="tur">
+      {{ tur.tipo_turno }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
 
-    <p>Elijiste el turno: {{ ingreso.turno.tipo_turno | json }}</p>
+  <p>Elijiste el turno: {{ ingreso.turno.tipo_turno | json }}</p>
 
-    <label for="horario">Horario:</label>
-    <select
-      id="horarios"
-      name="Hora:"
-      class="editable"
-      required
-      [(ngModel)]="ingreso.horarios"
-    >
-      <option value="">Elije el turno</option>
-      <option *ngFor="let horas of horario" [ngValue]="horas">
-        {{ horas.horario }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
+  <label for="horario">Horario:</label>
+  <select
+    id="horarios"
+    name="Hora:"
+    class="editable"
+    required
+    [(ngModel)]="ingreso.horarios"
+  >
+    <option value="">Elije el turno</option>
+    <option *ngFor="let horas of horario" [ngValue]="horas">
+      {{ horas.horario }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
 
-    <p>Elijiste el horario: {{ ingreso.horarios.horario }}</p>
+  <p>Elijiste el horario: {{ ingreso.horarios.horario }}</p>
 
-    <label for="modalidad">Modalidad:</label>
-    <select
-      id="modalidad"
-      name="modalidad"
-      class="editable"
-      required
-      [(ngModel)]="ingreso.modalidad"
-    >
-      <option value="">Elije tu tipo de Modalidad</option>
-      <option *ngFor="let modas of moda" [ngValue]="modas">
-        {{ modas.tipo_modalidad }}
-      </option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
+  <label for="modalidad">Modalidad:</label>
+  <select
+    id="modalidad"
+    name="modalidad"
+    class="editable"
+    required
+    [(ngModel)]="ingreso.modalidad"
+  >
+    <option value="">Elije tu tipo de Modalidad</option>
+    <option *ngFor="let modas of moda" [ngValue]="modas">
+      {{ modas.tipo_modalidad }}
+    </option>
+    <!-- Agrega más opciones según sea necesario -->
+  </select>
 
-    <p>Elijiste la modalidad: {{ ingreso.modalidad.tipo_modalidad | json }}</p>
+  <p>Elijiste la modalidad: {{ ingreso.modalidad.tipo_modalidad | json }}</p>
 
-    <label for="cv">CV:</label>
-    <input
-      type="text"
-      id="cv"
-      name="cv"
-      class="editable"
-      placeholder="CV"
-      required
-      [ngModel]="ingreso.cv"
-    />
+  <label for="cv">CV:</label>
+  <input
+    type="text"
+    id="cv"
+    name="cv"
+    class="editable"
+    placeholder="CV"
+    required
+    [ngModel]="ingreso.cv"
+  />
 
-    <label for="historialacademico">Historial Académico:</label>
-    <input
-      type="text"
-      id="historialacademico"
-      name="historialacademico"
-      class="editable"
-      placeholder="Historial Académico"
-      required
-      [ngModel]="ingreso.historial_Academico"
-    />
+  <label for="historialacademico">Historial Académico:</label>
+  <input
+    type="text"
+    id="historialacademico"
+    name="historialacademico"
+    class="editable"
+    placeholder="Historial Académico"
+    required
+    [ngModel]="ingreso.historial_Academico"
+  />
 
-    <button (click)="guardar()">Guardar</button>
-  </form>
-</body>
+  <button (click)="guardar()">Guardar</button>
+</form>

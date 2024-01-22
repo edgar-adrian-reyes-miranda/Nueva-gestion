@@ -1,68 +1,69 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 190vh;
-}
+/* estilos.css */
 
 form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #D4C19C;
+  /* Beige */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+  margin: 10px 0;
+  color: #9D2449;
+  /* Rojo más claro */
 }
 
-select,
-input {
+.select,
+input.editable,
+select.editable {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #13322B;
+  /* Verde oscuro */
+  border-radius: 5px;
 }
 
-.flatpickr {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+p {
+  color: #B38E5D;
+  /* Ocre */
+  margin-top: 15px;
 }
 
 button {
-  background-color: #285C4D;
-  color: #fff;
+  background-color: #4E232E;
+  /* Vino tinto */
+  color: white;
+  padding: 10px 15px;
   border: none;
-  padding: 12px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  width: 100%;
 }
 
 button:hover {
-  background-color: #13322B;
+  background-color: #56242A;
+  /* Marrón rojizo */
 }
+
+.material-icons {
+  font-size: 24px;
+}
+
 .regreso {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #13322B; /* Color de fondo verde oscuro */
-  color: #FFF; /* Texto blanco */
+  background-color: #13322B;
+  /* Verde oscuro */
+  color: white;
+  padding: 10px;
   border: none;
   border-radius: 5px;
-  padding: 10px;
   cursor: pointer;
+}
+
+.regreso:hover {
+  background-color: #285C4D;
+  /* Verde más claro */
 }

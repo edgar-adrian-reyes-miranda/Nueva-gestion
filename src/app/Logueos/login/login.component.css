@@ -1,55 +1,80 @@
 /* login.component.css */
 
 .login-container {
-  max-width: 400px;
+  width: 300px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #D4C19C; /* Color de fondo beige */
+  background-color: #D4C19C;
+  /* Beige */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 h2 {
-  color: #56242A; /* Color de texto marrón rojizo */
-}
-
-.form-group {
-  margin-bottom: 15px;
+  color: #621132;
+  /* Rojo oscuro */
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
-  color: #285C4D; /* Color de texto verde más claro */
+  margin: 10px 0;
+  color: #9D2449;
+  /* Rojo más claro */
 }
 
 input {
-  width: 80%;
+  width: 100%;
   padding: 8px;
-  border: 1px solid #285C4D; /* Color de borde verde más claro */
+  margin-bottom: 15px;
+  border: 1px solid #13322B;
+  /* Verde oscuro */
   border-radius: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #13322B;
+  /* Verde oscuro */
+  border-radius: 5px;
+  background-color: #285C4D;
+  /* Verde más claro */
+  color: white;
 }
 
 button {
-  background-color: #285C4D; /* Color de fondo verde más claro */
-  color: #FFF; /* Texto blanco */
-  border: none;
+  background-color: #4E232E;
+  /* Vino tinto */
+  color: white;
   padding: 10px 15px;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #13322B; /* Color de fondo verde oscuro al pasar el mouse */
+  background-color: #56242A;
+  /* Marrón rojizo */
 }
 
 p {
-  text-align: center;
-  margin-top: 10px;
+  color: #B38E5D;
+  /* Ocre */
+  margin-top: 15px;
 }
 
-p a {
-  color: #285C4D; /* Color de texto verde más claro */
+[routerLink] {
+  text-decoration: none;
+}
+
+button[routerLink] {
+  background-color: #13322B;
+  /* Verde oscuro */
+}
+
+button[routerLink]:hover {
+  background-color: #285C4D;
+  /* Verde más claro */
 }
