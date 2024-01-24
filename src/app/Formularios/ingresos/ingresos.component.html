@@ -55,7 +55,7 @@
 
   <p>Elijiste el turno: {{ ingreso.turno.tipo_turno | json }}</p>
 
-  <label for="horario">Horario:</label>
+  <label for="horarios">Horario:</label>
   <select
     id="horarios"
     name="Hora:"
@@ -97,7 +97,7 @@
     class="editable"
     placeholder="CV"
     required
-    [ngModel]="ingreso.cv"
+    [(ngModel)]="ingreso.cv"
   />
 
   <label for="historialacademico">Historial Académico:</label>
@@ -108,8 +108,12 @@
     class="editable"
     placeholder="Historial Académico"
     required
-    [ngModel]="ingreso.historial_Academico"
+    [(ngModel)]="ingreso.historial_Academico"
   />
 
-  <button (click)="guardar()">Guardar</button>
+  <button role="button" (click)="guardar()" *ngIf="!ingreso.id_ingreso; else elseBlock" >Guardar</button>
+
+  <ng-template #elseBlock>
+    <button (click)="editar()" role="button" >Actualizar</button>
+  </ng-template>
 </form>

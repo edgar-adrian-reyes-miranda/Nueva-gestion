@@ -21,6 +21,6 @@ export class Datosftd {
   enlace: Enlace = new Enlace();
   estatusInfotec: Estatusinfotec = new Estatusinfotec();
   cursos: Cursos = new Cursos();
-  datosPersonales: Datospersonales = new Datospersonales();
+  //datosPersonales: Datospersonales = new Datospersonales();
 
 }

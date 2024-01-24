@@ -4,6 +4,7 @@ import { DatosftdService } from "../../Apis/datosftd.service";
 import { Router } from "@angular/router";
 
 
+
 @Component({
   selector: 'app-lista-ftd',
   templateUrl: './lista-ftd.component.html',
@@ -12,6 +13,7 @@ import { Router } from "@angular/router";
 export class ListaFtdComponent implements OnInit {
   ftd: Datosftd[] = [];
   page!: number;
+
   constructor(private api: DatosftdService,
     private rute: Router) {
   }

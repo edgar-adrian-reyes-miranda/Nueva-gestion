@@ -14,6 +14,6 @@ export class Datosingresos {
   turno: Turno = new Turno();
   horarios: Horarios = new Horarios();
   modalidad: Modalidad = new Modalidad();
-  datosPersonales: Datospersonales = new Datospersonales();
+  //datosPersonales: Datospersonales = new Datospersonales();
 
 }

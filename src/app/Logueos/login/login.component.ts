@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Usuarios } from 'src/app/Interfaces/usuarios';
 import { UsuarioService } from 'src/app/Apis/usuario.service';
-import Swal from 'sweetalert2';
+import swal from 'sweetalert2';
 import { Admins } from 'src/app/Interfaces/admins';
 import { AdminsService } from 'src/app/Apis/admins.service';
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.api.login(this.compa).subscribe(
         (response) => {
           console.log('Acceso concedido', response);
-          Swal.fire({
+          swal.fire({
             position: "top-end",
             icon: "success",
             title: "Inicio Exitoso",
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           console.error('Error en el inicio de sesión', error);
-          Swal.fire({
+          swal.fire({
             position: "top-end",
             icon: "error",
             title: "Revisar Credenciales",
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
       this.apiadm.login(this.compa).subscribe(
         (response) => {
           console.log('Acceso concedido', response);
-          Swal.fire({
+          swal.fire({
             position: "top-end",
             icon: "success",
             title: "Inicio Exitoso",
@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           console.error('Error en el inicio de sesión', error);
-          Swal.fire({
+          swal.fire({
             position: "top-end",
             icon: "error",
             title: "Revisar Credenciales",

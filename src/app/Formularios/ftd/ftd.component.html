@@ -89,7 +89,7 @@
     <!-- Agrega más opciones según sea necesario -->
   </select>
 
-  <p>Elejiste el grupo: {{ ftd.grupos.nombre | json }}</p>
+  <p>Elejiste el grupo: {{ ftd.grupos.nombre  }}</p>
 
   <label for="enlace">Enlace:</label>
   <select
@@ -140,7 +140,7 @@
     </option>
   </select>
 
-  <p>Elejiste el estatus: {{ ftd.estatusInfotec.tipo_estaus | json }}</p>
+  <p>Elejiste el estatus: {{ ftd.estatusInfotec.tipo_estaus }}</p>
 
   <label for="cursos">Cursos:</label>
   <select
@@ -155,9 +155,9 @@
     </option>
   </select>
 
-  <p>Elejiste el estatus: {{ ftd.cursos.nombre | json }}</p>
-  <p>Elejiste el estatus: {{ ftd.cursos.tipo_estatus | json }}</p>
-  <p>Elejiste el estatus: {{ ftd.cursos.unidad | json }}</p>
+  <p>Elejiste el estatus: {{ ftd.cursos.nombre  }}</p>
+  <p>Elejiste el estatus: {{ ftd.cursos.tipo_estatus  }}</p>
+  <p>Elejiste el estatus: {{ ftd.cursos.unidad  }}</p>
 
   <button role="button" (click)="guardar()" *ngIf="!ftd.id_ftd; else elseBlock">
     Guardar

@@ -45,7 +45,7 @@ export class IngresosComponent implements OnInit {
     this.cargarmodalidad();
     this.cargarPerfils();
     this.cargargarhorarios();
-    this.relacionescolaresingreso();
+    //this.relacionescolaresingreso();
   }
   private cargardatos() {
     this.actived.params.subscribe(
@@ -59,7 +59,7 @@ export class IngresosComponent implements OnInit {
       }
     )
   }
-
+/*
   private relacionescolaresingreso() {
     this.actived.params.subscribe(
       params => {
@@ -70,7 +70,8 @@ export class IngresosComponent implements OnInit {
       }
     )
 
-  }
+  }*/
+
   private cargartramite() {
     this.sertram.getListTramite().subscribe((tramites) => this.tra = tramites);
   }
@@ -97,7 +98,7 @@ export class IngresosComponent implements OnInit {
   editar() {
     this.api.editarIngreso(this.ingreso).subscribe(
       ingresos => {
-        this.route.navigate(['/datos-personales']);
+        this.route.navigate(['/datos-ingresos']);
         console.log('Actualizado dato', `Actualizaco ${this.ingreso.id_ingreso}con exito`);
       }
     );

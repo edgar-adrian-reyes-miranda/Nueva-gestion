@@ -10,11 +10,10 @@ import {Datosftd} from "../Interfaces/datosftd";
 export class DatosftdService {
 
   constructor(private http:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
+ // private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
   getListFtd():Observable<Datosftd[]>{
     return this.http.get(`${baseUrl}ftd/lista`).pipe(
-        map(ftds=> ftds as Datosftd[])
-      );
+        map(ftds=> ftds as Datosftd[]));
   }
 
   getporIdFtd(id_ftd:number){
@@ -22,11 +21,11 @@ export class DatosftdService {
   }
 
   guardarFtd(ftd:Datosftd){
-    return this.http.post<Datosftd>(`${baseUrl}ftd/guardar`, ftd, {headers:this.httpHeaders});
+    return this.http.post<Datosftd>(`${baseUrl}ftd/guardar`, ftd);
   }
 
   editarFtd(ftd:Datosftd){
-    return this.http.put<Datosftd>(`${baseUrl}ftd/editaar/${ftd.id_ftd}`, ftd, {headers:this.httpHeaders});
+    return this.http.put<Datosftd>(`${baseUrl}ftd/editar/${ftd.id_ftd}`, ftd);
   }
   eliminarftd(id_ftd:number){
     return this.http.delete<void>(`${baseUrl}ftd/${id_ftd}`);

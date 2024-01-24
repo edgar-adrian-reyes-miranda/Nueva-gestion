@@ -1,0 +1,22 @@
+/* estilos.css */
+
+.boton-inicio {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.Inicio {
+  background-color: #285C4D;
+  /* Verde más claro */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Inicio:hover {
+  background-color: #13322B;
+  /* Verde oscuro */
+}

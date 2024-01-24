@@ -50,7 +50,7 @@ export class FtdComponent implements OnInit {
     this.cargarproyectos();
     this.cargardatos();
     this.cargarestatusinfotec();
-    this.relacioningresoftd();
+    //this.relacioningresoftd();
   }
 
   private cargardatos() {
@@ -61,6 +61,7 @@ export class FtdComponent implements OnInit {
       }
     );
   }
+  /*
   private relacioningresoftd() {
     this.active.params.subscribe(
       params => {
@@ -70,7 +71,8 @@ export class FtdComponent implements OnInit {
         }
       }
     )
-  }
+  }*/
+
   private cargarproyectos() {
     this.serpro.getListProyecto().subscribe((proyectos) => this.proyec = proyectos)
   }

@@ -49,6 +49,7 @@ import { PortadaComponent } from './Logueos/portada/portada.component';
 @NgModule({
   declarations: [
     AppComponent,
+    PortadaComponent,
     LoginComponent,
     UsuarioComponent,
     AdminsComponent,
@@ -83,7 +84,7 @@ import { PortadaComponent } from './Logueos/portada/portada.component';
     ProyectosComponent,
     ReportesComponent,
     TablaVistaComponent,
-    PortadaComponent,
+
 
   ],
   imports: [

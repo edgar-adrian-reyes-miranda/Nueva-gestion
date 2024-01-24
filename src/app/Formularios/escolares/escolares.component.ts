@@ -31,7 +31,8 @@ export class EscolaresComponent implements OnInit {
     private seruni: UniversidadesService,
     private serplan: PlaneducativoService,
     private serperi: PeriodoService,
-    private serperson: DatospersonalesService) {
+    private serperson: DatospersonalesService
+  ) {
   }
   ngOnInit(): void {
     this.cargardatos();
@@ -39,7 +40,7 @@ export class EscolaresComponent implements OnInit {
     this.cargarModEscolar();
     this.cargarPeiodos();
     this.cargarPlanes();
-    this.relacionpersonalesescolares();
+    //this.relacionpersonalesescolares();
   }
   private cargardatos() {
     this.active.params.subscribe(params => {
@@ -53,7 +54,7 @@ export class EscolaresComponent implements OnInit {
     }
     );
   }
-
+/*
   private relacionpersonalesescolares(): void {
     this.active.params.subscribe(
       params => {
@@ -64,7 +65,8 @@ export class EscolaresComponent implements OnInit {
         }
       }
     )
-  }
+  }*/
+
   private cargarUniversidad() {
     this.seruni.getListUniversidad().subscribe((universidad) => {
       this.univerisdad = universidad;
@@ -97,7 +99,7 @@ export class EscolaresComponent implements OnInit {
   editar() {
     this.api.editarEscolar(this.escolares).subscribe(
       escolar => {
-        this.route.navigate(['/registro-ingresos']);
+        this.route.navigate(['/datos-escolares']);
         console.error('Actualizado dato', `Actualizado ${this.escolares.id_escolar}con exito`);
       }
     );

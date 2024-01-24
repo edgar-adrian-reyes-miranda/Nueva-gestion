@@ -38,7 +38,7 @@
             <button
               class="accion-boton"
               title="Editar"
-              [routerLink]="['/actualizar/forms', ingreso.id_ingreso]"
+              [routerLink]="['/actualizar-ingreso/forms', ingreso.id_ingreso]"
             >
               Editar
             </button>
@@ -54,9 +54,11 @@
       </tbody>
     </table>
   </div>
+  <div class="paginacion">
   <pagination-controls
     (pageChange)="page = $event"
     previousLabel="Anterior"
     nextLabel="Siguiente"
   ></pagination-controls>
+  </div>
 </body>

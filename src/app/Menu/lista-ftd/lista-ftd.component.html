@@ -29,7 +29,7 @@
       </thead>
       <tbody>
         <!-- Puedes agregar filas de datos aquí -->
-        <tr *ngFor="let lista of ftd">
+        <tr *ngFor="let lista of ftd | paginate:{itemsPerPage:10, currentPage:page}">
           <td>{{ lista.id_ftd }}</td>
           <td>{{ lista.area }}</td>
           <td>{{ lista.beca }}</td>
@@ -65,9 +65,11 @@
       </tbody>
     </table>
   </div>
+  <div class="paginacion">
   <pagination-controls
     (pageChange)="page = $event"
     previousLabel="Anterior"
     nextLabel="Siguiente"
   ></pagination-controls>
+  </div>
 </body>

@@ -33,13 +33,16 @@ import { EstusInfotecComponent } from "./Formatos/estus-infotec/estus-infotec.co
 import { ProyectosComponent } from "./Formatos/proyectos/proyectos.component";
 import { ReportesComponent } from "./Pages/usuario/reportes/reportes.component";
 import { LoginComponent } from './Logueos/login/login.component';
+import { AppComponent } from './app.component';
+import { PortadaComponent } from './Logueos/portada/portada.component';
 
 
 
 const routes: Routes = [
 
-  //,/Logueos
-
+  //Logueos
+  { path: '', redirectTo: '/portada', pathMatch: 'full' },
+  { path: 'portada', component: PortadaComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
 
   //registros
@@ -95,10 +98,11 @@ const routes: Routes = [
   { path: 'proyectos/forms/:id_proyecto', component: ProyectosComponent, pathMatch: 'full' },
   { path: 'perfilamiento/forms/:id_perfilamiento', component: PerfilamientoComponent, pathMatch: 'full' },
   { path: 'actualizar/forms/:id_person', component: PersonalesComponent, pathMatch: 'full' },
-  { path: 'actualizar/forms/:id_escolar', component: EscolaresComponent, pathMatch: 'full' },
+  { path: 'actualizar-escolar/forms/:id_escolar', component: EscolaresComponent, pathMatch: 'full' },
   { path: 'actualizar/forms/:id_ftd', component: FtdComponent, pathMatch: 'full' },
-  { path: 'actualizar/forms/:id_ingreso', component: IngresosComponent, pathMatch: 'full' },
+  { path: 'actualizar-ingreso/forms/:id_ingreso', component: IngresosComponent, pathMatch: 'full' },
   { path: 'proyectos/forms/:id:proyecto', component: ProyectosComponent, pathMatch: 'full' },
+  { path: 'registro-admins/forms/:id_admin', component: RegistroAddComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

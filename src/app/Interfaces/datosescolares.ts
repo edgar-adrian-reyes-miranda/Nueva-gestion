@@ -13,5 +13,5 @@ export class Datosescolares {
   modalidadesEscolares: Modalidadescolares = new Modalidadescolares();
   planEducativo: Planeducativo = new Planeducativo();
   periodo: Periodo = new Periodo();
-  datosPersonales: Datospersonales = new Datospersonales();
+  //datosPersonales: Datospersonales = new Datospersonales();
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Usuarios } from 'src/app/Interfaces/usuarios';
 import { UsuarioService } from 'src/app/Apis/usuario.service';
-import Swal from 'sweetalert2';
+import swal from 'sweetalert2';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class ResgitroComponent implements OnInit {
   guardar() {
     this.api.registroUsuario(this.registro).subscribe(
       (usurios: Usuarios) => {
-        Swal.fire({
+        swal.fire({
           position: "top-end",
           icon: "success",
           title: "Inicio Exitoso",
@@ -33,7 +33,7 @@ export class ResgitroComponent implements OnInit {
         this.route.navigate(['/registro-personales']);
       },
       (error) => {
-        Swal.fire({
+        swal.fire({
           position: "top-end",
           icon: "error",
           title: "Revisar credenciales",
