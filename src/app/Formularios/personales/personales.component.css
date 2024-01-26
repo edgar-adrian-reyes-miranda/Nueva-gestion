@@ -1,63 +1,47 @@
-.regreso {
-  background-color: #13322B; /* Verde oscuro */
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 20px;
+:root {
+  --verde: #13322B;
+  --verde-claro: #285C4D;
+  --vino: #4E232E;
+  --vino-oscuro: #56242q;
+  --beige: #D4C19C;
+  --pantone-1: #621132;
+  --pantone-2: #9D2449;
 }
-
-.regreso i {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.regreso:hover {
-  background-color: #285C4D; /* Verde más claro */
-}
-
 form {
-  background-color: #FFF;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
-  margin: 0 auto; /* Centra el formulario en la página */
-  font-family: 'Montserrat-Bold';
+  background-color: var(--beige);
+  border: none;
+  border-radius: 0.5em;
+  padding: 2em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 label {
-  display: block;
-  margin-bottom: 8px;
-  color: #4E232E; /* Vino tinto */
+  color: var(--pantone-2);
+  font-size: 0.9em;
 }
 
-input,
-select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #D4C19C; /* Beige */
-  border-radius: 4px;
+input, select {
+  width: 70%;
+  border: none;
+  border-bottom: 2px solid var(--pantone-1);
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-bottom-color: var(--pantone-2);
 }
 
 button {
-  background-color: #285C4D; /* Verde más claro */
+  background-color: var(--verde-claro);
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 0.75em 2em;
+  border-radius: 2em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 button:hover {
-  background-color: #13322B; /* Verde oscuro */
+  background-color: var(--verde);
 }
-
-select {
-  width: calc(100% - 18px); /* Ajusta el ancho del elemento 'select' para evitar desbordamiento */
-}
-
-/* Agrega estilos adicionales según sea necesario */

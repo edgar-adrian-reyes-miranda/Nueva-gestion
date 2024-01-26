@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuarios } from '../Interfaces/usuarios';
 import baseUrl from './UrlApiB';
-import { Observable, catchError, map, throwError } from 'rxjs';
+import {Observable, catchError, map, throwError, tap} from 'rxjs';
 import { Admins } from '../Interfaces/admins';
 
 @Injectable({
@@ -11,7 +11,7 @@ import { Admins } from '../Interfaces/admins';
 export class UsuarioService {
 
   constructor(private http: HttpClient) { }
-  private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+
 
   getAllUsuario(): Observable<Usuarios[]> {
     return this.http.get(`${baseUrl}usuarios/lista`).pipe(
@@ -23,7 +23,7 @@ export class UsuarioService {
   }
 
   registroUsuario(usuario: Usuarios) {
-    return this.http.post<Usuarios>(`${baseUrl}usuarios/registro`, usuario, { headers: this.httpHeaders });
+    return this.http.post<Usuarios>(`${baseUrl}usuarios/registro`, usuario);
   }
 
   EliminarUsuario(id: number) {
@@ -31,15 +31,20 @@ export class UsuarioService {
   }
 
   editarUsuario(id: number, usuario: Usuarios): Observable<Usuarios> {
-    return this.http.put<Usuarios>(`${baseUrl}usuarios/editar/${id}`, usuario, { headers: this.httpHeaders });
+    return this.http.put<Usuarios>(`${baseUrl}usuarios/editar/${id}`, usuario);
   }
 
   login(usuario: any): Observable<any> {
-    return this.http.post<any>(`${baseUrl}usuarios/login`, usuario, { headers: this.httpHeaders })
-      .pipe(catchError((error) => {
-        console.error('ERROR AL INICIAR SESIÓN', error);
-        return throwError('Error en el inicio de sesión');
-      }));
+    // @ts-ignore
+    return this.http.post<any>(`${baseUrl}usuarios/login`, usuario, { responseType: 'text' })
+      .pipe(
+        tap(response => console.log('Respuesta del servidor:', response)),
+        catchError((error) => {
+          console.error('ERROR AL INICIAR SESIÓN', error);
+          return throwError('Error en el inicio de sesión');
+        })
+      );
   }
 
 }
+

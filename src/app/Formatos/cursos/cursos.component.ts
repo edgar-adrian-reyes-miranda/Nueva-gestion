@@ -11,6 +11,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class CursosComponent implements OnInit{
   curso:Cursos[]=[];
   curs:Cursos= new Cursos();
+  page!: number;
+
   constructor(private api:CursosService,
               private route:Router,
               private activeRoute:ActivatedRoute) {

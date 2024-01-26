@@ -40,7 +40,7 @@
           <th>Password</th>
           <th>Acciones</th>
           <th>
-            <button title="Imprimir" (click)="imprimirlista()">
+            <button title="Imprimir" (click)="generarPdf()">
               <i class="material-icons">picture_as_pdf</i>Imprimir</button>
           </th>
         </tr>
@@ -48,7 +48,7 @@
       <tbody>
         <tr *ngFor="let admi of adm">
           <td>{{ admi.id_admin }}</td>
-          <td>{{ admi.username }}</td>
+          <td>{{ admi.username }}</td>ng
           <td>{{ admi.password }}</td>
           <td>
             <button class="accion-boton" title="Editar" [routerLink]="['/registro-admins/forms', admi.id_admin]">

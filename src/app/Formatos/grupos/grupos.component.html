@@ -1,3 +1,4 @@
+<script src="grupos.component.ts"></script>
 <body>
 
 <button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
@@ -26,7 +27,8 @@
     </thead>
     <tbody>
     <!-- Filas de datos aquí -->
-    <tr *ngFor="let grupos of grupo">
+    <tr *ngFor="let grupos of grupo | paginate:
+    {itemsPerPage:7, currentPage: page} ">
       <td>{{grupos.id_grupo}}</td>
       <td>{{grupos.nombre}}</td>
       <td>
@@ -36,6 +38,12 @@
     </tr>
     </tbody>
   </table>
+</div>
+<div>
+  <pagination-controls (pageChange)="page = $event"
+                       previousLabel="Anterior"
+                       nextLabel="Siguiente"
+                       ></pagination-controls>
 </div>
 
 

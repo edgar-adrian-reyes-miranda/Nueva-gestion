@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class GruposComponent implements  OnInit{
   grupo:Grupos[]=[];
   gruo:Grupos= new Grupos();
+  page!: number;
   constructor(private api:GruposService,
               private roue:Router,
               private activedRoute:ActivatedRoute) {

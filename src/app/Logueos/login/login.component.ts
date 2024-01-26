@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       this.api.login(this.compa).subscribe(
         (response) => {
           console.log('Acceso concedido', response);
+
           swal.fire({
             position: "top-end",
             icon: "success",
@@ -58,6 +59,7 @@ export class LoginComponent implements OnInit {
       this.apiadm.login(this.compa).subscribe(
         (response) => {
           console.log('Acceso concedido', response);
+          console.log('Nombre de usuario almacenado:', this.apiadm.getUsername());
           swal.fire({
             position: "top-end",
             icon: "success",
@@ -83,7 +85,5 @@ export class LoginComponent implements OnInit {
       console.error('Erro el tipo usuario no encontrado');
     }
   }
-
-
 }
 

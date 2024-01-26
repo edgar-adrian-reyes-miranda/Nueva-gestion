@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class PerfilamientoComponent implements OnInit {
   perfil: Perfilamiento[] = [];
   perfila: Perfilamiento = new Perfilamiento();
+  page!: number;
   constructor(private api: PerfilamientoService,
     private route: Router,
     private actived: ActivatedRoute) {

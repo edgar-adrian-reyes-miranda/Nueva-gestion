@@ -27,7 +27,8 @@
     </thead>
     <tbody>
     <!-- Filas de datos aquí -->
-    <tr *ngFor="let perfi of perfil">
+    <tr *ngFor="let perfi of perfil  | paginate:{
+    itemsPerPage:8, currentPage:page  }">
       <td>{{perfi.id_perfilamiento}}</td>
       <td>{{perfi.nombre}}</td>
       <td>
@@ -37,5 +38,11 @@
     </tr>
     </tbody>
   </table>
+</div>
+<div>
+  <pagination-controls (pageChange)="page = $event"
+                       previousLabel="Anterior"
+                       nextLabel="Siguiente"
+                       ></pagination-controls>
 </div>
 </body>

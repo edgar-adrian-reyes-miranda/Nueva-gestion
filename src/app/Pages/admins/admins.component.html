@@ -34,8 +34,12 @@
 
     <br />
     <br />
+    <div *ngIf="admin">
+     <p>{{admin}}</p>
+      <p>variable: {{ admin | json}}</p>
+    </div>
     <p>
-      Bienvenido al sistema de Gestion de Recursos de infotec, donde este
+      Bienvenido , al sistema de Gestion de Recursos de infotec, donde este
       sistema gestionara los recursos que proporcione el pasante, alumno de
       practicas profesionales etc. Y servicio social. Ya que al ser aspirante ha
       una beca proporcionaras ciertos documentos en liga para poder

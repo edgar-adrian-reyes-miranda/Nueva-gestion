@@ -65,7 +65,8 @@
       </thead>
       <tbody>
         <tr></tr>
-        <tr *ngFor="let pro of proyectos">
+        <tr *ngFor="let pro of proyectos | paginate:
+{itemsPerPage:8, currentPage:page}">
           <td>{{ pro.id_proyecto }}</td>
           <td>{{ pro.nombre }}</td>
           <td>{{ pro.avance }}</td>
@@ -90,4 +91,10 @@
       </tbody>
     </table>
   </div>
+<div>
+  <pagination-controls (pageChange)="page= $event"
+                       previousLabel="Anteior"
+                       nextLabel="Siguinete"
+  ></pagination-controls>
+</div>
 </body>

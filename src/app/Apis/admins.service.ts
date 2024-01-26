@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, throwError } from 'rxjs';
+import {Observable, catchError, map, throwError, tap} from 'rxjs';
 import { Admins } from '../Interfaces/admins';
 import baseUrl from './UrlApiB';
 import jsPDF from "jspdf";
@@ -10,9 +10,9 @@ import autoTable from "jspdf-autotable";
   providedIn: 'root'
 })
 export class AdminsService {
-
+  private username: string | undefined;
   constructor(private http: HttpClient) { }
-  //private HttpHeaders = new HttpHeaders({ 'Content-Type': `applications/json` });
+
 
   getAll(): Observable<Admins[]> {
     return this.http.get(`${baseUrl}adminis/lista`).pipe(
@@ -30,13 +30,28 @@ export class AdminsService {
     return this.http.delete<void>(`${baseUrl}adminis/${id}`);
   }
 
-  login(usuario: any): Observable<Admins> {
-    return this.http.post<Admins>(`${baseUrl}adminis/login`, usuario)
-      .pipe(
-        catchError((error) => {
-          console.error('Error en el inicio de sesion', error);
-          return throwError('Error en el servidor');
-        }));
+
+  login(usuario: any): Observable<any> {
+    // @ts-ignore
+    return this.http.post<string>(`${baseUrl}adminis/login`, usuario, {responseType:'text'}).pipe(
+        tap((response)=>{
+          console.log('Inicio exitoso', response);
+          try {
+            // @ts-ignore
+            const parseResponse = JSON.parse(response);
+            this.username= parseResponse.username;
+            console.log('Nombre de administrador extraido:', this.username);
+          }catch (error){
+            // @ts-ignore
+            this.username= response;
+            console.error('Error al extraer el nombre de usuario:', error);
+          }
+    }),
+    catchError((error) =>{
+      console.error('Error al iniciar sesion', error);
+      return throwError('Error en el servidor');
+      })
+    );
   }
   editarAdm(admin:Admins){
     return this.http.put<Admins>(`${baseUrl}adminis/editar/${admin.id_admin}`, admin);
@@ -58,5 +73,9 @@ export class AdminsService {
     }else{
 
     }
+  }
+
+  getUsername():string | undefined{
+    return this.username;
   }
 }

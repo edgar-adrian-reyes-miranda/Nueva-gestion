@@ -17,13 +17,17 @@
     </thead>
     <tbody>
     <!-- Filas de datos aquí -->
-    <tr *ngFor="let per of perido">
+    <tr *ngFor="let per of perido | paginate:
+    {itemsPerPage:5, currentPage:page}">
       <td>{{per.id_periodo}}</td>
       <td>{{per.tipo_periodo}}</td>
     </tr>
     </tbody>
   </table>
 </div>
-
-
+<div>
+  <pagination-controls (pageChange)="page= $event"
+                       previousLabel="Anterior"
+                       nextLabel="Siguiene"></pagination-controls>
+</div>
 </body>

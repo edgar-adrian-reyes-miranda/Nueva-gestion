@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class ProyectosComponent implements OnInit {
   proyectos: Proyectos[] = [];
   proyec: Proyectos = new Proyectos();
-
+  page!: number;
   constructor(private api: ProyectosService,
     private route: Router,
     private actived: ActivatedRoute) {

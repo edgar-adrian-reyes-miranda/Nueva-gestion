@@ -32,7 +32,8 @@
     </thead>
     <tbody>
     <!-- Filas de datos aquí -->
-    <tr *ngFor="let cursos of curso">
+    <tr *ngFor="let cursos of curso | paginate:
+{itemsPerPage:5, currentPage:page}">
       <td>{{cursos.id_curso}}</td>
       <td>{{cursos.nombre}}</td>
       <td>{{cursos.tipo_estatus}}</td>
@@ -45,6 +46,11 @@
     </tbody>
   </table>
 </div>
-
+<div>
+  <pagination-controls (pageChange)="page = $event"
+                       previousLabel="Anterior"
+                       nextLabel="Siguiente"
+  ></pagination-controls>
+</div>
 
 </body>

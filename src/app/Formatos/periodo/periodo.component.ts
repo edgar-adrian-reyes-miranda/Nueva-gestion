@@ -9,7 +9,7 @@ import {PeriodoService} from "../../Apis/periodo.service";
 })
 export class PeriodoComponent implements OnInit{
   perido:Periodo[]=[];
-
+  page!:number;
   constructor(private api:PeriodoService) {
   }
   ngOnInit(): void {
