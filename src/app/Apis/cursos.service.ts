@@ -10,7 +10,6 @@ import {Cursos} from "../Interfaces/cursos";
 export class CursosService {
 
   constructor(private htpp:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
 
   gerListCursos():Observable<Cursos[]>{
     return this.htpp.get(`${baseUrl}cursos/lista`).pipe(
@@ -21,10 +20,10 @@ export class CursosService {
     return this.htpp.get<Cursos>(`${baseUrl}cursos/${id_curso}`);
   }
   guardarCursos(curso: Cursos){
-    return this.htpp.post<Cursos>(`${baseUrl}cursos/guardar`, curso, {headers:this.httpHeaders});
+    return this.htpp.post<Cursos>(`${baseUrl}cursos/guardar`, curso);
   }
   editarCurso(curso: Cursos){
-    return this.htpp.put<Cursos>(`${baseUrl}cursos/editar/${curso.id_curso}`, curso, {headers:this.httpHeaders});
+    return this.htpp.put<Cursos>(`${baseUrl}cursos/editar/${curso.id_curso}`, curso);
   }
   //Hard delete
   eliminar(id_curso: number){

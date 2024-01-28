@@ -4,7 +4,7 @@ import { Universidades } from "../../Interfaces/universidades";
 import { Modalidadescolares } from "../../Interfaces/modalidadescolares";
 import { Planeducativo } from "../../Interfaces/planeducativo";
 import { Periodo } from "../../Interfaces/periodo";
-import { ActivatedRoute, Route, Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ModalidadescolarService } from "../../Apis/modalidadescolar.service";
 import { UniversidadesService } from "../../Apis/universidades.service";
 import { PlaneducativoService } from "../../Apis/planeducativo.service";

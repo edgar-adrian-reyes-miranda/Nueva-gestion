@@ -10,7 +10,7 @@ import {Enlace} from "../Interfaces/enlace";
 export class EnlaceService {
 
   constructor(private http:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
+
 
   getListEnlace():Observable<Enlace[]>{
     return this.http.get(`${baseUrl}enlace/lista`).pipe(
@@ -22,11 +22,11 @@ export class EnlaceService {
   }
 
   guardarEnlace(enlace:Enlace){
-    return this.http.post<Enlace>(`${baseUrl}enlace/guardar`, enlace, {headers:this.httpHeaders});
+    return this.http.post<Enlace>(`${baseUrl}enlace/guardar`, enlace);
   }
 
   editarEnlace(enlace:Enlace){
-    return this.http.put<Enlace>(`${baseUrl}enlace/editar/${enlace.id_enlace}`, enlace, {headers:this.httpHeaders});
+    return this.http.put<Enlace>(`${baseUrl}enlace/editar/${enlace.id_enlace}`, enlace);
   }
 
   eliminarEnlace(id_enlace:number){

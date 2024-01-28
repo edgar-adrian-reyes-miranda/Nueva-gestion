@@ -10,7 +10,7 @@ import {Datosftd} from "../Interfaces/datosftd";
 export class DatosftdService {
 
   constructor(private http:HttpClient) { }
- // private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
+
   getListFtd():Observable<Datosftd[]>{
     return this.http.get(`${baseUrl}ftd/lista`).pipe(
         map(ftds=> ftds as Datosftd[]));

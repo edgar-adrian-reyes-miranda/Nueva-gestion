@@ -10,7 +10,6 @@ import baseUrl from "./UrlApiB";
 export class GruposService {
 
   constructor(private http:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
 
   getListGrupo():Observable<Grupos[]>{
     return this.http.get(`${baseUrl}grupos/lista`).pipe(
@@ -23,12 +22,12 @@ export class GruposService {
   }
 
   guardarGrupo(grupo:Grupos){
-    return this.http.post<Grupos>(`${baseUrl}grupos/guardar`, grupo, {headers:this.httpHeaders});
+    return this.http.post<Grupos>(`${baseUrl}grupos/guardar`, grupo);
   }
 
 
   editarGrupo(grupo:Grupos){
-    return this.http.put<Grupos>(`${baseUrl}grupos/editar/${grupo.id_grupo}`, grupo, {headers:this.httpHeaders});
+    return this.http.put<Grupos>(`${baseUrl}grupos/editar/${grupo.id_grupo}`, grupo);
   }
 
   eliminarGrupo(id_grupo:number){

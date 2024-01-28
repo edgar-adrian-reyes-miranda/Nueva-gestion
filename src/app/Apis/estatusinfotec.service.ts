@@ -10,7 +10,7 @@ import {Estatusinfotec} from "../Interfaces/estatusinfotec";
 export class EstatusinfotecService {
 
   constructor(private http:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
+
 
   getList():Observable<Estatusinfotec[]>{
     return this.http.get(`${baseUrl}estatus/lista`).pipe(
@@ -22,10 +22,10 @@ export class EstatusinfotecService {
     return this.http.get<Estatusinfotec>(`${baseUrl}estatus/${id_estatus}`);
   }
   guardarEstatus(estatus:Estatusinfotec){
-    return this.http.post<Estatusinfotec>(`${baseUrl}estatus/guardar`, estatus, {headers:this.httpHeaders});
+    return this.http.post<Estatusinfotec>(`${baseUrl}estatus/guardar`, estatus);
   }
   editarEstatus(estatus:Estatusinfotec){
-    return this.http.put<Estatusinfotec>(`${baseUrl}estatus/editar/${estatus.id_estatus}`, estatus, {headers:this.httpHeaders});
+    return this.http.put<Estatusinfotec>(`${baseUrl}estatus/editar/${estatus.id_estatus}`, estatus);
   }
 
   eliminarEstatus(id_estatus:number){

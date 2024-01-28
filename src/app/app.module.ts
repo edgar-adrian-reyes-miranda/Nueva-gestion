@@ -102,6 +102,9 @@ import { PortadaComponent } from './Logueos/portada/portada.component';
 
   ],
   providers: [],
+  exports: [
+    LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

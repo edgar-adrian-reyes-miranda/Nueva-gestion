@@ -1,47 +1,69 @@
-:root {
-  --verde: #13322B;
-  --verde-claro: #285C4D;
-  --vino: #4E232E;
-  --vino-oscuro: #56242q;
-  --beige: #D4C19C;
-  --pantone-1: #621132;
-  --pantone-2: #9D2449;
-}
-form {
-  background-color: var(--beige);
-  border: none;
-  border-radius: 0.5em;
-  padding: 2em;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F0F0F0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+/* Estilos del formulario */
+.formulario {
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: auto; /* Centrar horizontalmente */
+}
+
+/* Estilos de las etiquetas */
 label {
-  color: var(--pantone-2);
-  font-size: 0.9em;
+  font-size: 14px;
+  color: #333333;
+  display: block;
+  margin-bottom: 5px;
 }
 
-input, select {
-  width: 70%;
-  border: none;
-  border-bottom: 2px solid var(--pantone-1);
-  padding: 0.5em;
-  margin-bottom: 1.5em;
+/* Estilos de los input y select */
+.editable {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
 }
 
-input:focus, select:focus {
-  outline: none;
-  border-bottom-color: var(--pantone-2);
-}
-
+/* Estilos de los botones */
 button {
-  background-color: var(--verde-claro);
-  color: white;
+  background-color: #4E232E;
+  color: #FFFFFF;
+  padding: 12px;
   border: none;
-  padding: 0.75em 2em;
-  border-radius: 2em;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
-button:hover {
-  background-color: var(--verde);
+/* Estilo para el icono dentro del botón */
+.material-icons {
+  vertical-align: middle;
+}
+
+/* Estilo para el mensaje de género seleccionado */
+p {
+  margin: 10px 0;
+  color: #56242A;
+}
+
+/* Alineación del formulario en dispositivos pequeños */
+@media screen and (max-width: 600px) {
+  .formulario {
+    width: 90%;
+  }
 }

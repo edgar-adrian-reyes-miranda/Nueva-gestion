@@ -1,67 +1,78 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F0F0F0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Estilos del formulario */
 form {
-  /*width: 300px;*/
-  margin: 50px auto;
+  background-color: #FFFFFF;
   padding: 20px;
-  background-color: #D4C19C;
-  /* Beige */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: auto; /* Centrar horizontalmente */
 }
 
+/* Estilos de las etiquetas */
 label {
+  font-size: 14px;
+  color: #13322B;
   display: block;
-  margin: 10px 0;
-  color: #9D2449;
-  /* Rojo más claro */
+  margin-bottom: 5px;
 }
 
-.select,
-input.editable,
-select.editable {
+/* Estilos de los input y select */
+.editable {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #13322B;
-  /* Verde oscuro */
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #285C4D;
   border-radius: 5px;
 }
 
-p {
-  color: #B38E5D;
-  /* Ocre */
-  margin-top: 15px;
-}
-
+/* Estilos de los botones */
 button {
   background-color: #4E232E;
-  /* Vino tinto */
-  color: white;
-  padding: 10px 15px;
+  color: #FFFFFF;
+  padding: 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
-button:hover {
-  background-color: #56242A;
-  /* Marrón rojizo */
-}
-
-.material-icons {
-  font-size: 24px;
-}
-
+/* Estilo para el enlace de regreso */
 .regreso {
-  background-color: #13322B;
-  /* Verde oscuro */
-  color: white;
+  background-color: #621132;
+  color: #FFFFFF;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 15px;
 }
 
-.regreso:hover {
-  background-color: #285C4D;
-  /* Verde más claro */
+/* Estilo para el icono dentro del botón de regreso */
+.material-icons {
+  margin-right: 5px;
+}
+
+/* Alineación del formulario en dispositivos pequeños */
+@media screen and (max-width: 600px) {
+  form {
+    width: 90%;
+  }
 }

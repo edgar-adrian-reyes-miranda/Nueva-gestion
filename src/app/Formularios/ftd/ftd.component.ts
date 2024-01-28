@@ -55,9 +55,13 @@ export class FtdComponent implements OnInit {
 
   private cargardatos() {
     this.active.params.subscribe(
-      (params) => {
-        let id = params['id_ftd'];
-        this.api.getporIdFtd(id).subscribe((ftds) => this.ftd = ftds);
+      (params)=>{
+        let id= params['id_ftd'];
+        if(id){
+          this.api.getporIdFtd(id).subscribe(
+            (FTDS)=> this.ftd= FTDS
+          );
+        }
       }
     );
   }
@@ -94,7 +98,7 @@ export class FtdComponent implements OnInit {
   guardar() {
     this.api.guardarFtd(this.ftd).subscribe(
       ftds => {
-        this.route.navigate(['/login']);
+        this.route.navigate(['/General']);
         console.log('Nuevo ftd', `Nuevo ${this.ftd.id_ftd} creado con exito`);
       }
     );

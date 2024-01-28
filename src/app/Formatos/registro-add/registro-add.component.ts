@@ -5,8 +5,6 @@ import { UsuarioService } from 'src/app/Apis/usuario.service';
 import { Admins } from 'src/app/Interfaces/admins';
 import { Usuarios } from 'src/app/Interfaces/usuarios';
 import swal from "sweetalert2";
-import * as jsPDF from "jspdf";
-import {GenerarPDFService} from "../../Apis/generar-pdf.service";
 
 @Component({
   selector: 'app-registro-add',
@@ -17,15 +15,13 @@ export class RegistroAddComponent implements OnInit {
   admins: Admins = new Admins();
   adm: Admins[] = [];
   page!: number;
-  dataFromDatabase:any[]=[];
   usuario: Usuarios[] = [];
   usus: Usuarios = new Usuarios();
 
   constructor(private api: AdminsService,
     private apiusus: UsuarioService,
     private route: Router,
-    private actived: ActivatedRoute,
-              private pdf:GenerarPDFService) { }
+    private actived: ActivatedRoute,) { }
 
   ngOnInit(): void {
     this.api.getAll().subscribe(
@@ -49,15 +45,7 @@ export class RegistroAddComponent implements OnInit {
 
   }
 
-  //pdf
-  generarPdf(){
-    this.pdf.generarPDF(this.dataFromDatabase);
-  }
 
-  generarPDFFromhtml(){
-    const htmlContent= '<div id="pdf">Conetenido</div>';
-    this.pdf.generatePdfFromHtml(htmlContent);
-  }
   private cargarAdmins() {
     this.actived.params.subscribe(
       (params) => {

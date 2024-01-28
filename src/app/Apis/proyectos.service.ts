@@ -10,7 +10,6 @@ import baseUrl from "./UrlApiB";
 export class ProyectosService {
 
   constructor(private http:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
 
   getListProyecto():Observable<Proyectos[]>{
     return this.http.get(`${baseUrl}proyectos/lista`).pipe(
@@ -23,10 +22,10 @@ export class ProyectosService {
   }
 
   guardarProyecto(proyecto:Proyectos){
-    return this.http.post<Proyectos>(`${baseUrl}proyectos/guardar`, proyecto, {headers:this.httpHeaders});
+    return this.http.post<Proyectos>(`${baseUrl}proyectos/guardar`, proyecto);
   }
   editarProyecto(proyecto:Proyectos){
-    return this.http.put<Proyectos>(`${baseUrl}proyectos/editar/${proyecto.id_proyecto}`, proyecto, {headers:this.httpHeaders});
+    return this.http.put<Proyectos>(`${baseUrl}proyectos/editar/${proyecto.id_proyecto}`, proyecto);
   }
 
   eliminarProyecto(id_proyecto:number){
