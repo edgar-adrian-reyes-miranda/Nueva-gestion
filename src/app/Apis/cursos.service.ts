@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import baseUrl from "./UrlApiB";
 import {map, Observable} from "rxjs";
 import {Cursos} from "../Interfaces/cursos";

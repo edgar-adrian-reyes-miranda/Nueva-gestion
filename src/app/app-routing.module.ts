@@ -33,13 +33,19 @@ import { EstusInfotecComponent } from "./Formatos/estus-infotec/estus-infotec.co
 import { ProyectosComponent } from "./Formatos/proyectos/proyectos.component";
 import { ReportesComponent } from "./Pages/usuario/reportes/reportes.component";
 import { LoginComponent } from './Logueos/login/login.component';
+import {PortadaComponent} from "./Pages/portada/portada.component";
+
 
 
 
 const routes: Routes = [
+  //ruta principal
+  {path:'', children:[
+      {path:'', redirectTo: '/portada', pathMatch:'full'},
+      {path:'portada', component: PortadaComponent, pathMatch:'full'},
+    ]},
 
   //Logueos
-  { path: '', redirectTo: '/portada', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
 
   //registros

@@ -1,5 +1,4 @@
-<body>
-  <div class="contenedor">
+ <div class="contenedor">
     <button class="regreso" [routerLink]="'/'">
       <i class="material-icons">arrow_back</i> Regreso
     </button>
@@ -36,7 +35,7 @@
     <br />
     <div *ngIf="admin">
      <p>{{admin}}</p>
-      <p>variable: {{ admin | json}}</p>
+      <p>variable: {{ admin }}</p>
     </div>
     <p>
       Bienvenido , al sistema de Gestion de Recursos de infotec, donde este
@@ -47,4 +46,3 @@
     </p>
     <img src="assets/IMG/Infotec.png" alt="Logo Infotec" class="logo" />
   </div>
-</body>

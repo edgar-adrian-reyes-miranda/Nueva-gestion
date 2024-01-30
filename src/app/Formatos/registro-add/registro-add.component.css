@@ -1,104 +1,88 @@
-/* estilos.css */
 body {
-  background-color: #F0F0F0;
-  margin: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: Arial, sans-serif;
 }
 
 .regreso {
-  background-color: #13322B;
-  /* Verde oscuro */
-  color: white;
-  padding: 8px;
+  background-color: #3498db;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.regreso i {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.regreso:hover {
-  background-color: #285C4D;
-  /* Verde más claro */
 }
 
 .contenedor {
   display: flex;
-  justify-content: space-between;
-  font-family: 'Montserrat-Medium';
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 
 .contenedor-tabla {
-  flex: 1;
-  margin: 8px;
-  padding: 8px;
-  background-color: #FFF;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #3498db;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.1);
 }
 
-.contenedor-tabla h1,
-.contenedor-tabla h2 {
-  color: #4E232E;
-  /* Vino tinto */
+#formulario-admin {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#formulario-admin label {
+  margin-bottom: 8px;
+}
+
+#formulario-admin input {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.guardar-boton {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .tabla-datos {
-  width: 40%;
+  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.tabla-datos th,
-.tabla-datos td {
-  border: 1px solid #D4C19C;
-  /* Beige */
-  padding: 4px;
+.tabla-datos th, .tabla-datos td {
+  border: 1px solid #ddd;
+  padding: 12px;
   text-align: left;
 }
 
 .tabla-datos th {
-  background-color: #13322B;
-  /* Verde oscuro */
-  color: white;
+  background-color: #3498db;
+  color: #fff;
 }
 
-.guardar-boton,
-.accion-boton,
-button {
-  background-color: #285C4D;
-  /* Verde más claro */
-  color: white;
-  border: none;
-  padding: 7px 18px;
-  border-radius: 4px;
+.accion-boton {
+  padding: 8px 12px;
+  margin-right: 8px;
   cursor: pointer;
-  font-family: 'Montserrat-Bold';
+  border-radius: 5px;
+  display: inline-block;
 }
 
-.guardar-boton:hover,
-.accion-boton:hover,
-button:hover {
-  background-color: #13322B;
-  /* Verde oscuro */
+.accion-boton.editar {
+  background-color: #3498db;
+  color: #fff;
 }
 
-.label {
-  display: block;
-  margin-bottom: 8px;
-  color: #4E232E;
-  font-family: 'Montserrat-SemiBold';
-  /* Vino tinto */
-}
-
-input{
-  width: 20%;
-  padding: 8px;
-  margin-bottom: 8px;
-  border: 1px solid #D4C19C;
-  /* Beige */
-  border-radius: 4px;
+.accion-boton.eliminar {
+  background-color: #e74c3c;
+  color: #fff;
 }

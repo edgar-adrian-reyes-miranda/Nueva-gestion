@@ -24,7 +24,8 @@ export class PersonalesComponent implements OnInit {
   ngOnInit(): void {
     this.cargardatos();
     this.cargargenero();
-    //this.relaciondatospersonalesusuario();
+   // this.relaciondatospersonalesusuario();
+   // this.relaciondatospersonalesusuario();
   }
   cargardatos() {
     this.active.params.subscribe(params => {
@@ -42,8 +43,8 @@ export class PersonalesComponent implements OnInit {
       this.genero = generos;
     });
   }
-
-  /*private relaciondatospersonalesusuario() {
+/*
+  private relaciondatospersonalesusuario() {
     this.active.params.subscribe(
       params => {
         let id = params['id']

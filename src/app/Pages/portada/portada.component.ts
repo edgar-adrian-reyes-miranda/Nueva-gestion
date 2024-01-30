@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
-import {AppModule} from "../../app.module";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-portada',
   templateUrl: './portada.component.html',
-  standalone: true,
-  imports: [
-    AppModule
-  ],
   styleUrls: ['./portada.component.css']
 })
-export class PortadaComponent {
+export class PortadaComponent implements  OnInit{
+  mostrar:boolean= true;
+  ngOnInit(): void {
+  }
+
 
 }

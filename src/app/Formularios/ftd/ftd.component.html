@@ -31,6 +31,7 @@
 
   <label for="tutor">Tutor:</label>
   <select id="tutor" name="tutor" required [(ngModel)]="ftd.tutores">
+    <option value="">Elije el tutor</option>
     <option *ngFor="let t of turt" [ngValue]="t">
       {{ t.nombre }}
     </option>
@@ -157,7 +158,7 @@
   <p>Elejiste el estatus: {{ ftd.cursos.nombre  }}</p>
   <p>Elejiste el estatus: {{ ftd.cursos.tipo_estatus  }}</p>
   <p>Elejiste el estatus: {{ ftd.cursos.unidad  }}</p>
-
+<!--Fin-->
   <button role="button" (click)="guardar()" *ngIf="!ftd.id_ftd; else elseBlock">
     Guardar
   </button>

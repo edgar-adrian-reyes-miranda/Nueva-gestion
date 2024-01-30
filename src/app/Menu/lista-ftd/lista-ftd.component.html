@@ -1,13 +1,10 @@
-<body>
-  <button class="regreso" [routerLink]="'/General'">
+ <button class="regreso" [routerLink]="'/General'">
     <i class="material-icons">arrow_back</i> Regresar
   </button>
   <div class="contenedor">
     <h1>Datos FTD</h1>
-
     <table
-      class="tabla-datos | paginate : { itemsPerPage: 10, currentPage: page }"
-    >
+      class="tabla-datos | paginate : { itemsPerPage: 10, currentPage: page }">
       <thead>
         <tr>
           <th>ID</th>
@@ -72,4 +69,3 @@
     nextLabel="Siguiente"
   ></pagination-controls>
   </div>
-</body>

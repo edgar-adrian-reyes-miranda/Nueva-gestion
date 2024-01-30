@@ -1,74 +1,82 @@
+/* Estilos generales */
 body {
+  background-color: #F0F0F0;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat-Bold';
-  background-color: #D4C19C; /* Fondo beige */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.contenedor {
-  text-align: center;
-  padding: 20px;
-}
-
+/* Estilos del botón de regreso */
 .regreso {
-  background-color: #13322B; /* Color de fondo verde oscuro */
-  color: #FFF; /* Texto blanco */
+  background-color: #285C4D;
+  color: #FFFFFF;
+  padding: 10px;
   border: none;
-  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  margin: 5px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  display: inline-block;
+  margin-bottom: 15px;
 }
 
-.regreso:hover {
-  background-color: #285C4D; /* Color de fondo verde más claro */
+/* Estilos del icono dentro del botón de regreso */
+.material-icons {
+  margin-right: 5px;
 }
 
-.tabla-datos {
-  width: 80%;
+/* Estilos del contenedor */
+.contenedor {
+  font-family: Montserrat-SemiBold;
+  background-color: #D4C19C;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
   margin: 20px auto;
+  overflow-x: auto; /* Permite el desplazamiento horizontal */
+}
+h1{
+  font-family: Montserrat-Bold;
+  color:#56242A;
+  text-align: center;
+}
+/* Estilos de la tabla */
+.tabla-datos {
+  width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.tabla-datos th, .tabla-datos td {
-  border: 1px solid #285C4D;
+.tabla-datos th,
+.tabla-datos td {
+  border: 1px solid #621132;
   padding: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .tabla-datos th {
-  background-color: #B38E5D; /* Fondo ocre */
-  color: #FFF; /* Texto blanco */
+  background-color: #13322B;
+  color: #FFFFFF;
 }
 
-.tabla-datos td {
-  background-color: #D4C19C; /* Fondo beige */
-}
-
+/* Estilos de los botones de acción */
 .accion-boton {
-  background-color: #13322B; /* Color de fondo verde oscuro */
-  color: #FFF; /* Texto blanco */
+  background-color: #56242A;
+  color: #D4C19C;
+  padding: 8px;
   border: none;
-  padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
-  margin: 2px;
+  margin-right: 5px;
 }
 
-.accion-boton:hover {
-  background-color: #285C4D; /* Color de fondo verde más claro */
-}
-H1{
-  color: #B38E5D;
-  font-family: 'Montserrat-Italic';
-  text-align: center;
-  background-color: #4E232E;
-  border-radius: 23px;
-}
-.paginacion{
-  background-color: #621132;
-  color:#B38E5D;
-  border-radius: 530px;
+/* Estilos de la paginación */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

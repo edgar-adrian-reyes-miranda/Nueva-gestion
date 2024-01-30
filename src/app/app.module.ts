@@ -7,7 +7,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
-import { LoginComponent } from './Logueos/login/login.component';
 import { UsuarioComponent } from './Pages/usuario/usuario.component';
 import { AdminsComponent } from './Pages/admins/admins.component';
 import { MatCardModule } from "@angular/material/card";
@@ -43,7 +42,9 @@ import { ProyectosComponent } from './Formatos/proyectos/proyectos.component';
 import { ReportesComponent } from './Pages/usuario/reportes/reportes.component';
 import { TablaVistaComponent } from './Formularios/tabla-vista/tabla-vista.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { PortadaComponent } from './Logueos/portada/portada.component';
+import {PortadaComponent} from "./Pages/portada/portada.component";
+import {LoginComponent} from "./Logueos/login/login.component";
+
 
 
 @NgModule({
@@ -99,12 +100,8 @@ import { PortadaComponent } from './Logueos/portada/portada.component';
     MatCardModule,
     NgxPaginationModule,
 
-
   ],
   providers: [],
-  exports: [
-    LoginComponent
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
