@@ -44,6 +44,7 @@ import { TablaVistaComponent } from './Formularios/tabla-vista/tabla-vista.compo
 import { NgxPaginationModule } from 'ngx-pagination';
 import {PortadaComponent} from "./Pages/portada/portada.component";
 import {LoginComponent} from "./Logueos/login/login.component";
+import { ListaAdminsComponent } from './Formatos/lista-admins/lista-admins.component';
 
 
 
@@ -85,6 +86,7 @@ import {LoginComponent} from "./Logueos/login/login.component";
     ProyectosComponent,
     ReportesComponent,
     TablaVistaComponent,
+    ListaAdminsComponent,
 
 
   ],

@@ -1,53 +1,62 @@
 body {
   font-family: 'Arial', sans-serif;
+  background-color: #13322B;
+  color: #D4C16C;
   margin: 0;
   padding: 0;
-  background-color: #FFF; /* Color de fondo blanco */
 }
 
 .regreso {
-  background-color: #13322B; /* Color de fondo verde oscuro */
-  color: #FFF; /* Texto blanco */
+  background-color: #9D2449;
+  color: #D4C16C;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
-  margin: 10px;
-  text-decoration: none;
-}
-
-.regreso:hover {
-  background-color: #285C4D; /* Color de fondo verde más claro al pasar el mouse */
 }
 
 .contenedor-tabla {
-  max-width: 800px;
-  margin: 20px auto;
+  background-color: #285C4D;
   padding: 20px;
-  background-color: #D4C19C; /* Color de fondo beige */
   border-radius: 10px;
+  margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  color: #285C4D; /* Color de texto marrón rojizo */
+  color: #D4C16C;
   text-align: center;
-  background-color: #56242A;
-  border-radius: 23px;
 }
 
-.agregar-curso-boton {
-  background-color: #285C4D; /* Color de fondo verde más claro */
-  color: #FFF; /* Texto blanco */
+#formulario-curso {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #D4C16C;
+}
+
+input {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #D4C16C;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #9D2449;
+  color: #D4C16C;
   border: none;
   padding: 10px 15px;
-  border-radius: 5px;
+  margin-top: 10px;
   cursor: pointer;
-  margin: 10px 0;
 }
 
-.agregar-curso-boton:hover {
-  background-color: #13322B; /* Color de fondo verde oscuro al pasar el mouse */
+button:hover {
+  background-color: #9D2449;
 }
 
 .tabla-datos {
@@ -56,65 +65,48 @@ h1 {
   margin-top: 20px;
 }
 
-.tabla-datos th, .tabla-datos td {
-  border: 1px solid #B38E5D; /* Color del borde ocre */
-  padding: 10px;
+th,
+td {
+  border: 1px solid #D4C16C;
+  padding: 12px;
   text-align: left;
 }
 
-.tabla-datos th {
-  background-color: #4E232E; /* Color de fondo vino tinto */
-  color: #FFF; /* Texto blanco */
-}
-
-.tabla-datos tbody tr:nth-child(even) {
-  background-color: #B38E5D; /* Color de fondo ocre en filas pares */
-}
-
-.tabla-datos tbody tr:hover {
-  background-color: #D4C19C; /* Color de fondo beige al pasar el mouse */
+th {
+  background-color: #9D2449;
 }
 
 .accion-boton {
-  background-color: #56242A; /* Color de fondo marrón rojizo */
-  color: #FFF; /* Texto blanco */
+  background-color: #9D2449;
+  color: #D4C16C;
   border: none;
   padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .accion-boton:hover {
-  background-color: #9D2449; /* Color de fondo rojo más claro al pasar el mouse */
+  background-color: #621132;
 }
 
-#formulario-cursp {
+.pagination-controls {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-#formulario-curso label {
-  display: block;
-  margin-bottom: 5px;
+/* Additional Structure Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-#formulario-curso input {
+.form-and-table {
   width: 80%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #285C4D; /* Color de borde verde más claro */
-  border-radius: 5px;
-}
-
-#formulario-curso button {
-  background-color: #285C4D; /* Color de fondo verde más claro */
-  color: #FFF; /* Texto blanco */
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#formulario-curso button:hover {
-  background-color: #13322B; /* Color de fondo verde oscuro al pasar el mouse */
+  max-width: 600px;
+  margin: auto;
 }

@@ -24,69 +24,22 @@
         required
         [(ngModel)]="admins.password"
       />
-      <button role="button" class="guardar-boton" (click)="guardar()" *ngIf="!admins.id_admin; else elseBlock" >Guardar</button>
+      <button
+        role="button"
+        class="guardar-boton"
+        (click)="guardar()"
+        *ngIf="!admins.id_admin; else elseBlock"
+      >
+        Guardar
+      </button>
 
       <ng-template #elseBlock>
-        <button role="button" class="guardar-boton" (click)="editar()">Actualizar</button>
+        <button role="button" class="guardar-boton" (click)="editar()">
+          Actualizar
+        </button>
       </ng-template>
 
+      <button type="button" [routerLink]="'/lista-admins'">Lista de Administradores</button>
     </form>
-    <h2>Lista de administradores</h2>
-    <table id="lista-tabla" class="tabla-datos" >
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Acciones</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let admi of adm">
-        <td>{{ admi.id_admin }}</td>
-        <td>{{ admi.username }}</td>
-        <td>{{ admi.password }}</td>
-        <td>
-          <button class="accion-boton editar" title="Editar" [routerLink]="['/registro-admins/forms', admi.id_admin]">
-            <i class="material-icons">edit</i> Editar
-          </button>
-          <button class="accion-boton eliminar" title="Eliminar" (click)="eliminar(admi.id_admin)">
-            <i class="material-icons" >delete</i> Eliminar
-          </button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="contenedor-tabla">
-    <h2>Lista de usuarios</h2>
-    <table class="tabla-datos">
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>Correo</th>
-        <th>Password</th>
-        <th>Acciones</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let usua of usuario">
-        <td>{{ usua.id }}</td>
-        <td>{{ usua.username }}</td>
-        <td>{{ usua.correo }}</td>
-        <td>{{ usua.password }}</td>
-        <td>
-          <button class="accion-boton editar">
-            <i class="material-icons">edit</i> Editar
-          </button>
-          <button class="accion-boton eliminar">
-            <i class="material-icons">delete</i> Eliminar
-          </button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
   </div>
 </div>

@@ -1,56 +1,103 @@
 <body>
+  <button class="regreso" [routerLink]="'/datos-extras'">
+    <i class="material-icons">arrow_back</i> Regresar
+  </button>
 
-<button class="regreso" [routerLink]="'/datos-extras'"><i class="material-icons">arrow_back</i> Regresar</button>
+  <div class="contenedor-tabla">
+    <h1>Cursos</h1>
 
-<div class="contenedor-tabla">
-  <h1> Cursos</h1>
-
-  <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
-  <form id="formulario-curso" >
-    <label for="nombre-curso">Nombre del curso:</label>
-    <input type="text" id="nombre-curso" placeholder="Ingrese el nombre del curso" name="nombre" required [(ngModel)]="curs.nombre">
-    <label for="tipo-estatus">Tipo de estatus:</label>
-    <input type="text" id="tipo-estatus" placeholder="Ingrese el estatus del curso" name="estatus" required [(ngModel)]="curs.tipo_estatus">
-    <label for="unidad">Unidad:</label>
-    <input type="text" id="unidad" placeholder="Ingrese la unidad" name="unidad" required [(ngModel)]="curs.unidad">
-
-    <button type="button"  role="button" (click)="guardar()" *ngIf="!curs.id_curso; else elseBlock">Guardar</button>
-    <ng-template #elseBlock>
-      <button type="button"  role="button" (click)="editar()" >Actualizar</button>
-    </ng-template>
-  </form>
-  <!-- Tabla de Universidades -->
-  <table class="tabla-datos">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nombre del curso</th>
-      <th>Tipo de curso</th>
-      <th>Unidad</th>
-      <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!-- Filas de datos aquí -->
-    <tr *ngFor="let cursos of curso | paginate:
-{itemsPerPage:5, currentPage:page}">
-      <td>{{cursos.id_curso}}</td>
-      <td>{{cursos.nombre}}</td>
-      <td>{{cursos.tipo_estatus}}</td>
-      <td>{{cursos.unidad}}</td>
-      <td>
-        <button class="accion-boton" title="Editar" [routerLink]="['/cursos/forms', cursos.id_curso]"><i class="material-icons">edit</i> Editar</button>
-        <button class="accion-boton" title="Eliminar" (click)="eliminar(cursos.id_curso)"><i class="material-icons">delete</i> Eliminar</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<div>
-  <pagination-controls (pageChange)="page = $event"
-                       previousLabel="Anterior"
-                       nextLabel="Siguiente"
-  ></pagination-controls>
-</div>
-
+    <!-- Formulario para agregar nueva universidad (inicialmente oculto) -->
+    <form id="formulario-curso">
+      <label for="nombre-curso">Nombre del curso:</label>
+      <input
+        type="text"
+        id="nombre-curso"
+        placeholder="Ingrese el nombre del curso"
+        name="nombre"
+        required
+        [(ngModel)]="curs.nombre"
+      />
+      <label for="tipo-estatus">Tipo de estatus:</label>
+      <input
+        type="text"
+        id="tipo-estatus"
+        placeholder="Ingrese el estatus del curso"
+        name="estatus"
+        required
+        [(ngModel)]="curs.tipo_estatus"
+      />
+      <label for="unidad">Unidad:</label>
+      <input
+        type="text"
+        id="unidad"
+        placeholder="Ingrese la unidad"
+        name="unidad"
+        required
+        [(ngModel)]="curs.unidad"
+      />
+      <br>
+      <button
+        type="button"
+        role="button"
+        (click)="guardar()"
+        *ngIf="!curs.id_curso; else elseBlock"
+      >
+        Guardar
+      </button>
+      <ng-template #elseBlock>
+        <button type="button" role="button" (click)="editar()">
+          Actualizar
+        </button>
+      </ng-template>
+    </form>
+    <!-- Tabla de Universidades -->
+    <table class="tabla-datos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre del curso</th>
+          <th>Tipo de curso</th>
+          <th>Unidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas de datos aquí -->
+        <tr
+          *ngFor="
+            let cursos of curso
+              | paginate : { itemsPerPage: 5, currentPage: page }
+          "
+        >
+          <td>{{ cursos.id_curso }}</td>
+          <td>{{ cursos.nombre }}</td>
+          <td>{{ cursos.tipo_estatus }}</td>
+          <td>{{ cursos.unidad }}</td>
+          <td>
+            <button
+              class="accion-boton"
+              title="Editar"
+              [routerLink]="['/cursos/forms', cursos.id_curso]"
+            >
+              <i class="material-icons">edit</i> Editar
+            </button>
+            <button
+              class="accion-boton"
+              title="Eliminar"
+              (click)="eliminar(cursos.id_curso)"
+            >
+              <i class="material-icons">delete</i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <pagination-controls
+      (pageChange)="page = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+    ></pagination-controls>
+  </div>
 </body>
