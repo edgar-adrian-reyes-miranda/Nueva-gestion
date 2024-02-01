@@ -1,10 +1,10 @@
-<button class="regreso" [routerLink]="'/General'">
+<button class="regreso" [routerLink]="'/lista-admins'">
   <i class="material-icons">arrow_back</i> Regresar
 </button>
 
 <div class="contenedor">
   <div class="contenedor-tabla">
-    <h1>Admins</h1>
+    <h1>Registro de Administradores</h1>
     <form id="formulario-admin">
       <label for="username">Username:</label>
       <input
@@ -39,7 +39,9 @@
         </button>
       </ng-template>
 
-      <button type="button" [routerLink]="'/lista-admins'">Lista de Administradores</button>
+      <button type="button" [routerLink]="'/lista-admins'">
+        Lista de Administradores
+      </button>
     </form>
   </div>
 </div>

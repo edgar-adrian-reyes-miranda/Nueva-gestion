@@ -1,97 +1,117 @@
 body {
-  background-color: #13322B;
-  color: #D4C16C;
+  /*background-color: #F5F5F5;*/
+  color: #333;
   margin: 0;
   padding: 0;
 }
 
 .regreso {
-  background-color: #9D2449;
-  color: #D4C16C;
-  border: 4px;
-  padding: 10px;
-  margin-bottom: 20px;
+  background-color: #13322B;
+  /* Color de fondo verde oscuro */
+  color: #FFF;
+  /* Texto blanco */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.regreso i {
+  vertical-align: middle;
 }
 
 .contenedor-tabla {
-  background-color: #285C4D;
-  font-family: 'Montserrat-Italic';
+  background-color: #D4C19C;
   padding: 20px;
-  border-radius: 10px;
   margin: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 h1 {
-  color: #D4C16C;
+  color: #D4C19C;
   text-align: center;
+  background-color: #621132;
+  border-radius: 23px;
 }
 
 #formulario-universidad {
-  margin-bottom: 20px;
+  /*background-color: #13322B;*/
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  text-align: center;
 }
 
 label {
+  font-family: 'Montserrat-Bold';
   display: block;
+  size: 20px;
   margin-bottom: 10px;
-  color: #D4C16C;
+  color: #621132;
+  text-align: center;
 }
 
 input {
   width: 40%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #D4C16C;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #D4C19C;
   border-radius: 5px;
+  box-sizing: border-box;
+  align-items: center;
 }
 
 button {
   background-color: #9D2449;
-  color: #D4C16C;
+  color: #D4C19C;
   border: none;
-  padding: 10px 15px;
-  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #13322B;
+  background-color: #285C4D;
 }
 
 .tabla-datos {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  font-family: 'Montserrat-Medium';
 }
 
 th,
 td {
-  border: 1px solid #D4C16C;
-  padding: 12px;
+  border: 1px solid #9D2449;
+  padding: 10px;
   text-align: left;
 }
 
 th {
+  background-color: #56242A;
+  color: #D4C19C;
+}
+
+tbody tr:hover {
   background-color: #285C4D;
 }
 
 .accion-boton {
-  background-color: #9D2449;
-  color: #D4C16C;
+  background-color: #4E232E;
+  color: #D4C19C;
   border: none;
-  padding: 8px 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
   margin-right: 5px;
   cursor: pointer;
 }
 
-.accion-boton:hover {
-  background-color: #13322B;
+.accion-boton i {
+  margin-right: 5px;
 }
 
-.pagination-controls {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+.accion-boton:hover {
+  background-color: #285C4D;
 }

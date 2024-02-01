@@ -71,7 +71,6 @@ export class PersonalesComponent implements OnInit {
     this.api.editarPersonal(this.dato).subscribe(
       personal => {
         this.rouete.navigate(['/datos-personales']);
-        window.location.reload();
         console.log('Actualizado dato', `Actualizado ${this.dato.id_person}con exito`);
       },
       error => 'Error en la actualizacion'

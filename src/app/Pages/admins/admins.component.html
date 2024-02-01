@@ -1,48 +1,48 @@
- <div class="contenedor">
-    <button class="regreso" [routerLink]="'/'">
-      <i class="material-icons">arrow_back</i> Regreso
-    </button>
+<div class="contenedor">
+  <button class="regreso" [routerLink]="'/'">
+    <i class="material-icons">arrow_back</i> Regreso
+  </button>
 
-    <a [routerLink]="'/datos-personales'" class="boton datos-personales">
-      <i class="material-icons">person</i> Datos Personales
-    </a>
+  <a [routerLink]="'/datos-personales'" class="boton datos-personales">
+    <i class="material-icons">person</i> Datos Personales
+  </a>
 
-    <a [routerLink]="'/datos-escolares'" class="boton datos-escolares">
-      <i class="material-icons">school</i> Datos Escolares
-    </a>
+  <a [routerLink]="'/datos-escolares'" class="boton datos-escolares">
+    <i class="material-icons">school</i> Datos Escolares
+  </a>
 
-    <a [routerLink]="'/datos-ingresos'" class="boton datos-ingresos">
-      <i class="material-icons">attach_money</i> Datos Ingresos
-    </a>
+  <a [routerLink]="'/datos-ingresos'" class="boton datos-ingresos">
+    <i class="material-icons">attach_money</i> Datos Ingresos
+  </a>
 
-    <a [routerLink]="'/datos-ftd'" class="boton datos-ftd">
-      <i class="material-icons">insert_drive_file</i> Datos FTD
-    </a>
+  <a [routerLink]="'/datos-ftd'" class="boton datos-ftd">
+    <i class="material-icons">insert_drive_file</i> Datos FTD
+  </a>
 
-    <a [routerLink]="'/bajas'" class="boton bajas">
-      <i class="material-icons">remove_circle</i> Bajas
-    </a>
+  <a [routerLink]="'/bajas'" class="boton bajas">
+    <i class="material-icons">remove_circle</i> Bajas
+  </a>
 
-    <a [routerLink]="'/datos-extras'" class="boton datos-extras">
-      <i class="material-icons">extension</i> Datos Extras
-    </a>
+  <a [routerLink]="'/datos-extras'" class="boton datos-extras">
+    <i class="material-icons">extension</i> Datos Extras
+  </a>
 
-    <a [routerLink]="'/registro-admins'" class="boton registro">
-      <i class="material-icons">person_add</i>Registro Admins
-    </a>
+  <a [routerLink]="'/lista-admins'" class="boton registro">
+    <i class="material-icons">person_add</i>Registro Admins
+  </a>
 
-    <br />
-    <br />
-    <div *ngIf="admin">
-     <p>{{admin}}</p>
-      <p>variable: {{ admin }}</p>
-    </div>
-    <p>
-      Bienvenido , al sistema de Gestion de Recursos de infotec, donde este
-      sistema gestionara los recursos que proporcione el pasante, alumno de
-      practicas profesionales etc. Y servicio social. Ya que al ser aspirante ha
-      una beca proporcionaras ciertos documentos en liga para poder
-      visisualizarlos
-    </p>
-    <img src="assets/IMG/Infotec.png" alt="Logo Infotec" class="logo" />
+  <br />
+  <br />
+  <div *ngIf="admin">
+    <p>{{ admin }}</p>
+    <p>variable: {{ admin }}</p>
   </div>
+  <p>
+    Bienvenido , al sistema de Gestion de Recursos de infotec, donde este
+    sistema gestionara los recursos que proporcione el pasante, alumno de
+    practicas profesionales etc. Y servicio social. Ya que al ser aspirante ha
+    una beca proporcionaras ciertos documentos en liga para poder
+    visisualizarlos
+  </p>
+  <img src="assets/IMG/Infotec.png" alt="Logo Infotec" class="logo" />
+</div>

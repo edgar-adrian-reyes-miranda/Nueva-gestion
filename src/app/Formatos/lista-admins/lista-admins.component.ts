@@ -105,4 +105,33 @@ export class ListaAdminsComponent implements OnInit {
       () => console.log('Actalizada con exito la lista')
     );
   }
+  //usuarios
+  private actualizarusuarios() {
+    this.apisus.getAllUsuario().subscribe(
+      (data: Usuarios[]) => {
+        this.usuario = data;
+        swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Actualizada la lista de  Administrador",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      },
+      error => console.error('Error al actualizar la lista', error),
+      () => console.log('Actalizada con exito la lista')
+    );
+  }
+
+  eliminarUsuario(id: number | undefined) {
+    if (typeof id === 'number') {
+      this.apisus.EliminarUsuario(id).subscribe(
+        res => {
+          this.actualizarusuarios();
+        },
+        error => console.error('Error al eliminar', error.console.error));
+    } else {
+      console.error('ID del admin no valido', id);
+    }
+  }
 }

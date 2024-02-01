@@ -1,21 +1,23 @@
 body {
-  background-color: #13322B;
-  color: #D4C16C;
   margin: 0;
   padding: 0;
 }
 
 .regreso {
-  background-color: #285C4D;
-  color: #D4C16C;
+  background-color: #13322B;
+  /* Color de fondo verde oscuro */
+  color: #FFF;
+  /* Texto blanco */
   border: none;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
 }
 
 .contenedor-tabla {
-  background-color: #56242A;
+  background-color: #D4C19C;
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
@@ -24,31 +26,34 @@ body {
 }
 
 h1 {
-  color: #D4C16C;
+  background-color: #9D2449;
+  color: #D4C19C;
   text-align: center;
+  border-radius: 23px;
 }
 
 #formulario-grupo {
-  margin-bottom: 20px;
+  margin-bottom: 9px;
+  text-align: center;
 }
 
 label {
   display: block;
-  margin-bottom: 10px;
-  color: #D4C16C;
+  margin-bottom: 8px;
+  color: #13322B;
 }
 
 input {
   width: 40%;
   padding: 8px;
   margin-bottom: 10px;
-  border: 1px solid #D4C16C;
+  border: 1px solid #D4C19C;
   border-radius: 5px;
 }
 
 button {
   background-color: #285C4D;
-  color: #D4C16C;
+  color: #D4C19C;
   border: none;
   padding: 10px 15px;
   margin-top: 10px;
@@ -56,7 +61,7 @@ button {
 }
 
 button:hover {
-  background-color: #621132;
+  background-color: #9D2449;
 }
 
 .tabla-datos {
@@ -67,18 +72,18 @@ button:hover {
 
 th,
 td {
-  border: 1px solid #D4C16C;
+  border: 1px solid #285C4D;
   padding: 12px;
   text-align: left;
 }
 
 th {
-  background-color: #13322B;
+  background-color: #621132;
 }
 
 .accion-boton {
   background-color: #9D2449;
-  color: #D4C16C;
+  color: #D4C19C;
   border: none;
   padding: 8px 12px;
   margin-right: 5px;

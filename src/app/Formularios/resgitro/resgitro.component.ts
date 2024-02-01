@@ -18,6 +18,17 @@ export class ResgitroComponent implements OnInit {
     private actived: ActivatedRoute) {
   }
   ngOnInit(): void {
+    this.actived.params.subscribe(
+      params => {
+        let id = params['id'];
+        if (id) {
+          this.api.gerUsuarioById(id).subscribe(
+            (usuarios) => this.registro = usuarios,
+            (error) => console.error('ERror al cargar el usaurio', error)
+          );
+        }
+      }
+    );
   }
 
   guardar() {
@@ -45,6 +56,28 @@ export class ResgitroComponent implements OnInit {
     )
   }
   editar() {
-
+    this.api.editarUsuario(this.registro).subscribe(
+      usuario => {
+        this.route.navigate(['/lista-admins']);
+        console.log('Actualizacion de usuario', 'Actualizacion ${this.registro.id}, con exito')
+        swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Actualizado el Administrador",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      },
+      (error) => {
+        console.error('Error al actualiazar', error);
+        swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Error al Actualizar",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    );
   }
 }

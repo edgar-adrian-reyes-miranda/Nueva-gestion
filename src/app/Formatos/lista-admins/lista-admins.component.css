@@ -1,17 +1,39 @@
 body {
-  background-color: #13322B;
-  color: #D4C16C;
+  color: #D4C19C;
   margin: 0;
   padding: 0;
 }
 
 .regreso {
-  background-color: #285C4D;
-  color: #D4C16C;
+  background-color: #13322B;
+  /* Color de fondo verde oscuro */
+  color: #FFF;
+  /* Texto blanco */
   border: none;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.registro {
+  background-color: #13322B;
+  /* Color de fondo verde oscuro */
+  color: #FFF;
+  /* Texto blanco */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.regreso:hover,
+.registro:hover {
+  background-color: #285C4D;
+  /* Color de fondo verde más claro al pasar el mouse */
 }
 
 .contenedor {
@@ -23,8 +45,8 @@ body {
 }
 
 .tabla-container {
-  background-color: #D4C16C;
-  align-items: center;
+  background-color: #D4C19C;
+  text-align: center;
   padding: 20px;
   border-radius: 10px;
   margin: 10px;
@@ -38,7 +60,7 @@ h2 {
 }
 
 .tabla-datos {
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -56,7 +78,7 @@ th {
 
 .accion-boton {
   background-color: #13322B;
-  color: #D4C16C;
+  color: #D4C19C;
   border: none;
   padding: 8px;
   margin-right: 5px;

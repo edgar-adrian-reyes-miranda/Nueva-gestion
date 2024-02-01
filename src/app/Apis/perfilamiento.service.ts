@@ -10,7 +10,6 @@ import baseUrl from "./UrlApiB";
 export class PerfilamientoService {
 
   constructor(private http:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
 
   getListPerfil():Observable<Perfilamiento[]>{
     return this.http.get(`${baseUrl}perfilamiento/lista`).pipe(
@@ -23,10 +22,10 @@ export class PerfilamientoService {
   }
 
   guardarPerfil(perfil:Perfilamiento){
-    return this.http.post<Perfilamiento>(`${baseUrl}perfilamiento/guardar`, perfil, {headers:this.httpHeaders});
+    return this.http.post<Perfilamiento>(`${baseUrl}perfilamiento/guardar`, perfil);
   }
   editarPerfil(perfil:Perfilamiento){
-    return this.http.put<Perfilamiento>(`${baseUrl}perfilamiento/editar/${perfil.id_perfilamiento}`, perfil, {headers:this.httpHeaders});
+    return this.http.put<Perfilamiento>(`${baseUrl}perfilamiento/editar/${perfil.id_perfilamiento}`, perfil);
   }
 
   eliminarPerfil(id_perfilamiento:number){

@@ -10,7 +10,6 @@ import {Datosingresos} from "../Interfaces/datosingresos";
 export class DatosingresosService {
 
   constructor(private http:HttpClient) { }
-  private httpHeaders= new HttpHeaders({'Content-Type':'application/json'});
 
   getListIngreso():Observable<Datosingresos[]>{
     return this.http.get(`${baseUrl}ingresos/lista`).pipe(
@@ -21,11 +20,11 @@ export class DatosingresosService {
     return this.http.get<Datosingresos>(`${baseUrl}ingresos/${id_ingreso}`);
   }
   guardarIngreso(ingreso:Datosingresos){
-    return this.http.post<Datosingresos>(`${baseUrl}ingresos/guardar`, ingreso, {headers:this.httpHeaders});
+    return this.http.post<Datosingresos>(`${baseUrl}ingresos/guardar`, ingreso);
   }
 
   editarIngreso(ingreso:Datosingresos){
-    return this.http.put<Datosingresos>(`${baseUrl}ingresos/editar/${ingreso.id_ingreso}`, ingreso, {headers:this.httpHeaders});
+    return this.http.put<Datosingresos>(`${baseUrl}ingresos/editar/${ingreso.id_ingreso}`, ingreso);
   }
 
   eliminarIngreso(id_ingreso:number){

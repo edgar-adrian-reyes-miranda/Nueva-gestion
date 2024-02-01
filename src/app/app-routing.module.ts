@@ -96,9 +96,9 @@ const routes: Routes = [
   { path: 'registro-personales', component: PersonalesComponent, pathMatch: 'full' },
   { path: 'registro-escolares', component: EscolaresComponent, pathMatch: 'full' },
   { path: 'registro-ingresos', component: IngresosComponent, pathMatch: 'full' },
-  { path: 'registro-ftd', component: FtdComponent, pathMatch: 'full' },
+  { path: 'registro-ftd/forms/:id_ftd', component: FtdComponent, pathMatch: 'full' },
 
-  //guardados y ecitaciones
+  // editaciones
   { path: 'universidades/forms/:id_uni', component: UniversidadComponent, pathMatch: 'full' },
   { path: 'cursos/forms/:id_curso', component: CursosComponent, pathMatch: 'full' },
   { path: 'grupo/forms/:id_grupo', component: GruposComponent, pathMatch: 'full' },
@@ -106,10 +106,11 @@ const routes: Routes = [
   { path: 'perfilamiento/forms/:id_perfilamiento', component: PerfilamientoComponent, pathMatch: 'full' },
   { path: 'actualizar/forms/:id_person', component: PersonalesComponent, pathMatch: 'full' },
   { path: 'actualizar-escolar/forms/:id_escolar', component: EscolaresComponent, pathMatch: 'full' },
-  { path: 'actualizar/forms/:id_ftd', component: FtdComponent, pathMatch: 'full' },
+  { path: 'actualizar-ftd/forms/:id_ftd', component: FtdComponent, pathMatch: 'full' },
   { path: 'actualizar-ingreso/forms/:id_ingreso', component: IngresosComponent, pathMatch: 'full' },
   { path: 'proyectos/forms/:id:proyecto', component: ProyectosComponent, pathMatch: 'full' },
   { path: 'registro-admins/forms/:id_admin', component: RegistroAddComponent, pathMatch: 'full' },
+  { path: 'actualizacion-registro/forms/:id', component: ResgitroComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

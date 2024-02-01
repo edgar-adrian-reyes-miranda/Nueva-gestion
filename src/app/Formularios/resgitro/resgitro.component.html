@@ -1,7 +1,7 @@
 <button class="regreso" [routerLink]="'/login'">
   <i class="material-icons">arrow_back</i> Regresar
 </button>
-<form (ngSubmit)="guardar()">
+<form>
   <label for="username">Username:</label>
   <input
     type="text"
@@ -28,6 +28,15 @@
     required
     [(ngModel)]="registro.password"
   />
-
-  <button type="submit">Registrarse</button>
+  <button
+    type="submit"
+    role="button"
+    (click)="guardar()"
+    *ngIf="!registro.id; else elseBlock"
+  >
+    Registrarse
+  </button>
+  <ng-template #elseBlock>
+    <button type="submit" role="button" (click)="editar()">Actualizar</button>
+  </ng-template>
 </form>

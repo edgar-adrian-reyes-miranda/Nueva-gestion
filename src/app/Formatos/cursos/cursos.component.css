@@ -1,22 +1,23 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #13322B;
-  color: #D4C16C;
   margin: 0;
   padding: 0;
 }
 
 .regreso {
-  background-color: #9D2449;
-  color: #D4C16C;
+  background-color: #13322B;
+  /* Color de fondo verde oscuro */
+  color: #FFF;
+  /* Texto blanco */
   border: none;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
 }
 
 .contenedor-tabla {
-  background-color: #285C4D;
+  background-color: #D4C19C;
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
@@ -24,31 +25,34 @@ body {
 }
 
 h1 {
-  color: #D4C16C;
+  color: #D4C19C;
   text-align: center;
+  background-color: #621132;
+  border-radius: 23px;
 }
 
 #formulario-curso {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 label {
   display: block;
   margin-bottom: 10px;
-  color: #D4C16C;
+  color: #9D2449;
 }
 
 input {
   width: 50%;
   padding: 8px;
   margin-bottom: 10px;
-  border: 1px solid #D4C16C;
+  border: 1px solid #13322B;
   border-radius: 5px;
 }
 
 button {
   background-color: #9D2449;
-  color: #D4C16C;
+  color: #D4C19C;
   border: none;
   padding: 10px 15px;
   margin-top: 10px;
@@ -65,20 +69,31 @@ button:hover {
   margin-top: 20px;
 }
 
+.tabla-datos tbody tr:nth-child(even) {
+  background-color: #B38E5D;
+  /* Color de fondo ocre en filas pares */
+}
+
+.tabla-datos tbody tr:hover {
+  background-color: #D4C19C;
+  /* Color de fondo beige al pasar el mouse */
+}
+
 th,
 td {
-  border: 1px solid #D4C16C;
+  border: 1px solid #9D2449;
   padding: 12px;
   text-align: left;
 }
 
-th {
-  background-color: #9D2449;
+.tabla-datos th {
+  background-color: #621132;
+  color: #B38E5D;
 }
 
 .accion-boton {
   background-color: #9D2449;
-  color: #D4C16C;
+  color: #D4C19C;
   border: none;
   padding: 8px 12px;
   margin-right: 5px;

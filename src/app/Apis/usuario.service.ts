@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuarios } from '../Interfaces/usuarios';
 import baseUrl from './UrlApiB';
-import {Observable, catchError, map, throwError, tap} from 'rxjs';
+import { Observable, catchError, map, throwError, tap } from 'rxjs';
 import { Admins } from '../Interfaces/admins';
 
 @Injectable({
@@ -30,8 +30,8 @@ export class UsuarioService {
     return this.http.delete<void>(`${baseUrl}usuarios/${id}`);
   }
 
-  editarUsuario(id: number, usuario: Usuarios): Observable<Usuarios> {
-    return this.http.put<Usuarios>(`${baseUrl}usuarios/editar/${id}`, usuario);
+  editarUsuario(usuario: Usuarios): Observable<Usuarios> {
+    return this.http.put<Usuarios>(`${baseUrl}usuarios/editar/${usuario.id}`, usuario);
   }
 
   login(usuario: any): Observable<any> {

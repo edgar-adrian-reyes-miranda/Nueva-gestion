@@ -1,8 +1,12 @@
-<button class="regreso" [routerLink]="'/registro-admins'">
+<button class="regreso" [routerLink]="'/General'">
   <i class="material-icons">arrow_back</i> Regresar
 </button>
 
 <div class="contenedor">
+  <button class="registro" type="button" [routerLink]="'/registro-admins'">
+    <i class="material-icons">library_add</i>
+    Registro Administradores
+  </button>
   <div class="tabla-container">
     <h2>Lista de administradores</h2>
     <table class="tabla-datos">
@@ -19,8 +23,8 @@
           <td>{{ admi.id_admin }}</td>
           <td>{{ admi.username }}</td>
           <td>{{ admi.password }}</td>
-          <td>
-            <button
+          <td> 
+            <button 
               class="accion-boton editar"
               title="Editar"
               [routerLink]="['/registro-admins/forms', admi.id_admin]"
@@ -59,10 +63,10 @@
           <td>{{ usua.correo }}</td>
           <td>{{ usua.password }}</td>
           <td>
-            <button class="accion-boton editar">
+            <button class="accion-boton editar" [routerLink]="['/actualizacion-registro/forms', usua.id]">
               <i class="material-icons">edit</i> Editar
             </button>
-            <button class="accion-boton eliminar">
+            <button class="accion-boton eliminar" (click)="eliminarUsuario(usua.id)">
               <i class="material-icons">delete</i> Eliminar
             </button>
           </td>
@@ -71,3 +75,4 @@
     </table>
   </div>
 </div>
+

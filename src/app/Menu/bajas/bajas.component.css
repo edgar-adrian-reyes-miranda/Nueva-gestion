@@ -1,65 +1,78 @@
 body {
-  font-family: 'Montserrat';
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 .regreso {
   background-color: #13322B;
+  /* Color de fondo verde oscuro */
   color: #FFF;
+  /* Texto blanco */
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  margin: 5px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.regreso:hover {
+  background-color: #285C4D;
+  /* Color de fondo verde más claro al pasar el mouse */
 }
 
 .contenedor-tabla {
-  max-width: 1290px;
-  margin: 20px auto;
-  padding: 20px;
   background-color: #D4C19C;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+
 }
 
-.contenedor-tabla h1 {
-  color: #285C4D;
+h1 {
+  color: #621132;
+  text-align: center;
+  font-family: 'Monserrat-Bold';
 }
 
 .tabla-datos {
-  width: 100%;
+  font-family: 'Montserrat-Italic';
+  width: 90%;
   border-collapse: collapse;
   margin-top: 20px;
+  text-align: center;
 }
 
-.tabla-datos th, .tabla-datos td {
+th,
+td {
   border: 1px solid #285C4D;
   padding: 10px;
   text-align: left;
 }
 
-.tabla-datos th {
-  background-color: #285C4D;
-  color: #FFF;
+th {
+  background-color: #56242A;
+  color: #D4C19C;
 }
 
-.tabla-datos td button {
+tbody tr:hover {
   background-color: #285C4D;
-  color: #FFF;
+}
+
+.accion-boton {
+  background-color: #4E232E;
+  color: #D4C19C;
   border: none;
-  padding: 8px;
+  padding: 5px 10px;
   border-radius: 5px;
+  margin-right: 5px;
   cursor: pointer;
+}
+
+.accion-boton i {
   margin-right: 5px;
 }
 
-.tabla-datos td button i {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.tabla-datos td button:hover {
-  background-color: #13322B;
+.accion-boton:hover {
+  background-color: #621132;
 }
