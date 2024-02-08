@@ -5,6 +5,29 @@ body {
   padding: 0;
 }
 
+/* Estilos del contenedor */
+.container {
+  position: fixed;
+  top: 20px;
+  /* Adjust as needed */
+  right: 20px;
+  /* Adjust as needed */
+  background-color: #13322B;
+  color: #D4C19C;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+/* Resto de tus estilos... */
+
+.time {
+  font-size: 16px;
+}
+
+.ampm {
+  font-size: 16px;
+}
+
 /* Estilos del contenedor principal */
 .contenedor {
   font-family: 'Montserrat-Medium';

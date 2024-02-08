@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="time">{{ day }}</div>
+  <div class="time">{{ hour }}:{{ minute }}:{{ second }}</div>
+  <div class="ampm">{{ ampm }}</div>
+</div>
 <div class="contenedor">
   <button class="regreso" [routerLink]="'/'">
     <i class="material-icons">arrow_back</i> Regreso
@@ -31,18 +36,11 @@
     <i class="material-icons">person_add</i>Registro Admins
   </a>
 
-  <br />
-  <br />
-  <div *ngIf="admin">
-    <p>{{ admin }}</p>
-    <p>variable: {{ admin }}</p>
-  </div>
   <p>
-    Bienvenido , al sistema de Gestion de Recursos de infotec, donde este
-    sistema gestionara los recursos que proporcione el pasante, alumno de
-    practicas profesionales etc. Y servicio social. Ya que al ser aspirante ha
-    una beca proporcionaras ciertos documentos en liga para poder
-    visisualizarlos
+    Bienvenido al sistema de Gestion de Recursos de infotec, donde este sistema
+    gestionara los recursos que proporcione el pasante, alumno de practicas
+    profesionales etc. Y servicio social. Ya que al ser aspirante ha una beca
+    proporcionaras ciertos documentos en liga para poder visisualizarlos
   </p>
   <img src="assets/IMG/Infotec.png" alt="Logo Infotec" class="logo" />
 </div>

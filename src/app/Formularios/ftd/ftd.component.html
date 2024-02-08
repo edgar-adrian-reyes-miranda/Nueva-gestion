@@ -57,7 +57,7 @@
 
   <label for="fechaIngreso">Fecha de Ingreso:</label>
   <input
-    type="text"
+    type="date"
     id="fechaIngreso"
     name="fecha_Ingreso"
     class="flatpickr"
@@ -68,7 +68,7 @@
 
   <label for="fechaTermino">Fecha de Término:</label>
   <input
-    type="text"
+    type="date"
     id="fechaTermino"
     name="fecha_Termino"
     class="flatpickr"
@@ -103,7 +103,7 @@
   </select>
 
   <p>Has elejido el tipo de enlace: {{ ftd.enlace.tipo_enlace }}</p>
-
+  <!--
   <label for="infotecMatricula">Matrícula Infotec:</label>
   <input
     type="text"
@@ -112,7 +112,8 @@
     placeholder="Matrícula Infotec"
     required
     [(ngModel)]="ftd.matricula_ftd"
-  />
+  />-->
+  <p>Matrícula Infotec: {{ ftd.matricula_ftd }}</p>
 
   <label for="correoBecario">Correo Becario:</label>
   <input

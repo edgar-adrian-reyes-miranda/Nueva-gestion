@@ -1,19 +1,51 @@
-import {Component, OnInit} from '@angular/core';
-import {AdminsService} from "../../Apis/admins.service";
+import { Component, OnInit } from '@angular/core';
+import { AdminsService } from "../../Apis/admins.service";
 
 @Component({
   selector: 'app-admins',
   templateUrl: './admins.component.html',
   styleUrls: ['./admins.component.css']
 })
-export class AdminsComponent implements  OnInit{
-  admin:string | undefined;
+export class AdminsComponent implements OnInit {
+  private dayArray = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
 
-  constructor(private api:AdminsService) {
+  private date = new Date();
+
+  public hour: any;
+
+  public minute: string | undefined;
+
+  public second: string | undefined;
+
+  public ampm: string | undefined;
+
+  public day: string | undefined;
+
+  constructor() {
   }
   ngOnInit(): void {
-    this.admin= this.api.getUsername();
-    console.log('Nombre de admin en el componente', this.admin);
+    setInterval(() => {
+      const date = new Date();
+      this.updateDate(date);
+    }, 1000);
+    this.day = this.dayArray[this.date.getDay()];
   }
+
+  private updateDate(date: Date) {
+    const hours = date.getHours();
+    this.ampm = hours >= 12 ? 'PM' : 'AM';
+    this.hour = hours % 12;
+    this.hour = this.hour ? this.hour : 12;
+    this.hour = this.hour < 10 ? '0' + this.hour : this.hour;
+
+    const minutes = date.getMinutes();
+
+    this.minute = minutes < 10 ? '0' + minutes : minutes.toString();
+
+    const seconds = date.getSeconds();
+    this.second = seconds < 10 ? '0' + seconds : this.second?.toString();
+  }
+
+
 
 }

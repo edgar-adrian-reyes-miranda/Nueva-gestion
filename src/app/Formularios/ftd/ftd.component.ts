@@ -61,7 +61,10 @@ export class FtdComponent implements OnInit {
         let id = params['id_ftd'];
         if (id) {
           this.api.getporIdFtd(id).subscribe(
-            (FTDS) => this.ftd = FTDS
+            (FTDS) => {
+              this.ftd = FTDS;
+              this.calcularmatricula();
+            }
           );
         }
       }
@@ -116,6 +119,7 @@ export class FtdComponent implements OnInit {
     this.serestatus.getList().subscribe((estatus) => this.estatus = estatus);
   }
   guardar() {
+    this.calcularmatricula();
     this.api.guardarFtd(this.ftd).subscribe(
       ftds => {
         this.route.navigate(['/General']);
@@ -124,12 +128,32 @@ export class FtdComponent implements OnInit {
     );
   }
   editar() {
+    this.calcularmatricula();
     this.api.editarFtd(this.ftd).subscribe(
       ftds => {
         this.route.navigate(['/datos-ftd']);
         console.log('Actualizado ftd', `Actualizado ${this.ftd.id_ftd} creado con exito`);
       }
     );
+  }
+
+  //matricula
+  private calcularmatricula() {
+    const fechaIngreso = new Date(this.ftd.fecha_ingreso);
+    const fechaTermino = new Date(this.ftd.fecha_termino);
+
+    if (!isNaN(fechaIngreso.getTime()) && !isNaN(fechaTermino.getTime())) {
+      this.ftd.matricula_ftd = this.generarMatricula(fechaIngreso, fechaTermino, this.ftd.id_ftd);
+    } else {
+      console.error('Las fecha de ingreso y/o termino son invalidas')
+    }
+
+
+  }
+
+  private generarMatricula(fechaIngreso: Date, FechaTermino: Date, id: number | undefined): string {
+    const matricula = "M- " + id + "- " + fechaIngreso.getFullYear() + "-" + FechaTermino.getFullYear() + "-" + FechaTermino.getMonth() + fechaIngreso.getDate();
+    return matricula;
   }
 }
 
