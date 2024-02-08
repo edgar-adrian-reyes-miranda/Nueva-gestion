@@ -15,6 +15,8 @@ import { ProyectosService } from "../../Apis/proyectos.service";
 import { Estatusinfotec } from "../../Interfaces/estatusinfotec";
 import { EstatusinfotecService } from "../../Apis/estatusinfotec.service";
 import { DatospersonalesService } from 'src/app/Apis/datospersonales.service';
+import flatpickr from 'flatpickr';
+import { Spanish } from "flatpickr/dist/l10n/es";
 
 @Component({
   selector: 'app-ftd',
@@ -50,16 +52,16 @@ export class FtdComponent implements OnInit {
     this.cargarproyectos();
     this.cargardatos();
     this.cargarestatusinfotec();
-    //this.relacioningresoftd();
+
   }
 
   private cargardatos() {
     this.active.params.subscribe(
-      (params)=>{
-        let id= params['id_ftd'];
-        if(id){
+      (params) => {
+        let id = params['id_ftd'];
+        if (id) {
           this.api.getporIdFtd(id).subscribe(
-            (FTDS)=> this.ftd= FTDS
+            (FTDS) => this.ftd = FTDS
           );
         }
       }
@@ -76,6 +78,24 @@ export class FtdComponent implements OnInit {
       }
     )
   }*/
+
+  private inicializarCalendarios() {
+    flatpickr("#fechaingreso", {
+      locale: Spanish,
+      dateFormat: "Y-m-d",
+      onChange: (selectedDates, dateStr) => {
+        this.ftd.fecha_ingreso = dateStr;
+      }
+    });
+
+    flatpickr("#fechaTermino", {
+      locale: Spanish, // Establece el idioma a español
+      dateFormat: "Y-m-d", // Formato de fecha
+      onChange: (selectedDates, dateStr) => {
+        this.ftd.fecha_termino = dateStr; // Actualiza el modelo cuando cambia la fecha
+      }
+    });
+  }
 
   private cargarproyectos() {
     this.serpro.getListProyecto().subscribe((proyectos) => this.proyec = proyectos)
@@ -112,3 +132,5 @@ export class FtdComponent implements OnInit {
     );
   }
 }
+
+

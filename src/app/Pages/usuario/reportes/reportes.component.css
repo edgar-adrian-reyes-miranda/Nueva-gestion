@@ -1,54 +1,107 @@
+/* Estilos generales */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
-form {
+/* Estilos del botón de regreso */
+.regreso {
+  background-color: #9d2449;
+  color: #d4c19c;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.regreso i {
+  vertical-align: middle;
+}
+
+/* Contenedor del formulario de carga de archivos */
+.upload-form {
+  margin: 20px;
   background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de los campos del formulario */
+.form-group {
+  margin-bottom: 15px;
 }
 
 label {
-  display: block;
-  margin-bottom: 8px;
   font-weight: bold;
-  color: #333;
 }
 
-select,
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Estilos del botón de carga de archivos */
+.upload-button {
+  background-color: #4e232e;
+  color: #d4c19c;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
 }
 
-button {
-  background-color: #4CAF50;
+.upload-button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Lista de archivos subidos */
+.file-list {
+  margin: 20px;
+}
+
+/* Estilos de los elementos de la lista de archivos */
+.file-item {
+  margin-bottom: 10px;
+}
+
+/* Estilos del botón de eliminar */
+.delete-button {
+  background-color: #ff6666;
   color: #fff;
   border: none;
-  padding: 12px;
-  border-radius: 4px;
+  padding: 5px 10px;
   cursor: pointer;
-  width: 100%;
+  font-size: 0.8em;
+  border-radius: 5px;
 }
 
-button:hover {
-  background-color: #45a049;
+.delete-button:hover {
+  background-color: #cc0000;
 }
 
-p {
-  margin-bottom: 15px;
-  color: #555;
+.file-list {
+  list-style: none;
+  padding: 0;
+}
+
+.file-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.file-name {
+  flex: 1;
+}
+
+.file-download,
+.file-delete {
+  margin-left: 8px;
 }

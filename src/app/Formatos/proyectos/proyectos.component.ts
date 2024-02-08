@@ -64,7 +64,7 @@ export class ProyectosComponent implements OnInit {
   }
   eliminar(id_proyecto: number | undefined) {
     if (typeof id_proyecto === 'number') {
-      this.api.eliminarProyecto(id_proyecto).subscribe(
+      this.api.softDelete(id_proyecto).subscribe(
         res => {
           console.log('Eliminado proyecto');
           window.location.reload();

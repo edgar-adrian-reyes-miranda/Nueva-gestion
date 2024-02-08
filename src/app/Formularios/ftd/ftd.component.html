@@ -16,8 +16,6 @@
     <!-- Agrega más opciones según sea necesario -->
   </select>
   <p>Has selecionado el proyecto {{ ftd.proyectos.nombre }}</p>
-  <p>Has selecionado el proyecto {{ ftd.proyectos.evaluacion }}</p>
-  <p>Has selecionado el proyecto {{ ftd.proyectos.avance }}</p>
 
   <label for="areaInfotec">Área de Infotec:</label>
   <input
@@ -88,7 +86,7 @@
     <!-- Agrega más opciones según sea necesario -->
   </select>
 
-  <p>Elejiste el grupo: {{ ftd.grupos.nombre  }}</p>
+  <p>Elejiste el grupo: {{ ftd.grupos.nombre }}</p>
 
   <label for="enlace">Enlace:</label>
   <select
@@ -105,6 +103,7 @@
   </select>
 
   <p>Has elejido el tipo de enlace: {{ ftd.enlace.tipo_enlace }}</p>
+
   <label for="infotecMatricula">Matrícula Infotec:</label>
   <input
     type="text"
@@ -155,10 +154,9 @@
     </option>
   </select>
 
-  <p>Elejiste el estatus: {{ ftd.cursos.nombre  }}</p>
-  <p>Elejiste el estatus: {{ ftd.cursos.tipo_estatus  }}</p>
-  <p>Elejiste el estatus: {{ ftd.cursos.unidad  }}</p>
-<!--Fin-->
+  <p>Elejiste el estatus: {{ ftd.cursos.nombre }}</p>
+
+  <!--Fin-->
   <button role="button" (click)="guardar()" *ngIf="!ftd.id_ftd; else elseBlock">
     Guardar
   </button>

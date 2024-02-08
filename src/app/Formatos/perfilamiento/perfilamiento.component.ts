@@ -67,7 +67,7 @@ export class PerfilamientoComponent implements OnInit {
   }
   eliminar(id: number | undefined) {
     if (typeof id === 'number') {
-      this.api.eliminarPerfil(id).subscribe(
+      this.api.softdelete(id).subscribe(
         res => {
           console.log('Eliminado perfil');
           window.location.reload();

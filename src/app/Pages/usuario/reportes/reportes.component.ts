@@ -1,73 +1,73 @@
-import { Component, OnInit } from '@angular/core';
-import { Datosingresos } from "../../../Interfaces/datosingresos";
-import { Tramite } from "../../../Interfaces/tramite";
-import { Perfilamiento } from "../../../Interfaces/perfilamiento";
-import { Modalidad } from "../../../Interfaces/modalidad";
-import { Turno } from "../../../Interfaces/turno";
-import { DatosingresosService } from "../../../Apis/datosingresos.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { TramiteService } from "../../../Apis/tramite.service";
-import { ModalidadService } from "../../../Apis/modalidad.service";
-import { TurnoService } from "../../../Apis/turno.service";
-import { PerfilamientoService } from "../../../Apis/perfilamiento.service";
-
+import { Component, OnInit, } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FileService } from 'src/app/Apis/file.service';
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.component.html',
   styleUrls: ['./reportes.component.css']
 })
 export class ReportesComponent implements OnInit {
-  ingreso: Datosingresos = new Datosingresos();
-  tra: Tramite[] = [];
-  perfis: Perfilamiento[] = [];
-  moda: Modalidad[] = [];
-  tunr: Turno[] = [];
-  constructor(private api: DatosingresosService,
-    private route: Router,
-    private actived: ActivatedRoute,
-    private sertram: TramiteService,
-    private sermoda: ModalidadService,
-    private serturn: TurnoService,
-    private serperfi: PerfilamientoService) {
+  selectedFile: File | undefined;
+
+  files$: Observable<any[]> | undefined
+
+  constructor(private api: FileService) {
   }
 
   ngOnInit(): void {
-    this.cargardatos();
-    this.cargartramite();
-    this.cargarTurnos();
-    this.cargarmodalidad();
-    this.cargarPerfils();
+    this.loadFiles();
   }
-  private cargardatos() {
-    this.actived.params.subscribe(
-      (params) => {
-        let id = params['id_ingreso']
-        if (id) {
-          this.api.getporIdIngreso(id).subscribe(
-            (ingreso) => this.ingreso = ingreso
-          );
+
+  loadFiles() {
+    this.files$ = this.api.getFiles();
+  }
+
+  deleteFiles(filename: string) {
+    this.api.deletefile(filename).subscribe(() => {
+      this.loadFiles();
+    })
+  }
+
+  onFileSelected(event: any) {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement.files && inputElement.files.length > 0) {
+      this.selectedFile = inputElement.files[0] as File;
+    }
+  }
+
+  uploadFile() {
+    if (this.selectedFile) {
+      this.api.upload(this.selectedFile).subscribe(
+        () => {
+          console.log('File uploaded successfully');
+          swal.fire({
+            icon: 'success',
+            title: 'succefull',
+            text: 'Archivo correcto'
+          });
+        },
+        error => {
+          if (error.status === 413) {
+            console.error('Error: El archivo excede el límite de tamaño permitido');
+            // Mostrar mensaje con SweetAlert
+            swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'El archivo excede el límite de tamaño permitido',
+            });
+          } else {
+            console.error('Error al cargar el archivo', error);
+            // Manejar otros errores de carga de archivos si es necesario
+            swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al cargar el archivo',
+            });
+          }
         }
-      }
-    )
+      );
+    }
   }
-  private cargartramite() {
-    this.sertram.getListTramite().subscribe((tramites) => this.tra = tramites);
-  }
-  private cargarmodalidad() {
-    this.sermoda.getListModalidad().subscribe((modalidades) => this.moda = modalidades);
-  }
-  private cargarTurnos() {
-    this.serturn.getListtunro().subscribe((turnos) => this.tunr = turnos);
-  }
-  private cargarPerfils() {
-    this.serperfi.getListPerfil().subscribe((perfilamiento) => this.perfis = perfilamiento);
-  }
-  editar() {
-    this.api.editarIngreso(this.ingreso).subscribe(
-      ingresos => {
-        this.route.navigate(['/vistaUsuario']);
-        console.log('Actualizado dato', `Actualizaco ${this.ingreso.id_ingreso}con exito`);
-      }
-    );
-  }
+
 }

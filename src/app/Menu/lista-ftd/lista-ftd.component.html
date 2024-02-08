@@ -1,71 +1,76 @@
- <button class="regreso" [routerLink]="'/General'">
-    <i class="material-icons">arrow_back</i> Regresar
-  </button>
-  <div class="contenedor">
-    <h1>Datos FTD</h1>
-    <table
-      class="tabla-datos | paginate : { itemsPerPage: 10, currentPage: page }">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Area</th>
-          <th>Beca</th>
-          <th>Documento de Beca (Drive)</th>
-          <th>Fecha de Ingreso</th>
-          <th>Fecha de Termino</th>
-          <th>Matricula FTD</th>
-          <th>Correo Becario</th>
-          <th>Nombre proyecto</th>
-          <th>Tutor</th>
-          <th>Nombre Grupo</th>
-          <th>Enlace</th>
-          <th>Estatus Infotec</th>
-          <th>Cursos</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Puedes agregar filas de datos aquí -->
-        <tr *ngFor="let lista of ftd | paginate:{itemsPerPage:10, currentPage:page}">
-          <td>{{ lista.id_ftd }}</td>
-          <td>{{ lista.area }}</td>
-          <td>{{ lista.beca }}</td>
-          <td>{{ lista.becadocumenot }}</td>
-          <td>{{ lista.fecha_ingreso }}</td>
-          <td>{{ lista.fecha_termino }}</td>
-          <td>{{ lista.matricula_ftd }}</td>
-          <td>{{ lista.correo_becario }}</td>
-          <td>{{ lista.proyectos.nombre }}</td>
-          <td>{{ lista.tutores.nombre }}</td>
-          <td>{{ lista.grupos.nombre }}</td>
-          <td>{{ lista.enlace.tipo_enlace }}</td>
-          <td>{{ lista.estatusInfotec.tipo_estaus }}</td>
-          <td>{{ lista.cursos.nombre }}</td>
+<button class="regreso" [routerLink]="'/General'">
+  <i class="material-icons">arrow_back</i> Regresar
+</button>
+<div class="contenedor">
+  <h1>Datos FTD</h1>
+  <table
+    class="tabla-datos | paginate : { itemsPerPage: 10, currentPage: page }"
+  >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Area</th>
+        <th>Beca</th>
+        <th>Documento de Beca (Drive)</th>
+        <th>Fecha de Ingreso</th>
+        <th>Fecha de Termino</th>
+        <th>Matricula FTD</th>
+        <th>Correo Becario</th>
+        <th>Nombre proyecto</th>
+        <th>Tutor</th>
+        <th>Nombre Grupo</th>
+        <th>Enlace</th>
+        <th>Estatus Infotec</th>
+        <th>Cursos</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Puedes agregar filas de datos aquí -->
+      <tr
+        *ngFor="
+          let lista of ftd | paginate : { itemsPerPage: 10, currentPage: page }
+        "
+      >
+        <td>{{ lista.id_ftd }}</td>
+        <td>{{ lista.area }}</td>
+        <td>{{ lista.beca }}</td>
+        <td>{{ lista.becadocumenot }}</td>
+        <td>{{ lista.fecha_ingreso }}</td>
+        <td>{{ lista.fecha_termino }}</td>
+        <td>{{ lista.matricula_ftd }}</td>
+        <td>{{ lista.correo_becario }}</td>
+        <td>{{ lista.proyectos.nombre }}</td>
+        <td>{{ lista.tutores.nombre }}</td>
+        <td>{{ lista.grupos.nombre }}</td>
+        <td>{{ lista.enlace.tipo_enlace }}</td>
+        <td>{{ lista.estatusInfotec.tipo_estaus }}</td>
+        <td>{{ lista.cursos.nombre }}</td>
 
-          <td>
-            <button
-              class="accion-boton"
-              title="Editar"
-              [routerLink]="['/actualizar/forms', lista.id_ftd]"
-            >
-              Editar
-            </button>
-            <button
-              class="accion-boton"
-              title="Eliminar"
-              (click)="eliminar(lista.id_ftd)"
-            >
-              Eliminar
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="paginacion">
+        <td>
+          <button
+            class="accion-boton"
+            title="Editar"
+            [routerLink]="['/actualizar-ftd/forms', lista.id_ftd]"
+          >
+            Editar
+          </button>
+          <button
+            class="accion-boton"
+            title="Eliminar"
+            (click)="eliminar(lista.id_ftd)"
+          >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="paginacion">
   <pagination-controls
     (pageChange)="page = $event"
     previousLabel="Anterior"
     nextLabel="Siguiente"
   ></pagination-controls>
-  </div>
+</div>

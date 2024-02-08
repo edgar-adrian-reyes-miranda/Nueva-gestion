@@ -74,7 +74,7 @@ export class UniversidadComponent implements OnInit {
   }
   eliminar(id: number | undefined) {
     if (typeof id === 'number') {
-      this.api.eliminarUniversidad(id).subscribe(
+      this.api.softdeDelete(id).subscribe(
         res => {
           console.log('Universidad Eliminada con exito');
           window.location.reload();
