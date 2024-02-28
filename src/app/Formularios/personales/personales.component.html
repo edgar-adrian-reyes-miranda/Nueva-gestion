@@ -10,7 +10,6 @@
       name="nombre"
       class="editable"
       placeholder="Nombre"
-      name="nomre"
       required
       [(ngModel)]="dato.nombre"
     />
@@ -22,7 +21,6 @@
       name="primerApellido"
       class="editable"
       placeholder="Primer Apellido"
-      name="p_apellido"
       required
       [(ngModel)]="dato.p_apellido"
     />
@@ -34,7 +32,6 @@
       name="segundoApellido"
       class="editable"
       placeholder="Segundo Apellido"
-      name="s_apellido"
       required
       [(ngModel)]="dato.s_apellido"
     />
@@ -46,7 +43,6 @@
       name="correo"
       class="editable"
       placeholder="Correo"
-      name="correo"
       required
       [(ngModel)]="dato.correo"
     />
@@ -58,7 +54,6 @@
       name="Curp"
       class="editable"
       placeholder="CURP"
-      name="curp"
       required
       [(ngModel)]="dato.curp"
     />
@@ -70,7 +65,6 @@
       name="Edad"
       class="editable"
       placeholder="Edad"
-      name="edad"
       required
       [(ngModel)]="dato.edad"
     />
@@ -82,7 +76,6 @@
       name="Estado"
       class="editable"
       placeholder="Estado"
-      name="estado"
       required
       [(ngModel)]="dato.estados"
     />
@@ -94,7 +87,6 @@
       name="Municipio"
       class="editable"
       placeholder="Municipio"
-      name="municipio"
       required
       [(ngModel)]="dato.municipio"
     />
@@ -106,7 +98,6 @@
       name="Direccion"
       class="editable"
       placeholder="Dirección"
-      name="direccion"
       required
       [(ngModel)]="dato.direccion"
     />
@@ -125,7 +116,7 @@
       </option>
     </select>
 
-    <p>Elejiste el genero: {{ dato.genero.tipo_genero | json }}</p>
+    <p>Elejiste el genero: {{ dato.genero.tipo_genero  }}</p>
 
     <label for="Telefono">Teléfono:</label>
     <input
@@ -134,7 +125,6 @@
       name="Telefono"
       class="editable"
       placeholder="Teléfono"
-      name="telefono"
       required
       [(ngModel)]="dato.telefono"
     />
@@ -146,7 +136,6 @@
       name="TelefonoCasa"
       class="editable"
       placeholder="Teléfono de Casa"
-      name="telefono_casa"
       required
       [(ngModel)]="dato.telefono_casa"
     />
@@ -163,6 +152,7 @@
     <ng-template #elseBlock>
       <button type="submit" role="button" (click)="editar()">Actualizar</button>
     </ng-template>
+
   </form>
 </div>
 

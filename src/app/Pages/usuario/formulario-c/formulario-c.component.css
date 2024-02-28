@@ -1,62 +1,56 @@
-body {
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
+/* Colores */
 .regreso {
-  background-color: #9D2449;
-  color: #D4C19C;
+  background-color: #13322B;
+  color: #FFFFFF;
   border: none;
-  padding: 10px;
-  margin: 10px;
-  cursor: pointer;
-  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.regreso i {
-  vertical-align: middle;
+.regreso:hover {
+  background-color: #285C4D;
 }
 
 .main-container {
   display: flex;
-  justify-content: space-around;
-  margin: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-section {
-  background-color: #9D2449;
+  margin-bottom: 20px;
   padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  color: #D4C19C;
-  width: 30%;
+  background-color: #D4C19C;
+  border-radius: 10px;
+  width: 50%;
 }
 
-.form-section h2 {
-  margin-bottom: 10px;
+h2 {
+  color: #56242A;
+}
+
+.edit-icon {
+  color: #4E232E;
+  cursor: pointer;
 }
 
 .editable {
+  width: 80%;
+  padding: 10px;
   margin-bottom: 10px;
-  padding: 8px;
+  border: 1px solid #B38E5D;
+  border-radius: 5px;
 }
 
 .save-button {
-  background-color: #4E232E;
-  color: #D4C19C;
+  background-color: #9D2449;
+  color: #FFFFFF;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
 }
 
 .save-button:hover {
   background-color: #621132;
-}
-
-.edit-icon {
-  font-size: 1.5em;
-  margin-left: 5px;
 }

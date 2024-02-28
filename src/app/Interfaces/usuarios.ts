@@ -5,4 +5,5 @@ export class Usuarios {
   username: string = '';
   password: string = '';
   correo: string = '';
+  datopersonales: Datospersonales = new Datospersonales();
 }

@@ -14,6 +14,5 @@ export class Datospersonales {
   telefono_casa?: number;
   correo: string = '';
   genero: Genero = new Genero();
-  //usuario: Usuarios = new Usuarios();
-
+  
 }

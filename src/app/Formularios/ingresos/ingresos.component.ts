@@ -91,7 +91,7 @@ export class IngresosComponent implements OnInit {
     this.api.guardarIngreso(this.ingreso).subscribe(
       ingresos => {
         this.route.navigate(['/login']);
-        console.log('Nuevo dato de ingreso', `Nuevo ${this.ingreso.id_ingreso} creado con exito`);
+        console.log('Nuevo dato de ingreso', `Nuevo ${this.ingreso} creado con exito`);
       }
     );
   }

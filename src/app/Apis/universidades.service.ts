@@ -16,6 +16,11 @@ export class UniversidadesService {
       map(universidad => universidad as Universidades[])
     );
   }
+  getListUniversidadBaja(): Observable<Universidades[]> {
+    return this.http.get(`${baseUrl}universidades/lista/false`).pipe(
+      map(universidad => universidad as Universidades[])
+    );
+  }
   getporIdUniversodad(id_uni: number) {
     return this.http.get<Universidades>(`${baseUrl}universidades/${id_uni}`);
   }
@@ -33,7 +38,10 @@ export class UniversidadesService {
   }
 
   softdeDelete(id_uni : number) {
-    return this.http.delete<void>(`${baseUrl}universidades/soft/${id_uni}`);
+    return this.http.delete<void>(`${baseUrl}universidades/logica/${id_uni}`);
+  }
+  restaurar(id_uni: number):Observable<Universidades>{
+    return this.http.put<Universidades>(`${baseUrl}universidades/logica/${id_uni}`, null);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { Usuarios } from 'src/app/Interfaces/usuarios';
 import { UsuarioService } from 'src/app/Apis/usuario.service';
 import swal from 'sweetalert2';
@@ -13,6 +13,7 @@ import { AdminsService } from 'src/app/Apis/admins.service';
 })
 export class LoginComponent implements OnInit {
   compa = {
+    id:'',
     username: '',
     password: '',
     tipo: ''
@@ -23,9 +24,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private api: UsuarioService,
     private apiadm: AdminsService,
-    private router: Router) {
+    private router: Router,
+    private actived:ActivatedRoute) {
   }
   ngOnInit(): void {
+    this.sobrecargarusuario();
   }
 
   acceso() {
@@ -33,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.api.login(this.compa).subscribe(
         (response) => {
           console.log('Acceso concedido', response);
-
+          this.api.setCurrentUser(response);
           swal.fire({
             position: "top-end",
             icon: "success",
@@ -41,7 +44,7 @@ export class LoginComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           });
-          this.router.navigate(['/vistaUsuario']);
+          this.router.navigate(['/vistaUsuario', {id: this.usuario.id }]);
         },
         (error) => {
           console.error('Error en el inicio de sesión', error);
@@ -82,8 +85,20 @@ export class LoginComponent implements OnInit {
         }
       );
     } else {
-      console.error('Erro el tipo usuario no encontrado');
+      console.error('Error el tipo usuario no encontrado');
     }
+  }
+
+  private sobrecargarusuario(){
+    this.actived.params.subscribe(
+      params=>{
+        let id = params['id'];
+        if(id){
+          this.api.gerUsuarioById(id).subscribe((usuarios)=> this.compa.id ,
+            (error)=> console.error('Error en la cargar del id', error));
+        }
+      }
+    );
   }
 }
 

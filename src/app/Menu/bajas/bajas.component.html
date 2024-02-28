@@ -15,7 +15,20 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Filas de datos aquí -->
+       <tr *ngFor="let uni of universidades">
+         <td>{{uni.id_uni}}</td>
+         <td>{{uni.nombre}}</td>
+         <td>
+           <button
+             class="accion-boton"
+             title="restaurar"
+                        >
+             <i class="material-icons">edit</i> Editar
+           </button>
+
+
+         </td>
+       </tr>
       </tbody>
     </table>
   </div>

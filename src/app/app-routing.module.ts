@@ -35,6 +35,8 @@ import { ReportesComponent } from "./Pages/usuario/reportes/reportes.component";
 import { LoginComponent } from './Logueos/login/login.component';
 import { PortadaComponent } from "./Pages/portada/portada.component";
 import { ListaAdminsComponent } from './Formatos/lista-admins/lista-admins.component';
+import {TablaVistaComponent} from "./Formularios/tabla-vista/tabla-vista.component";
+import {PersonalesVistaComponent} from "./Formularios/personales-vista/personales-vista.component";
 
 
 
@@ -56,7 +58,7 @@ const routes: Routes = [
 
   //vistas
   { path: 'vistaUsuario', component: UsuarioComponent, pathMatch: 'full' },
-
+  { path: 'vistaUsuario/forms/:id', component: UsuarioComponent, pathMatch: 'full' },
   ///vistaAdministrador
   { path: 'General', component: AdminsComponent, pathMatch: 'full' },
   { path: 'datos-personales', component: ListaPersonalesComponent, pathMatch: 'full' },
@@ -93,7 +95,7 @@ const routes: Routes = [
   { path: 'registro', component: ResgitroComponent, pathMatch: 'full' },
 
   ///formularios de registro
-  { path: 'registro-personales', component: PersonalesComponent, pathMatch: 'full' },
+  { path: 'registro-personales/:id_person', component: PersonalesComponent, pathMatch: 'full' },
   { path: 'registro-escolares', component: EscolaresComponent, pathMatch: 'full' },
   { path: 'registro-ingresos', component: IngresosComponent, pathMatch: 'full' },
   { path: 'registro-ftd/forms/:id_ftd', component: FtdComponent, pathMatch: 'full' },
@@ -111,6 +113,11 @@ const routes: Routes = [
   { path: 'proyectos/forms/:id:proyecto', component: ProyectosComponent, pathMatch: 'full' },
   { path: 'registro-admins/forms/:id_admin', component: RegistroAddComponent, pathMatch: 'full' },
   { path: 'actualizacion-registro/forms/:id', component: ResgitroComponent, pathMatch: 'full' },
+  { path: 'retorno/forms/:id', component: TablaVistaComponent, pathMatch:'full'},
+  { path: 'retorno', component: TablaVistaComponent, pathMatch:'full'},
+  { path: 'muestra', component:PersonalesVistaComponent, pathMatch:'full'},
+  { path: 'muestra/forms/:id_person', component:PersonalesVistaComponent, pathMatch:'full'},
+
 ];
 
 @NgModule({

@@ -18,13 +18,17 @@ export class ResgitroComponent implements OnInit {
     private actived: ActivatedRoute) {
   }
   ngOnInit(): void {
+    this.cargarnuevo();
+  }
+
+  private cargarnuevo(){
     this.actived.params.subscribe(
       params => {
         let id = params['id'];
         if (id) {
           this.api.gerUsuarioById(id).subscribe(
             (usuarios) => this.registro = usuarios,
-            (error) => console.error('ERror al cargar el usaurio', error)
+            (error) => console.error('Error al cargar el usaurio', error)
           );
         }
       }
@@ -41,7 +45,7 @@ export class ResgitroComponent implements OnInit {
           showConfirmButton: true,
           timer: 1500
         });
-        this.route.navigate(['/registro-personales']);
+        this.route.navigate(['/retorno', {id: usurios.id}]);
       },
       (error) => {
         swal.fire({

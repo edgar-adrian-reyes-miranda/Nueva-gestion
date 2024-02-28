@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DatosingresosService } from 'src/app/Apis/datosingresos.service';
-import { DatospersonalesService } from 'src/app/Apis/datospersonales.service';
-import { Datospersonales } from 'src/app/Interfaces/datospersonales';
+import {Usuarios} from "../../Interfaces/usuarios";
+import {UsuarioService} from "../../Apis/usuario.service";
 
 @Component({
   selector: 'app-tabla-vista',
@@ -10,31 +9,38 @@ import { Datospersonales } from 'src/app/Interfaces/datospersonales';
   styleUrls: ['./tabla-vista.component.css']
 })
 export class TablaVistaComponent implements OnInit {
-  lista: Datospersonales[] = [];
+  registro: Usuarios= new Usuarios();
+  mostrarDato:any;
 
-  constructor(private api: DatospersonalesService,
+  constructor(
     private route: Router,
+    private apisu:UsuarioService,
     private actived: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
+   this.cargausuario();
 
   }
 
-  private cargarporidPersonales() {
+  private cargausuario(){
     this.actived.params.subscribe(
-      params => {
-        let id = params['id_person']
-        if (id) {
-          this.api.getporIdpersonal(id).subscribe(
-            
-          (error)=>console.error('Error al cargar el id', error)
-          )
+      params=>{
+        let id = params['id'];
+        if(id){
+          this.apisu.gerUsuarioById(id).subscribe(
+            (usuario: Usuarios)=>{
+              this.mostrarDato = usuario;
+            },
+            error => {
+              console.error('Error en la carga de usuario', error);
+            }
+          );
         }
       }
-    )
-
+    );
   }
+
 
 }

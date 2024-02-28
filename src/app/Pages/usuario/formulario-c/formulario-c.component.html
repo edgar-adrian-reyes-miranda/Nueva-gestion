@@ -1,25 +1,71 @@
-<button class="regreso" [routerLink]="'/vistaUsuario'">
+<button class="regreso" [routerLink]="['/vistaUsuario/forms/', this.usuario.id]">
   <i class="material-icons icono">rotate_left</i>
 </button>
 <div class="main-container">
   <div class="form-section">
     <h2>Datos Personales <i class="material-icons edit-icon">edit</i></h2>
     <div>
-      <input type="text" class="editable" placeholder="Nombre" />
-      <input type="text" class="editable" placeholder="Primer Apellido" />
-      <input type="text" class="editable" placeholder="Segundo Apellido" />
-
-      <!-- Otros campos de datos personales -->
-      <button class="save-button">Guardar</button>
+      <input
+        type="text"
+        class="editable"
+        placeholder="Nombre"
+        name="nombre"
+        required
+        [(ngModel)]="personales.nombre"
+      />
+      <input
+        type="text"
+        class="editable"
+        placeholder="Primer Apellido"
+        name="p_apellido"
+        required
+        [(ngModel)]="personales.p_apellido"
+      />
+      <input
+        type="text"
+        class="editable"
+        placeholder="Segundo Apellido"
+        name="s_apellido"
+        required
+        [(ngModel)]="personales.s_apellido"
+      />
+      <input
+        type="text"
+        class="editable"
+        placeholder="Genero"
+        name="genero"
+        required
+        [(ngModel)]="personales.genero.tipo_genero"
+      />
+      <input
+        type="text"
+        class="editable"
+        placeholder="CURP"
+        name="curp"
+        required
+        [(ngModel)]="personales.curp"
+      />
+      <input type="text" class="editable" placeholder="Estado o Ciudad"  name="estado" required [(ngModel)]="personales.estados"/>
+      <input type="text" class="editable" placeholder="Municipio" name="municipio" required [(ngModel)]="personales.municipio" />
+      <input type="text" class="editable" placeholder="Direccion"  name="direccion" required [(ngModel)]="personales.direccion"/>
+      <input type="text" class="editable" placeholder="Telefeno" name="telefono"  required [(ngModel)]="personales.telefono"/>
+      <input type="text" class="editable" placeholder="Correo" name="correo" required [(ngModel)]="personales.correo" />
+      <input type="text" class="editable" placeholder="Telefono de casa" name="telefono_casa" required [(ngModel)]="personales.telefono_casa" />
+      <button class="save-button">Editar</button>
     </div>
   </div>
 
   <div class="form-section">
     <h2>Datos Escolares <i class="material-icons edit-icon">edit</i></h2>
     <div>
-      <input type="text" class="editable" placeholder="Correo Institucional" />
-      <input type="text" class="editable" placeholder="Carrera" />
-      <!-- Otros campos de datos escolares -->
+      <input type="text" class="editable" placeholder="Correo Institucional" name="correo_inst" required [(ngModel)]="escolares.correo_inst"/>
+      <input type="text" class="editable" placeholder="Carrera"  name="carrera" required [(ngModel)]="escolares.carrera"/>
+      <input type="text" class="editable" placeholder="Universidad" name="universidades" required [(ngModel)]="escolares.universidades.nombre" />
+      <input type="text" class="editable" placeholder="No. de Matricula"  name="matricula" required [(ngModel)]="escolares.matricula"/>
+      <input type="text" class="editable" placeholder="Modalidad Escolar" name="modalidadescolar" required [(ngModel)]="escolares.modalidadesEscolares.tipo_modalidad"/>
+      <input type="text" class="editable" placeholder="Plan Educativo" name="planes" required [(ngModel)]="escolares.planEducativo.nombre"/>
+      <input type="text" class="editable" placeholder="Periodo" name="periodo" required [(ngModel)]="escolares.periodo.tipo_periodo"/>
+
       <button class="save-button">Guardar</button>
     </div>
   </div>
@@ -27,9 +73,13 @@
   <div class="form-section">
     <h2>Datos Ingresos <i class="material-icons edit-icon">edit</i></h2>
     <div>
-      <input type="text" class="editable" placeholder="Trámite" />
-      <input type="text" class="editable" placeholder="Perfilamiento" />
-      <!-- Otros campos de datos de ingresos -->
+      <input type="text" class="editable" placeholder="Trámite"  name="tramites" required [(ngModel)]="ingresos.tramite.tipo_tramite"/>
+      <input type="text" class="editable" placeholder="Perfilamiento" name="perfilamiento" required [(ngModel)]="ingresos.perfilamiento.nombre" />
+      <input type="text" class="editable" placeholder="Turno"  name="turno" required [(ngModel)]="ingresos.turno.tipo_turno"/>
+      <input type="text" class="editable" placeholder="Horario" name="horario" required [(ngModel)]="ingresos.horarios.horario"/>
+      <input type="text" class="editable" placeholder="Modalidad" name="modalidad" required [(ngModel)]="ingresos.modalidad.tipo_modalidad"/>
+      <input type="text" class="editable" placeholder="CV"  name="cv" required [(ngModel)]="ingresos.cv"/>
+      <input type="text" class="editable" placeholder="Historial Academico" name="historialacademico" required [(ngModel)]="ingresos.historial_Academico" />
       <button class="save-button">Guardar</button>
     </div>
   </div>

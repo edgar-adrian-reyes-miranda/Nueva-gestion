@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Genero } from "../../Interfaces/genero";
 import { GeneroService } from "../../Apis/genero.service";
 import { UsuarioService } from 'src/app/Apis/usuario.service';
+import swal from "sweetalert2";
+import {forkJoin} from "rxjs";
 
 
 @Component({
@@ -15,6 +17,7 @@ import { UsuarioService } from 'src/app/Apis/usuario.service';
 export class PersonalesComponent implements OnInit {
   dato: Datospersonales = new Datospersonales();
   genero: Genero[] = [];
+
   constructor(private api: DatospersonalesService,
     private rouete: Router,
     private active: ActivatedRoute,
@@ -24,16 +27,20 @@ export class PersonalesComponent implements OnInit {
   ngOnInit(): void {
     this.cargardatos();
     this.cargargenero();
-   // this.relaciondatospersonalesusuario();
-   // this.relaciondatospersonalesusuario();
-  }
+   }
   cargardatos() {
     this.active.params.subscribe(params => {
-      let id = params['id_person'];
-      if (id) {
-        this.api.getporIdpersonal(id).subscribe(
-          (personales) => this.dato = personales,
-          (error) => console.error('Error al cargar personales', error)
+      let id_person = params['id_person'];
+      if (id_person) {
+        forkJoin({
+          personales : this.api.getporIdpersonal(id_person),
+          genero: this.sergenero.getListGenero()
+        }).subscribe(
+          ({personales, genero})=>{
+            this.dato = personales;
+            this.genero = genero;
+          }
+
         )
       }
     });
@@ -43,40 +50,40 @@ export class PersonalesComponent implements OnInit {
       this.genero = generos;
     });
   }
-/*
-  private relaciondatospersonalesusuario() {
-    this.active.params.subscribe(
-      params => {
-        let id = params['id']
-        if (id) {
-          this.seruus.gerUsuarioById(id).subscribe((usuarios) => this.dato.usuario = usuarios);
-        }
-      }
-    )
-  }*/
 
   guardar(): void {
-    console.log(this.dato)
-    this.api.guardarPersonales(this.dato).subscribe(
-      personales => {
+       this.api.guardarPersonales(this.dato).subscribe(
+      (personales: Datospersonales) => {
+        swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Guardado con exito",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.dato =personales;
         this.rouete.navigate(['/registro-escolares']);
-        //window.location.reload();
         console.log('Nuevo dato personal', `Nuevo ${this.dato.id_person} creado con exito`);
-
       }
     );
-
   }
+
   editar() {
     this.api.editarPersonal(this.dato).subscribe(
       personal => {
         this.rouete.navigate(['/datos-personales']);
         console.log('Actualizado dato', `Actualizado ${this.dato.id_person}con exito`);
+        swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Actualizado con exito",
+          showConfirmButton: false,
+          timer: 1500
+        });
       },
       error => 'Error en la actualizacion'
     );
   }
-
 
 
 }

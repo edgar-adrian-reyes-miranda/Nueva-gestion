@@ -46,5 +46,12 @@ export class UsuarioService {
       );
   }
 
+  private currentUser:any;
+  setCurrentUser(user:any){
+    this.currentUser = user;
+  }
+  getCurrentUser(){
+    return this.currentUser;
+  }
 }
 
